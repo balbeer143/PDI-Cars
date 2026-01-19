@@ -85,7 +85,7 @@
                 </div>
             </div>
             <div class="col-lg-6 ms-auto">
-                <h2 class="fw-bold mb-3 text-primary">Why PDI is Critical</h2>
+                <h2 class="fw-bold mb-3">Why PDI is Critical</h2>
                 <p class="text-muted mb-4">
                     Many buyers assume a "new" car is perfect. However, during transit from the factory to the
                     dealership,

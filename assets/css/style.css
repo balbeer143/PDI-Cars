@@ -27,6 +27,49 @@ body {
     line-height: 1.6;
 }
 
+/* --- GOOGLE TRANSLATE HIDDEN --- */
+/* Hide the top banner iframe */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+iframe[id^=":"] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Reset body position */
+body {
+    top: 0px !important;
+    position: static !important;
+}
+
+/* Hide the tooltip that appears on hover */
+.goog-te-balloon-frame {
+    display: none !important;
+}
+
+/* Remove the "original text" tooltip on hover */
+.goog-text-highlight {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Hide the Google icon in the language dropdown if present */
+.goog-te-gadget-icon {
+    display: none !important;
+}
+
+/* Ensure the wrapper doesn't take space */
+.goog-te-gadget-simple {
+    background-color: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+    font-size: 0 !important;
+}
+
 a {
     text-decoration: none;
     transition: 0.3s;
@@ -87,11 +130,11 @@ header {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 99999;
 }
 
 .header .navbar-brand img {
-    max-height: 50px;
+    /* max-height: 50px; */
     width: auto;
 }
 
@@ -220,12 +263,48 @@ header {
     transform: translateY(-9px) rotate(-45deg);
 }
 
+/* refined select styling to match premium theme */
 .language-switcher select {
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
     font-size: 0.9rem;
-    background-color: #f9f9f9;
+    font-weight: 500;
+    background-color: var(--white);
+    color: var(--text-dark);
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.language-switcher select:hover {
+    border-color: var(--primary);
+}
+
+.language-switcher select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* Nav Links Color Update */
+.main-nav .nav-link {
+    color: var(--text-dark) !important;
+    font-weight: 600;
+    margin: 0 10px;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease;
+}
+
+.main-nav .nav-link:hover,
+.main-nav .nav-link.active {
+    color: #F86F03 !important;
+}
+
+/* Hire Expert specific styling if needed, currently it is a nav-link */
+.nav-link[href*="hire-expert"] {
+    color: var(--accent) !important;
 }
 
 /* --- RESPONSIVE HEADER --- */
@@ -241,11 +320,19 @@ header {
     }
 
     .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
         background: var(--white);
-        padding: 1rem;
-        border-radius: 12px;
-        margin-top: 1rem;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        border-radius: 0 0 24px 24px;
+        /* Smooth rounded bottom */
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+        margin-top: 0;
+        /* Remove margin that causes jump */
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     .custom-lang-switcher {
@@ -683,3 +770,770 @@ body {
 .text-opacity-90 {
     opacity: 0.9;
 }
+
+/* --- HIRE EXPERT PAGE STYLES --- */
+.pricing-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.pricing-header {
+    background: var(--bg-light);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.price-tag {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.feature-list li {
+    margin-bottom: 0.8rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+}
+
+.booking-form-container {
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.form-control-custom {
+    border-radius: 50px;
+    padding: 12px 20px;
+    border: 1px solid #ced4da;
+    width: 100%;
+}
+
+.form-control-custom:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    outline: none;
+}
+
+/* --- PREMIUM SECTIONS (HIRE EXPERT) --- */
+
+/* 1. Timeline Section */
+.timeline-step {
+    position: relative;
+    padding: 20px;
+}
+
+
+/* 2. Comparison Table */
+.comparison-table th {
+    background: var(--bg-light);
+    color: var(--primary-dark);
+    padding: 15px;
+}
+
+.comparison-table td {
+    padding: 15px;
+    vertical-align: middle;
+}
+
+.check-icon {
+    color: #198754;
+    font-weight: bold;
+}
+
+.cross-icon {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* 3. Accordion Custom */
+.accordion-button:not(.collapsed) {
+    background-color: rgba(13, 110, 253, 0.1);
+    color: var(--primary);
+}
+
+/* 4. Report Preview */
+.report-preview-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.report-preview-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+}
+
+/* 5. Inspection Gallery */
+.gallery-card {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-description {
+    background: white;
+    padding: 15px;
+    border-bottom: 3px solid var(--primary);
+}
+
+/* 6. Testimonials */
+.testimonial-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* 7. Team Profile */
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: -60px;
+    position: relative;
+    z-index: 10;
+}
+
+.team-card-body {
+    background: white;
+    padding-top: 70px;
+    padding-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* 8. Trust Badge */
+.trust-badge-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 20px;
+}
+
+/* 9. FAQ */
+.faq-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+/* 10. Sticky Bottom CTA (Mobile) */
+.mobile-sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 15px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+    /* Shown via media query if needed */
+}
+
+/* --- ANIMATIONS & INTERACTIVITY --- */
+
+/* Scroll Reveal */
+.reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Hover Effects */
+.timeline-step {
+    transition: transform 0.3s ease;
+}
+
+.timeline-step:hover {
+    transform: translateY(-10px);
+}
+
+.team-member img {
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover img {
+    transform: scale(1.1);
+}
+
+.hover-shadow {
+    transition: box-shadow 0.3s ease;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* NEW FORM STYLES (Vertical Layout) - Added Step 394 */
+.booking-form-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    /* Constrain width for vertical look */
+    margin: 0 auto;
+}
+
+.vertical-form-label {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+    display: block;
+    text-align: left;
+}
+
+.form-control-custom {
+    border-radius: 8px;
+    /* Slightly more rounded */
+    padding: 12px 15px;
+    border: 1px solid #dee2e6;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    /* Space between fields */
+    font-size: 1rem;
+}
+
+.form-control-custom:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.1);
+    outline: none;
+}
+
+.btn-hire-expert {
+    background-color: #2b6bf3;
+    /* Bright Blue */
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    border: none;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    transition: background 0.3s;
+}
+
+
+/* TESTIMONIAL CAROUSEL STYLES */
+.testimonial-carousel-card {
+    /* Removed max-width for grid layout */
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Softer shadow */
+    border-radius: 15px;
+    height: 100%;
+    /* Equal height */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--primary);
+    /* Blue arrows */
+    border-radius: 50%;
+
+    /* --- REFINED FORM STYLES (Grid Layout & Shadow-SM) --- */
+    .booking-form-container {
+        background: white;
+        /* padding: 2.5rem; */
+        border-radius: 12px;
+        /* box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important; */
+        /* user requested shadow-sm */
+        /* max-width: 800px; */
+        /* Wider for grid layout */
+        margin: 0 auto;
+        transition: box-shadow 0.3s ease;
+    }
+
+    .booking-form-container:hover {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+    .vertical-form-label {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 0.8rem;
+        color: #495057;
+        margin-bottom: 0.5rem;
+        display: block;
+        text-align: left;
+        letter-spacing: 0.5px;
+    }
+
+    .form-control-custom {
+        border-radius: 6px;
+        padding: 12px 15px;
+        border: 1px solid #ced4da;
+        width: 100%;
+        margin-bottom: 0;
+        /* Margin handled by grid gap */
+        font-size: 1rem;
+        background-color: #f8f9fa;
+        transition: all 0.2s;
+    }
+
+    .form-control-custom:focus {
+        background-color: #fff;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+        outline: none;
+    }
+}
+
+.booking-form-container {
+    max-width: 1100px !important;
+}
+
+/* --- PREMIUM PRICING SECTION --- */
+/* --- PREMIUM PRICING SECTION --- */
+.pricing-card-premium {
+    background: #fff;
+    border: 1px solid #eef0f3;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    height: 100%;
+}
+
+.pricing-card-premium:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-card-premium.popular {
+    border: 2px solid var(--accent);
+    /* Orange Border */
+    box-shadow: 0 10px 30px rgba(248, 111, 3, 0.15);
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.pricing-card-premium.popular:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 25px 50px rgba(248, 111, 3, 0.25);
+}
+
+.pricing-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    /* Navy Price */
+    margin: 1rem 0;
+}
+
+.check-list li {
+    margin-bottom: 0.8rem;
+    color: #555;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+}
+
+.check-list li i {
+    color: #10b981;
+    /* Green check */
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.check-list li.cross i {
+    color: #ef4444;
+    /* Red cross */
+}
+
+/* --- GOLD STANDARD FEATURES --- */
+.feature-box-premium {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #f0f0f0;
+    height: 100%;
+    transition: transform 0.3s;
+}
+
+.feature-box-premium:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.feature-icon-circle {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- DARK TRUST SECTION --- */
+.section-dark-trust {
+    background-color: var(--primary);
+    /* Deep Navy */
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.warning-list li {
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.warning-list li i {
+    color: var(--accent);
+    /* Orange Warning Icons for Contrast */
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+/* --- NEW HIRE EXPERT DESIGN VARIABLES & UTILITIES --- */
+:root {
+    --primary: #1e3a8a;
+    /* Deep Navy Blue */
+    --primary-light: #eff6ff;
+    /* Light Blue Background */
+    --accent: #F86F03;
+    /* Vibrant Orange */
+    --text-dark: #0f172a;
+    /* Dark Slate */
+    --text-gray: #475569;
+    /* Slate Gray */
+    --bg-light: #f8fafc;
+    /* Very Light Gray */
+    --white: #ffffff;
+    --shadow: 0 10px 30px -5px rgba(30, 58, 138, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --radius: 24px;
+    --radius-lg: 120px;
+}
+
+.text-primary-custom {
+    color: var(--primary);
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+.bg-primary-custom {
+    background-color: var(--primary);
+}
+
+.bg-light-custom {
+    background-color: var(--primary-light);
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+/* Buttons */
+.btn-accent {
+    background-color: var(--accent);
+    color: var(--white);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(248, 111, 3, 0.3);
+}
+
+.btn-accent:hover {
+    background-color: #d65a00;
+    transform: translateY(-2px);
+    color: var(--white);
+}
+
+/* Section Titles */
+.section-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.section-subtitle {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    background-color: var(--primary);
+    color: var(--white);
+    padding-top: 100px;
+    padding-bottom: 150px;
+    position: relative;
+    border-bottom-left-radius: var(--radius-lg);
+    border-bottom-right-radius: var(--radius-lg);
+}
+
+/* The Booking Card */
+.booking-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 40px;
+    box-shadow: var(--shadow);
+    margin-top: -80px;
+    /* Pull up into hero */
+    position: relative;
+    z-index: 1000;
+}
+
+.booking-card .form-control {
+    border-radius: 12px;
+    padding: 12px 15px;
+    border: 1px solid #e2e8f0;
+    background-color: #f8fafc;
+}
+
+.booking-card .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+/* --- STATS BAR --- */
+.stats-bar {
+    margin-top: 60px;
+}
+
+.stat-item h3 {
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0;
+}
+
+.stat-item p {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+/* --- WHY PDI --- */
+.feature-box {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--radius);
+    transition: transform 0.3s;
+    height: 100%;
+    border: 1px solid #f1f5f9;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.icon-wrap {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* --- CHECKLIST --- */
+.checklist-img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.check-item i {
+    color: var(--accent);
+    margin-right: 10px;
+}
+
+/* --- HOW IT WORKS --- */
+.step-card {
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    font-size: 8rem;
+    /* Massive size */
+    font-weight: 800;
+    color: rgba(30, 58, 138, 0.05);
+    /* Very faint Navy */
+    position: absolute;
+    top: -40px;
+    /* Pull up to sit behind title */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    line-height: 1;
+}
+
+.step-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- COMPARISON --- */
+.comparison-table {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.comparison-table th {
+    background: var(--primary);
+    color: var(--white);
+    padding: 20px;
+    border: none;
+}
+
+.comparison-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+/* --- SAMPLE REPORT --- */
+.report-section {
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+/* --- TESTIMONIALS --- */
+.testimonial-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+.stars {
+    color: #FFC107;
+}
+
+/* --- FAQ --- */
+/* Note: Bootstrap accordion overrides might conflict, ensuring specificity */
+.accordion-button:not(.collapsed) {
+    background-color: var(--primary-light) !important;
+    color: var(--primary) !important;
+    box-shadow: none !important;
+}
+
+.accordion-button:focus {
+    box-shadow: none !important;
+}
+
+.accordion-item {
+    border: none !important;
+    margin-bottom: 10px;
+    border-radius: 12px !important;
+    overflow: hidden;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+    .hero-section {
+        padding-bottom: 100px;
+        border-radius: 0 0 60px 60px;
+    }
+
+    .booking-card {
+        padding: 25px;
+        margin-top: -50px;
+    }
+}
+
+/* Ensure Swiper Slides are Equal Height */
+.testimonialSwiper .swiper-slide {
+    height: auto !important;
+    /* Let Flexbox control height */
+    display: flex;
+    /* Enable flex context */
+}
+
+.testimonialSwiper .testimonial-card {
+    height: 100%;
+    /* Fill the slide height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Push content apart if needed */
+}
+
+
+/* --- ANTI-JERK & SMOOTH LOAD FIXES --- */
+
+/* 1. Prevent Google Translate Layout Shift */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+body {
+    top: 0px !important;
+    position: static !important;
+}
+
+#google_translate_element {
+    display: none;
+    /* Hide the default widget container */
+}
+
+.goog-te-balloon-frame {
+    display: none !important;
+}
+
+/* 2. Smooth Page Fade-In - REMOVED per user request */
+/* body { animation: fadeInPage 0.8s ease-out; } */
