@@ -8,8 +8,8 @@
                 <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill"><i
                         class="fas fa-star me-2"></i>Rated #1 PDI Service</span>
                 <h1 class="display-4 fw-bold mb-3">Don't Buy a New Car <br> Without a <span
-                        style="color: var(--accent);">PDI Expert</span></h1>
-                <p class="lead mb-4" style="opacity: 0.9;">Discover hidden scratches, repainted parts, and engine faults
+                        class="text-accent-theme">PDI Expert</span></h1>
+                <p class="lead mb-4 opacity-90">Discover hidden scratches, repainted parts, and engine faults
                     before you sign the papers. Get a 200-point professional inspection for complete peace of mind.</p>
                 <div class="d-flex gap-3">
                     <div class="d-flex align-items-center">
@@ -22,9 +22,8 @@
             </div>
             <!-- The Form (Visual anchor will be below) -->
             <div class="col-lg-6 d-none d-lg-block text-center">
-                <img src="assets/images/creta.jpg" alt="Car Shape" class="img-fluid rounded-5"
-                    style="opacity:0.8; max-height: 400px; object-fit: contain;" width="600" height="400"
-                    fetchpriority="high">
+                <img src="assets/images/creta.jpg" alt="Car Shape" class="img-fluid rounded-5 expert-hero-img"
+                    width="600" height="400" fetchpriority="high">
                 <!-- Placeholder to balance space, actual form is overlapping next section -->
             </div>
         </div>
@@ -36,7 +35,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-10">
             <div class="booking-card">
-                <h3 class="text-center mb-4 fw-bold" style="color: var(--primary);">Schedule Your Inspection</h3>
+                <h3 class="text-center mb-4 fw-bold text-primary-theme">Schedule Your Inspection</h3>
                 <form>
                     <div class="row g-3">
                         <div class="col-md-6 col-lg-3">
@@ -167,13 +166,12 @@
                         <div class="check-item"><i class="fas fa-check-circle text-accent"></i> VIN Verification</div>
                     </div>
                 </div>
-                <a href="#" class="btn btn-accent">View Full Checklist <i class="fas fa-arrow-right ms-2"></i></a>
+                <a href="#" class="mt-2 btn btn-accent">View Full Checklist <i class="fas fa-arrow-right ms-2"></i></a>
             </div>
             <div class="col-lg-6">
                 <div class="bg-white p-3 rounded-4 shadow-sm">
                     <!-- Using a colored block to simulate an image if none provided -->
-                    <div
-                        style="background: #cbd5e1; height: 350px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #64748b;">
+                    <div class="placeholder-car-block">
                         <i class="fas fa-car fa-5x"></i>
                     </div>
                 </div>
@@ -235,9 +233,8 @@
                         <thead>
                             <tr>
                                 <th style="width: 40%;">Feature</th>
-                                <th class="text-center"
-                                    style="background: var(--primary-light); color: var(--primary);">Our PDI Expert</th>
-                                <th class="text-center" style="background: #e2e8f0; color: #64748b;">Dealer PDI</th>
+                                <th class="text-center bg-primary-light-theme">Our PDI Expert</th>
+                                <th class="text-center bg-gray-light-theme">Dealer PDI</th>
                             </tr>
                         </thead>
                         <tbody>

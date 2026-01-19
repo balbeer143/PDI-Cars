@@ -62,8 +62,7 @@
           <form class="d-flex" role="search">
             <div id="google_translate_element" style="display:none"></div>
             <div class="language-switcher notranslate" translate="no">
-              <select id="language-selector" class="form-select form-select-sm"
-                style="border-radius: 20px; border: 1px solid #dee2e6;">
+              <select id="language-selector" class="form-select form-select-sm lang-select">
                 <option value="en">English</option>
                 <option value="hi">हिंदी (Hindi)</option>
                 <option value="bn">বাংলা (Bengali)</option>
@@ -109,52 +108,5 @@
     });
   </script>
 
-  <script>
-    // Aggressively remove Google Translate Top Bar
-    document.addEventListener('DOMContentLoaded', function () {
-      // 1. Force Reset Body Top
-      const style = document.createElement('style');
-      style.innerHTML = `
-            body { top: 0 !important; position: static !important; }
-            .goog-te-banner-frame { display: none !important; }
-            .goog-tooltip { display: none !important; }
-            .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
-        `;
-      document.head.appendChild(style);
-
-      // 2. MutationObserver to watch for the iframe injection
-      const observer = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
-          // Check new nodes
-          mutation.addedNodes.forEach(function (node) {
-            if (node.tagName === 'IFRAME') {
-              if (node.classList.contains('goog-te-banner-frame') ||
-                node.id === ':1.container' ||
-                node.id.indexOf('goog') > -1) {
-                node.remove();
-                document.body.style.top = '0px';
-              }
-            }
-            // Remove tooltips
-            if (node.classList && (node.classList.contains('goog-tooltip') || node.classList.contains('goog-te-balloon-frame'))) {
-              node.remove();
-            }
-          });
-        });
-        // Continuous check for body style
-        if (document.body.style.top !== '0px') {
-          document.body.style.top = '0px';
-          document.body.style.position = 'static';
-        }
-      });
-
-      observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['style'] });
-
-      // Final cleanup just in case
-      setInterval(() => {
-        const frame = document.querySelector('.goog-te-banner-frame');
-        if (frame) frame.remove();
-        document.body.style.top = '0px';
-      }, 1000);
-    });
   </script>
+  <?php // External CSS in style.css handles Google Translate cleanup ?>

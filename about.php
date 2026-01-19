@@ -134,7 +134,7 @@
 <div class="container mb-5">
     <div class="expert-banner text-center">
         <h2 class="fw-bold mb-3">Ready to Inspect Your Car?</h2>
-        <p class="mb-4 text-opacity-90">Download your checklist today or hire an expert to do it for you.</p>
+        <p class="mb-5">Download your checklist today or hire an expert to do it for you.</p>
         <a href="index.php#select-brand" class="expert-btn">Get Started</a>
     </div>
 </div>
