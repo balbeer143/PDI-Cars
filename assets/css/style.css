@@ -204,7 +204,20 @@ header {
     height: 2px;
     background-color: var(--text-dark);
     border-radius: 1px;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Toggler Open State (Cross Animation) */
+.custom-toggler:not(.collapsed) span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.custom-toggler:not(.collapsed) span:nth-child(2) {
+    opacity: 0;
+}
+
+.custom-toggler:not(.collapsed) span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
 }
 
 .language-switcher select {
@@ -213,6 +226,45 @@ header {
     border: 1px solid #ddd;
     font-size: 0.9rem;
     background-color: #f9f9f9;
+}
+
+/* --- RESPONSIVE HEADER --- */
+@media (max-width: 991px) {
+    .header {
+        padding: 0.5rem 0;
+    }
+
+    .main-nav .nav-link {
+        margin: 10px 0;
+        /* Vertical stacking spacing */
+        text-align: center;
+    }
+
+    .navbar-collapse {
+        background: var(--white);
+        padding: 1rem;
+        border-radius: 12px;
+        margin-top: 1rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .custom-lang-switcher {
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .lang-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .lang-menu {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /* --- HERO SECTION --- */
@@ -308,6 +360,13 @@ header {
     font-size: 1rem;
     font-weight: 700;
     color: var(--primary);
+    overflow: hidden;
+}
+
+.brand-logo-placeholder img {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
 }
 
 .brand-name {
@@ -585,4 +644,42 @@ footer {
     border-radius: 50px !important;
     padding: 12px !important;
     font-weight: 700 !important;
+}
+
+/* --- GOOGLE TRANSLATE CUSTOMIZATION --- */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-gadget,
+.goog-te-banner-frame,
+#goog-gt-tt {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+}
+
+body {
+    position: static !important;
+}
+
+/* --- ABOUT PAGE STYLES --- */
+.text-primary-dark {
+    color: var(--primary-dark);
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.mission-box {
+    background: var(--bg-light);
+    border: 2px dashed var(--primary);
+}
+
+.bg-primary-light-section {
+    background-color: var(--primary-light);
+    padding: 5rem 0;
+}
+
+.text-opacity-90 {
+    opacity: 0.9;
 }

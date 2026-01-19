@@ -20,73 +20,99 @@
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2 g-md-4 justify-content-center mb-4">
         <div class="col">
             <div class="brand-card">
-                <div class="brand-logo-placeholder">MS</div>
+                <div class="brand-logo-placeholder">
+                    <img src="assets/images/Maruti Suzuki.png" alt="Maruti Suzuki" class="img-fluid"
+                        style="border-radius: 50%;">
+                </div>
                 <div class="brand-name">Maruti Suzuki</div>
             </div>
         </div>
         <div class="col">
             <div class="brand-card">
-                <div class="brand-logo-placeholder">HY</div>
+                <div class="brand-logo-placeholder">
+                    <img src="assets/images/Hyundai.png" alt="Hyundai" class="img-fluid" style="border-radius: 50%;">
+                </div>
                 <div class="brand-name">Hyundai</div>
             </div>
         </div>
         <div class="col">
             <div class="brand-card">
-                <div class="brand-logo-placeholder">TM</div>
+                <div class="brand-logo-placeholder">
+                    <img src="assets/images/tata.jpg" alt="Tata Motors" class="img-fluid" style="border-radius: 50%;">
+                </div>
                 <div class="brand-name">Tata Motors</div>
             </div>
         </div>
         <div class="col">
             <div class="brand-card">
-                <div class="brand-logo-placeholder">MH</div>
+                <div class="brand-logo-placeholder">
+                    <img src="assets/images/Mahindra.webp" alt="Mahindra" class="img-fluid" style="border-radius: 50%;">
+                </div>
                 <div class="brand-name">Mahindra</div>
             </div>
         </div>
         <div class="col">
             <div class="brand-card">
-                <div class="brand-logo-placeholder">HN</div>
+                <div class="brand-logo-placeholder">
+                    <img src="assets/images/honda logo.webp" alt="Honda" class="img-fluid" style="border-radius: 50%;">
+                </div>
                 <div class="brand-name">Honda</div>
             </div>
         </div>
         <div class="col">
             <div class="brand-card">
-                <div class="brand-logo-placeholder">TY</div>
+                <div class="brand-logo-placeholder">
+                    <img src="assets/images/toyota.png" alt="Toyota" class="img-fluid">
+                </div>
                 <div class="brand-name">Toyota</div>
             </div>
         </div>
         <div class="col">
             <div class="brand-card">
-                <div class="brand-logo-placeholder">KI</div>
+                <div class="brand-logo-placeholder">
+                    <img src="assets/images/kia.png" alt="Kia" class="img-fluid">
+                </div>
                 <div class="brand-name">Kia</div>
             </div>
         </div>
         <div class="col">
             <div class="brand-card">
-                <div class="brand-logo-placeholder">MG</div>
+                <div class="brand-logo-placeholder">
+                    <img src="assets/images/mg.png" alt="MG Motor" class="img-fluid">
+                </div>
                 <div class="brand-name">MG Motor</div>
             </div>
         </div>
         <div class="col">
             <div class="brand-card">
-                <div class="brand-logo-placeholder">VW</div>
+                <div class="brand-logo-placeholder">
+                    <img src="assets/images/volkswagen.png" alt="Volkswagen" class="img-fluid">
+                </div>
                 <div class="brand-name">Volkswagen</div>
             </div>
         </div>
         <div class="col">
             <div class="brand-card">
-                <div class="brand-logo-placeholder">MB</div>
+                <div class="brand-logo-placeholder">
+                    <img src="assets/images/Mercedes logo.jpg" alt="Mercedes" class="img-fluid"
+                        style="border-radius: 50%;">
+                </div>
                 <div class="brand-name">Mercedes</div>
             </div>
         </div>
         <div class="col">
             <div class="brand-card">
-                <div class="brand-logo-placeholder">BM</div>
+                <div class="brand-logo-placeholder">
+                    <img src="assets/images/bmw logo.webp" alt="BMW" class="img-fluid">
+                </div>
                 <div class="brand-name">BMW</div>
             </div>
         </div>
         <div class="col">
             <div class="brand-card">
-                <div class="brand-logo-placeholder">SK</div>
+                <div class="brand-logo-placeholder">
+                    <img src="assets/images/skoda.png" alt="Skoda" class="img-fluid">
+                </div>
                 <div class="brand-name">Skoda</div>
             </div>
         </div>

@@ -16,11 +16,9 @@
   <header class="header">
     <nav class="navbar navbar-expand-lg p-0">
       <div class="container">
-        <div class="logo">
-          <a href="/" aria-label="Home">
-            <img src="assets/images/pdicars-logo.svg" alt="carpdi Logo" width="200" height="100">
-          </a>
-        </div>
+        <a class="navbar-brand" href="/" aria-label="Home">
+          <img src="assets/images/pdicars-logo.svg" alt="carpdi Logo" width="200" height="100" class="img-fluid">
+        </a>
         <button class="navbar-toggler custom-toggler collapsed" type="button" data-bs-toggle="collapse"
           data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
           aria-label="Toggle navigation">
@@ -33,9 +31,9 @@
           <!-- Center Navigation -->
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="https://pdicars.com">Home</a>
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
-            <li class="nav-item">
+            <li class=" nav-item">
               <a class="nav-link" href="about.php">About PDI</a>
             </li>
             <li class="nav-item">
@@ -76,20 +74,21 @@
         <script type="text/javascript">
           function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-              pageLanguage: 'en',
+              pageLanguage: 'en', // default language (English)
               includedLanguages: 'en,hi,bn,mr,te,ta,gu,kn',
-              layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
               autoDisplay: false
             }, 'google_translate_element');
           }
+        </script>
 
-          // Custom Logic to sync Custom UI with Google Translate
+        <script type="text/javascript"
+          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+        <script>
+          // Custom Language Switcher Logic
           document.addEventListener('DOMContentLoaded', () => {
             const switcher = document.getElementById('customLangSwitcher');
             const langBtn = document.getElementById('langBtn');
-            const currentLangSpan = document.getElementById('currentLang');
-            const options = document.querySelectorAll('.lang-option');
-
             // Toggle Dropdown
             langBtn.addEventListener('click', (e) => {
               e.stopPropagation();
@@ -101,34 +100,24 @@
               switcher.classList.remove('active');
             });
 
-            // Handle Language Selection
-            options.forEach(option => {
+            document.querySelectorAll('.lang-option').forEach(option => {
               option.addEventListener('click', function () {
-                const selectedLang = this.getAttribute('data-lang');
-                const selectedText = this.innerText;
+                const lang = this.getAttribute('data-lang');
+                const langText = this.innerText;
 
-                // 1. Update Custom UI
-                currentLangSpan.innerText = selectedText.split('(')[0].trim();
+                // Update text without the part in brackets if possible, or just user text
+                document.getElementById('currentLang').innerText = langText;
                 switcher.classList.remove('active'); // Close menu
 
-                // 2. Trigger Google Translate
-                const triggerTranslation = () => {
-                  const googleSelect = document.querySelector('.goog-te-combo');
-                  if (googleSelect) {
-                    googleSelect.value = selectedLang;
-                    googleSelect.dispatchEvent(new Event('change', { bubbles: true }));
-                  } else {
-                    console.warn("Google Translate widget not ready, retrying...");
-                    setTimeout(triggerTranslation, 500);
-                  }
-                };
-                triggerTranslation();
+                const select = document.querySelector('select.goog-te-combo');
+                if (select) {
+                  select.value = lang;
+                  select.dispatchEvent(new Event('change'));
+                }
               });
             });
           });
         </script>
-        <script type="text/javascript"
-          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
       </div>
     </nav>
   </header>
