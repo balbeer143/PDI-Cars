@@ -2050,7 +2050,59 @@ body {
         width: 100% !important;
     }
 
-    .icon-box {
-        margin-bottom: 1rem !important;
+}
+
+/* Share Modal Styles */
+.btn-share {
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.btn-share:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    opacity: 0.95;
+    color: #fff !important;
+}
+
+.custom-copy-group .form-control {
+    background: #f8fafc !important;
+    font-size: 0.95rem;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px 0 0 8px !important;
+}
+
+.custom-copy-group .btn-primary {
+    background: #2563eb;
+    border: none;
+    border-radius: 0 8px 8px 0 !important;
+    font-size: 0.9rem;
+    padding: 0 25px;
+}
+
+.modal-content.radius-theme {
+    border-radius: 20px !important;
+    overflow: hidden;
+}
+
+.modal-header .btn-close {
+    background-color: #f1f5f9;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.modal-header .btn-close:hover {
+    opacity: 1;
+    background-color: #e2e8f0;
+}
+
+@media (max-width: 576px) {
+    .btn-share {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+        font-size: 0.9rem !important;
     }
 }

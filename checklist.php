@@ -40,7 +40,7 @@ if (!empty($model_features)) {
             <button class="btn btn-action btn-action-accent">
                 <i class="fas fa-file-pdf"></i> Download PDF
             </button>
-            <button class="btn btn-action btn-action-outline">
+            <button class="btn btn-action btn-action-outline" data-bs-toggle="modal" data-bs-target="#shareModal">
                 <i class="fas fa-share-nodes"></i> Share
             </button>
 
@@ -98,5 +98,90 @@ if (!empty($model_features)) {
         </div>
     </div>
 </div>
+
+<!-- Share Modal -->
+<div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 radius-theme shadow-lg">
+            <div class="modal-header border-0 pb-0">
+                <h5 class="modal-title fw-bold text-primary fs-3" id="shareModalLabel">Share Your Checklist</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <div class="row g-3 mb-4">
+                    <div class="col-6">
+                        <a href="https://wa.me/?text=Check out my Custom PDI Checklist: <?php echo "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>"
+                            target="_blank"
+                            class="btn btn-share w-100 d-flex align-items-center justify-content-center gap-2 py-3 border-0 text-white rounded-3 fw-bold"
+                            style="background-color: #25d366; font-size: 1.1rem;">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a href="mailto:?subject=My PDI Checklist&body=Check out my Custom PDI Checklist: <?php echo "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>"
+                            class="btn btn-share w-100 d-flex align-items-center justify-content-center gap-2 py-3 border-0 text-white rounded-3 fw-bold"
+                            style="background-color: #6c757d; font-size: 1.1rem;">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode("https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']); ?>"
+                            target="_blank"
+                            class="btn btn-share w-100 d-flex align-items-center justify-content-center gap-2 py-3 border-0 text-white rounded-3 fw-bold"
+                            style="background-color: #3b5998; font-size: 1.1rem;">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a href="https://twitter.com/intent/tweet?text=Check out my Custom PDI Checklist&url=<?php echo urlencode("https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']); ?>"
+                            target="_blank"
+                            class="btn btn-share w-100 d-flex align-items-center justify-content-center gap-2 py-3 border-0 text-white rounded-3 fw-bold"
+                            style="background-color: #1da1f2; font-size: 1.1rem;">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                    </div>
+                </div>
+
+                <div class="input-group mb-2 custom-copy-group">
+                    <input type="text" class="form-control border-end-0 py-2" id="shareUrlInput"
+                        value="<?php echo "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" readonly>
+                    <button class="btn btn-primary px-4 fw-bold" type="button" id="copyBtn">Copy Link</button>
+                </div>
+                <div id="copySuccess" class="text-success small fw-bold" style="display: none; text-align: right;">
+                    Copied to clipboard!</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const copyBtn = document.getElementById('copyBtn');
+        const shareUrlInput = document.getElementById('shareUrlInput');
+        const copySuccess = document.getElementById('copySuccess');
+
+        if (copyBtn) {
+            copyBtn.addEventListener('click', function () {
+                shareUrlInput.select();
+                shareUrlInput.setSelectionRange(0, 99999); // For mobile devices
+
+                navigator.clipboard.writeText(shareUrlInput.value).then(() => {
+                    const originalText = copyBtn.innerText;
+                    copyBtn.innerText = 'Copied!';
+                    copyBtn.classList.remove('btn-primary');
+                    copyBtn.classList.add('btn-success');
+                    copySuccess.style.display = 'block';
+
+                    setTimeout(() => {
+                        copyBtn.innerText = originalText;
+                        copyBtn.classList.remove('btn-success');
+                        copyBtn.classList.add('btn-primary');
+                        copySuccess.style.display = 'none';
+                    }, 2000);
+                });
+            });
+        }
+    });
+</script>
 
 <?php include 'include/footer.php'; ?>
