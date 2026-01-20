@@ -22,7 +22,7 @@
             </div>
             <!-- The Form (Visual anchor will be below) -->
             <div class="col-lg-6 d-none d-lg-block text-center">
-                <img src="assets/images/creta.jpg" alt="Car Shape" class="img-fluid rounded-5 expert-hero-img"
+                <img src="assets/images/defender.avif" alt="Car Shape" class="img-fluid rounded-5 expert-hero-img"
                     width="600" height="400" fetchpriority="high">
                 <!-- Placeholder to balance space, actual form is overlapping next section -->
             </div>
@@ -225,12 +225,12 @@
 <section class="section-padding bg-light">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-8">
+            <div class="col-md-8 col-12">
                 <div class="text-center mb-4">
                     <h2 class="section-title">Us vs. Dealer Inspection</h2>
                 </div>
                 <div class="comparison-table">
-                    <table class="table mb-0">
+                    <table class="table mb-0 table-responsive">
                         <thead>
                             <tr>
                                 <th style="width: 40%;">Feature</th>

@@ -2262,7 +2262,7 @@ body {
 
 /* Hire Expert Page */
 .expert-hero-img {
-    opacity: 0.8 !important;
+    opacity: 1 !important;
     max-height: 400px !important;
     object-fit: contain !important;
 }
