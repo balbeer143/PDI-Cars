@@ -6,18 +6,20 @@ include 'include/carData.php';
 <!-- Hero -->
 <section class="hero text-white">
     <div class="container">
-        <h1 class="display-4">Ultimate Car PDI Checklist Tool</h1>
-        <p>Ensure a perfect delivery. Verify electronics, paint, and engine fluids before you sign the papers. Don't
+        <h1 class="display-5 text-white">Ultimate Car PDI Checklist Tool</h1>
+        <p class="text-white">Ensure a perfect delivery. Verify electronics, paint, and engine fluids before you sign
+            the papers. Don't
             accept your new car without checking it first!</p>
-        <a href="#select-brand" class="hero-btn">Start My Inspection</a>
+        <a href="#select-brand" class="btn-pdi btn-pdi-accent">Start My Inspection</a>
     </div>
 </section>
 
 <!-- Brands Grid -->
 <div class="container section-padding" id="select-brand">
     <div class="section-title text-center mb-5">
-        <h2 class="fw-bold">Select Your Manufacturer</h2>
-        <p class="text-muted">1. Choose your car brand to get a tailored checklist.</p>
+        <span class="section-subtitle-pdi">The Selection</span>
+        <h2 class="fw-bold">Select Your <span class="text-accent">Manufacturer</span> </h2>
+        <p class="">1. Choose your car brand to get a tailored checklist.</p>
     </div>
     <!-- Top Row (7 Brands) -->
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2 g-md-4 justify-content-center mb-4">
@@ -42,12 +44,12 @@ include 'include/carData.php';
     <div class="expert-banner px-4 py-5 p-md-5">
         <div class="row align-items-center">
             <div class="col-lg-8 text-center text-lg-start mb-4 mb-lg-0">
-                <h2 class="fw-bold mb-3 expert-banner-title">Find Your Nearest PDI Expert</h2>
-                <p class="mb-0 fs-5">Connect with certified professionals to assist
+                <h2 class="fw-bold mb-3 expert-banner-title text-white">Find Your Nearest PDI Expert</h2>
+                <p class="mb-0 fs-5 text-white">Connect with certified professionals to assist
                     with your Pre-Delivery Inspection.</p>
             </div>
             <div class="col-lg-4 text-center text-lg-end">
-                <a href="#" class="expert-btn d-inline-block">Find Expert Near Me &rarr;</a>
+                <a href="#" class="btn-pdi btn-pdi-primary">Find Expert Near Me &rarr;</a>
             </div>
         </div>
     </div>
@@ -56,7 +58,8 @@ include 'include/carData.php';
 <!-- Educational Content (Grid Layout) -->
 <div class="container section-padding">
     <div class="section-title">
-        <h2 class="fw-bold">Why PDI is Crucial</h2>
+        <span class="section-subtitle-pdi">The Essentials</span>
+        <h2 class="fw-bold">Why PDI is <span class="text-accent">Crucial</span></h2>
         <p>Understanding the basics before you buy.</p>
     </div>
 
@@ -106,33 +109,30 @@ include 'include/carData.php';
 <div class="container">
     <div class="steps-container">
         <div class="section-title text-center mb-5">
-            <h2 class="fw-bold">How to Use Our Tool</h2>
+            <span class="section-subtitle-pdi">Process</span>
+            <h2 class="fw-bold">How to Use Our <span class="text-accent">Tool</span></h2>
         </div>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
             <div class="col mb-4 mb-md-0">
                 <div class="step-box h-100">
-                    <div class="step-number">1</div>
                     <h4>Select Brand</h4>
                     <p>Choose from top Indian car brands like Maruti, Tata, or Hyundai.</p>
                 </div>
             </div>
             <div class="col mb-4 mb-md-0">
                 <div class="step-box h-100">
-                    <div class="step-number">2</div>
                     <h4>Choose Model</h4>
                     <p>Pick your specific model (e.g., Baleno, Harrier) for a custom list.</p>
                 </div>
             </div>
             <div class="col mb-4 mb-md-0">
                 <div class="step-box h-100">
-                    <div class="step-number">3</div>
                     <h4>Generate PDF</h4>
                     <p>Receive a detailed, printable checklist covering all points.</p>
                 </div>
             </div>
             <div class="col">
                 <div class="step-box h-100">
-                    <div class="step-number">4</div>
                     <h4>Inspect</h4>
                     <p>Follow the checklist digitally or on paper during your visit.</p>
                 </div>
@@ -141,12 +141,117 @@ include 'include/carData.php';
     </div>
 </div>
 
+<!-- SECTION: The Unseen Dangers (Gallery) -->
+<div class="gallery-section section-padding">
+    <div class="container container-custom">
+        <div class="section-title text-center mb-5">
+            <h2 class="fw-bold text-white">Don't Let These <span class="text-accent">Slip By</span></h2>
+            <p class="text-white">Common defects our users catch during PDI.</p>
+        </div>
+        <div class="gallery-grid">
+            <!-- Card 1 -->
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1600661653561-629509216228?q=80&w=600&auto=format&fit=crop"
+                    class="gallery-img" alt="Micro Scratches">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <h4>Micro Scratches</h4>
+                        <p>Often invisible under showroom lights.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=600&auto=format&fit=crop"
+                    class="gallery-img" alt="Interior Gaps">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <h4>Interior Gaps</h4>
+                        <p>Loose panels and rattling dashboards.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=600&auto=format&fit=crop"
+                    class="gallery-img" alt="Rust Issues">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <h4>Rust Issues</h4>
+                        <p>Common in cars stored in open yards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SECTION: Aesthetic Focus (New Layout) -->
+<section class="image-layout-section section-padding">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0 order-lg-1">
+                <h2 class="layout-heading">Your Luxury Car <br> deserve <span class="text-accent-theme">Perfect
+                        Finish</span></h2>
+                <p class="layout-subtext">A new car should look like it just rolled off the designer's sketchpad. We
+                    help you spot the tiniest imperfections before you sign.</p>
+
+                <ul class="layout-checkmark-list">
+                    <li><i class="fas fa-check-circle"></i> Precision Paint Quality Check</li>
+                    <li><i class="fas fa-check-circle"></i> Mirror-Like Body Reflection</li>
+                    <li><i class="fas fa-check-circle"></i> Zero Transit Scratch Policy</li>
+                    <li><i class="fas fa-check-circle"></i> Interior Upholstery Perfection</li>
+                </ul>
+
+                <a href="#select-brand" class="btn-pdi btn-pdi-primary">Check Aesthetics Now <i
+                        class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+            <div class="col-lg-6 order-lg-2 text-center">
+                <div class="layout-img-wrapper accent-bg-glow">
+                    <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=800&auto=format&fit=crop"
+                        alt="Engine Tech" class="img-fluid rounded-4">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: Technical Focus (New Layout) -->
+<section class="image-layout-section section-padding bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0 order-lg-2">
+                <h2 class="layout-heading">Master Every Bit of <br> <span class="text-accent-theme">Technical
+                        Precision</span></h2>
+                <p class="layout-subtext">Modern cars are computers on wheels. We ensure every sensor, fluid, and
+                    circuit is performing at its peak for your safety.</p>
+
+                <ul class="layout-checkmark-list accent-checks">
+                    <li><i class="fas fa-check-circle"></i> Smart-Tech Dashboard Diagnostics</li>
+                    <li><i class="fas fa-check-circle"></i> ADAS & Safety Sensor Validation</li>
+                    <li><i class="fas fa-check-circle"></i> Core Engine Performance Check</li>
+                    <li><i class="fas fa-check-circle"></i> Vital Fluids & Battery Health</li>
+                </ul>
+
+                <a href="#select-brand" class="btn-pdi btn-pdi-primary">Validate Tech Specs <i
+                        class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+            <div class="col-lg-6 order-lg-1 text-center">
+                <div class="layout-img-wrapper accent-bg-glow">
+                    <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=800&auto=format&fit=crop"
+                        alt="Engine Tech" class="img-fluid rounded-4">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Brand Specific Tips -->
 <div class="container section-padding">
     <div class="section-title">
-        <h2 class="fw-bold">Brand-Specific Considerations</h2>
+        <h2 class="fw-bold">Brand-Specific <span class="text-accent">Considerations</span></h2>
     </div>
-    <div class="row g-4">
+    <div class="row g-4 mt-2">
         <div class="col-md-6">
             <div class="tip-card h-100">
                 <h4 class="fw-bold h5">Maruti Suzuki / Nexa</h4>
@@ -181,10 +286,12 @@ include 'include/carData.php';
     </div>
 </div>
 
+
+
 <!-- FAQ -->
 <div class="container section-padding">
     <div class="section-title text-center mb-5">
-        <h2 class="fw-bold">Frequently Asked Questions</h2>
+        <h2 class="fw-bold">Frequently Asked <span class="text-accent">Questions</span></h2>
     </div>
     <div class="row g-4 justify-content-center">
         <!-- Column 1 -->

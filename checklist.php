@@ -34,17 +34,17 @@ if (!empty($model_features)) {
         <!-- Actions -->
         <!-- Actions -->
         <div class="d-flex flex-wrap align-items-center gap-3 mt-4 border-bottom pb-4">
-            <button class="btn btn-action btn-action-primary">
+            <button class="btn-pdi btn-pdi-primary">
                 <i class="fas fa-print"></i> Print
             </button>
-            <button class="btn btn-action btn-action-accent">
+            <button class="btn-pdi btn-pdi-accent">
                 <i class="fas fa-file-pdf"></i> Download PDF
             </button>
-            <button class="btn btn-action btn-action-outline" data-bs-toggle="modal" data-bs-target="#shareModal">
+            <button class="btn-pdi btn-pdi-outline" data-bs-toggle="modal" data-bs-target="#shareModal">
                 <i class="fas fa-share-nodes"></i> Share
             </button>
 
-            <a href="models.php?brand=<?php echo urlencode($brand); ?>" class="btn btn-back ms-auto">
+            <a href="models.php?brand=<?php echo urlencode($brand); ?>" class="btn-pdi btn-pdi-outline ms-auto">
                 <i class="fas fa-arrow-left"></i> Back to Models
             </a>
         </div>

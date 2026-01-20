@@ -55,7 +55,7 @@
                             <input type="text" id="location" class="form-control" placeholder="City/Dealer">
                         </div>
                         <div class="col-12 mt-4 text-center">
-                            <button type="submit" class="btn btn-accent btn-lg w-100 w-md-50 text-white">
+                            <button type="submit" class="btn-pdi btn-pdi-accent w-100 w-md-50">
                                 HIRE OUR EXPERT <i class="fas fa-arrow-right ms-2"></i>
                             </button>
                             <p class="text-muted small mt-2"><i class="fas fa-lock me-1"></i> No payment required
@@ -166,7 +166,8 @@
                         <div class="check-item"><i class="fas fa-check-circle text-accent"></i> VIN Verification</div>
                     </div>
                 </div>
-                <a href="#" class="mt-2 btn btn-accent">View Full Checklist <i class="fas fa-arrow-right ms-2"></i></a>
+                <a href="#" class="mt-2 btn-pdi btn-pdi-accent">View Full Checklist <i
+                        class="fas fa-arrow-right ms-2"></i></a>
             </div>
             <div class="col-lg-6">
                 <div class="bg-white p-3 rounded-4 shadow-sm">
@@ -276,7 +277,8 @@
                     <h2 class="fw-bold mb-3">See What You Get</h2>
                     <p class="lead mb-4">Our reports are easy to understand, digital, and come with high-res evidence of
                         any issues found.</p>
-                    <button class="btn btn-accent"><i class="fas fa-download me-2"></i> Download Sample Report</button>
+                    <button class="btn-pdi btn-pdi-accent"><i class="fas fa-download me-2"></i> Download Sample
+                        Report</button>
                 </div>
                 <div class="col-md-5 text-center mt-4 mt-md-0">
                     <i class="fas fa-file-pdf fa-5x text-white-50"></i>

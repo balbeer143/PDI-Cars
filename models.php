@@ -31,7 +31,7 @@ if ($brand_data && isset($brand_data['models'])) {
             <h2 class="fw-bold">2. Select Model</h2>
             <p class="text-muted mb-0">Choose your <?php echo $brand_title; ?> model to generate a checklist.</p>
         </div>
-        <a href="index.php" class="btn btn-back m-auto me-lg-0">&larr; Back to Brands</a>
+        <a href="index.php" class="btn-pdi btn-pdi-outline m-auto me-lg-0">&larr; Back to Brands</a>
     </div>
 
     <?php if (!empty($selected_cars)): ?>
@@ -125,7 +125,7 @@ if ($brand_data && isset($brand_data['models'])) {
             <h2 class="fw-bold mb-3">Not Sure What to Check?</h2>
             <p class="fs-5 mb-4 opacity-75">Hire a certified PDI expert to inspect your <?php echo $brand_title; ?> for you.
             </p>
-            <a href="hire-expert.php" class="btn btn-accent rounded-pill fw-bold w-auto">Hire an Expert Now</a>
+            <a href="hire-expert.php" class="btn-pdi btn-pdi-accent w-auto">Hire an Expert Now</a>
         </div>
 
         <!-- NEW: Download Sample Section -->
@@ -139,7 +139,7 @@ if ($brand_data && isset($brand_data['models'])) {
                             <small class="text-muted">See what a professional inspection covers.</small>
                         </div>
                     </div>
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Download Sample</a>
+                    <a href="#" class="btn-pdi btn-pdi-outline">Download Sample</a>
                 </div>
             </div>
         </div>
@@ -149,7 +149,7 @@ if ($brand_data && isset($brand_data['models'])) {
             <div class="display-1 text-muted mb-3">🚗</div>
             <h3 class="text-muted">No models found for <?php echo $brand_title; ?>.</h3>
             <p>We are constantly updating our database.</p>
-            <a href="index.php" class="btn btn-primary mt-3">Choose Another Brand</a>
+            <a href="index.php" class="btn-pdi btn-pdi-primary mt-3">Choose Another Brand</a>
         </div>
     <?php endif; ?>
 </div>
