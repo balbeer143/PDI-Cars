@@ -59,7 +59,7 @@ if (!empty($model_features)) {
                 foreach ($checklist_categories as $category => $items):
                     $collapseId = "collapse" . $index;
                     $headerId = "heading" . $index;
-                    ?>
+                ?>
                     <div class="accordion-item mb-3 border-0 shadow-sm overflow-hidden radius-theme">
                         <h2 class="accordion-header" id="<?php echo $headerId; ?>">
                             <button
@@ -79,7 +79,16 @@ if (!empty($model_features)) {
                                         <li
                                             class="d-flex align-items-center mb-3 py-2 px-3 border rounded-3 checklist-item-row">
                                             <div class="me-3 check-indicator">
-                                                <i class="fas fa-check"></i>
+                                                <span class="green-tick">✓</span>
+
+                                                <style>
+                                                    .green-tick {
+                                                        color: green;
+                                                        font-weight: bold;
+                                                    }
+                                                </style>
+
+
                                             </div>
                                             <div class="item-text text-gray-theme flex-grow-1">
                                                 <?php echo $item; ?>
@@ -90,7 +99,7 @@ if (!empty($model_features)) {
                             </div>
                         </div>
                     </div>
-                    <?php
+                <?php
                     $index++;
                 endforeach;
                 ?>
@@ -155,13 +164,13 @@ if (!empty($model_features)) {
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         const copyBtn = document.getElementById('copyBtn');
         const shareUrlInput = document.getElementById('shareUrlInput');
         const copySuccess = document.getElementById('copySuccess');
 
         if (copyBtn) {
-            copyBtn.addEventListener('click', function () {
+            copyBtn.addEventListener('click', function() {
                 shareUrlInput.select();
                 shareUrlInput.setSelectionRange(0, 99999); // For mobile devices
 
