@@ -1,0 +1,637 @@
+{
+    "default": {
+        "brand_info": "India's favorite car brand, known for reliability and efficiency. Ensure your localized manufacturing unit delivered a flawless piece.",
+        "why_pdi_matters": [
+            {
+                "title": "Manufacturing Defects",
+                "text": "Even top brands can have production slips. Catch paint issues, panel gaps, and electrical faults before registration."
+            },
+            {
+                "title": "Transit Damage",
+                "text": "Cars travel hundreds of kilometers on trailers. Scratches, dents, and underbody damage are common during transit."
+            },
+            {
+                "title": "Dealer Negligence",
+                "text": "Dealers may swap parts or hide defects. A PDI ensures you get exactly what you paid for, brand new and specific."
+            }
+        ],
+        "common_issues": [
+            {
+                "title": "Paint Scratches",
+                "text": "Look for swirl marks and minor scratches often caused by improper washing at the dealership."
+            },
+            {
+                "title": "Odometer Check",
+                "text": "Ensure the odometer reading is under 100km. Higher readings indicate the car was used as a demo or test drive unit."
+            },
+            {
+                "title": "Electrical Systems",
+                "text": "Test all lights, AC, infotainment, and power windows. Electrical gremlins are better caught early."
+            }
+        ],
+        "faqs": [
+            {
+                "question": "Is PDI mandatory for new cars?",
+                "answer": "While not legally mandatory, it is highly recommended to ensure you are receiving a defect-free vehicle."
+            },
+            {
+                "question": "Can I do PDI myself?",
+                "answer": "Yes, but a professional PDI expert has the tools and experience to catch subtle issues that a layperson might miss."
+            },
+            {
+                "question": "What if defects are found?",
+                "answer": "If defects are found, you can refuse delivery or ask the dealer to fix them before accepting the car."
+            }
+        ]
+    },
+    "brands": {
+        "Maruti Suzuki": {
+            "brand_info": "India's favorite car brand, known for reliability and efficiency. Ensure your localized manufacturing unit delivered a flawless piece.",
+            "why_pdi_matters": [
+                {
+                    "title": "High Volume Production",
+                    "text": "Due to massive production numbers, minor fit and finish issues can occasionally slip through quality control."
+                },
+                {
+                    "title": "Stockyard Storage",
+                    "text": "Popular models like Swift and Baleno often sit in open stockyards, risking sun damage and rodent issues."
+                },
+                {
+                    "title": "Accessory Fitment",
+                    "text": "Dealer-installed accessories like chrome kits and covers are often fitted hurriedly; check for loose installs."
+                }
+            ],
+            "common_issues": [
+                {
+                    "title": "Panel Gaps",
+                    "text": "Inconsistent panel gaps, especially around the bonnet and boot, can occur in mass-market models."
+                },
+                {
+                    "title": "Rattling Noises",
+                    "text": "Check for loose plastic trims on the dashboard and doors which can cause rattling on rough roads."
+                },
+                {
+                    "title": "Paint Quality",
+                    "text": "Inspect for thin paint layers or 'orange peel' effect, particularly on bumpers and door edges."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "Does Maruti support PDI?",
+                    "answer": "Yes, Maruti dealers are generally cooperative. Insist on inspecting the car at the stockyard before registration."
+                },
+                {
+                    "question": "What about Nexa cars?",
+                    "answer": "Nexa cars are premium, but the PDI process remains critical. Check for scratches on the glossy finish."
+                },
+                {
+                    "question": "Is rust a common issue?",
+                    "answer": "Surface rust on underbody components can happen if stored in humid stockyards. Check exhaust pipes and suspension."
+                },
+                {
+                    "question": "CNG Kit Check?",
+                    "answer": "For CNG models, strictly verify the cylinder hydro-test date and compliance plate installation."
+                }
+            ]
+        },
+        "Hyundai": {
+            "brand_info": "A tech-forward brand delivering feature-rich cars. Verify that all those smart features and premium finishes are in perfect working order.",
+            "why_pdi_matters": [
+                {
+                    "title": "Complex Electronics",
+                    "text": "Models like Creta and Tucson are loaded with tech. Thoroughly test features like BlueLink, ADAS, and sunroofs."
+                },
+                {
+                    "title": "Transit Scratches",
+                    "text": "Glossy black pillars and chrome elements on Hyundai cars are prone to hairline scratches during transport."
+                },
+                {
+                    "title": "Imported Components",
+                    "text": "CKD models need checks on localized assembly points to ensure factory-level precision."
+                }
+            ],
+            "common_issues": [
+                {
+                    "title": "Sunroof Operation",
+                    "text": "Test the panoramic sunroof for smooth operation. Listen for any grinding noises or uneven movement."
+                },
+                {
+                    "title": "Touchscreen Glitches",
+                    "text": "Ensure the large infotainment screens are responsive and don't freeze, especially with Android Auto/CarPlay."
+                },
+                {
+                    "title": "Fuel Pump Noise",
+                    "text": "Listen for any unusual humming from the rear seat area, which could indicate a fuel pump issue (rare but noted)."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "How to check BlueLink?",
+                    "answer": "Ask the dealer to activate BlueLink temporarily to test remote functions like engine start and AC control."
+                },
+                {
+                    "question": "DCT Gearbox Check?",
+                    "answer": "For DCT models, check for any jerkiness at crawling speeds or delay in engagement."
+                },
+                {
+                    "question": "Paint protection needed?",
+                    "answer": "Hyundai paint is generally good, but check for swirl marks on dark colors before delivery."
+                },
+                {
+                    "question": "ADAS Calibration?",
+                    "answer": "Ensure no warning lights for ADAS sensors are active on the instrument cluster."
+                }
+            ]
+        },
+        "Tata Motors": {
+            "brand_info": "Known for 5-star safety and rugged build. Focus your PDI on fit-and-finish details and electronic system stability.",
+            "why_pdi_matters": [
+                {
+                    "title": "Fit and Finish",
+                    "text": "While built like tanks, Tata cars can have minor alignment issues with plastic trims and beadings."
+                },
+                {
+                    "title": "Software Updates",
+                    "text": "Infotainment systems often have pending updates. Ensure the latest stable software version is installed."
+                },
+                {
+                    "title": "Electrical Gremlins",
+                    "text": "Check all sensors and digital displays. Tata's modern tech stack needs a thorough function check."
+                }
+            ],
+            "common_issues": [
+                {
+                    "title": "Infotainment Lag",
+                    "text": "Check the touchscreen response. Early batches sometimes have laggy interfaces needing software flashes."
+                },
+                {
+                    "title": "Door Alignment",
+                    "text": "Ensure all doors, including the tailgate, close smoothly without needing excessive force."
+                },
+                {
+                    "title": "Rubber Beading",
+                    "text": "Inspect rubber seals around doors and windows. Loose or pinched beadings are a known minor issue."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "Is rust protection needed?",
+                    "answer": "Tata cars have good heavy gauge metal, but underbody coating is recommended for coastal areas."
+                },
+                {
+                    "question": "Check engine light?",
+                    "answer": "Ensure no warning lights stay on after the engine starts. False sensors alerts can happen."
+                },
+                {
+                    "question": "AMT Gearbox Check?",
+                    "answer": "On AMT models, check for smooth shifting and verify 'Creep' function works on slopes."
+                },
+                {
+                    "question": "Harman Audio Check?",
+                    "answer": "Test all speakers. Sometimes a loose wire checks off a speaker in the premium sound system."
+                }
+            ]
+        },
+        "Mahindra": {
+            "brand_info": " The SUV specialists. Their rugged machines are packed with tech. Verify both the mechanicals and the sophisticated electronics.",
+            "why_pdi_matters": [
+                {
+                    "title": "Electronics & Sensors",
+                    "text": "With Adrenox and 4WD systems, Mahindra SUVs have complex wiring. meticulous checks are vital."
+                },
+                {
+                    "title": "Rough Usage Risks",
+                    "text": "SUVs are often tested rigorously. Ensure your unit wasn't used for rough test drives before allocation."
+                },
+                {
+                    "title": "Leakage Checks",
+                    "text": "Check for sunroof or window leaks, a concern sometimes reported in initial batches of new launches."
+                }
+            ],
+            "common_issues": [
+                {
+                    "title": "Screen Blanking",
+                    "text": "The massive dual-screens in XUV700/Scorpio-N should be checked for random restarts or blanking check."
+                },
+                {
+                    "title": "Suspension Noise",
+                    "text": "Listen for any squeaking or thudding sounds from the suspension on speed breakers."
+                },
+                {
+                    "title": "Door Handles",
+                    "text": "On XUV700, check the flush door handles deploy and retract smoothly every time."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "4WD/AWD Check?",
+                    "answer": "Engage 4WD modes on a loose surface (if permitted) to ensure engagement lights turn on."
+                },
+                {
+                    "question": "Sunroof Leakage?",
+                    "answer": "Pour some water (with permission) over the sunroof channels to ensure drains are clear."
+                },
+                {
+                    "question": "Software Version?",
+                    "answer": "Mahindra releases frequent updates. Ask the service team to flash the latest OS before delivery."
+                },
+                {
+                    "question": "Steering Alignment?",
+                    "answer": "Check for left/right pulling. Big SUVs are sensitive to alignment issues during transit."
+                }
+            ]
+        },
+        "Honda": {
+            "brand_info": "Symbol of engineering precision. PDI focuses on preserving that pristine condition and ensuring hybrid systems are go.",
+            "why_pdi_matters": [
+                {
+                    "title": "Low Ground Clearance",
+                    "text": "Sedans like City have low clearance. Check underbody bumpers for scrapes from loading/unloading."
+                },
+                {
+                    "title": "Hybrid Systems",
+                    "text": "For e:HEV models, battery health and hybrid system indicators need specific verification."
+                },
+                {
+                    "title": "Paint Softness",
+                    "text": "Honda paint can be soft. Check for swirl marks and hairline scratches from dealer washing."
+                }
+            ],
+            "common_issues": [
+                {
+                    "title": "Underbody Scrapes",
+                    "text": "Inspect the front bumper lip and underbody engine guard for scrapes from transport ramps."
+                },
+                {
+                    "title": "Fuel Pump Recall",
+                    "text": "Verify if the VIN falls under any active fuel pump recall campaigns (rare for new, but good to check)."
+                },
+                {
+                    "title": "CVT Rubberband",
+                    "text": "Test drive to ensure the CVT is smooth and doesn't show excessive lag or unusual whining."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "Hybrid Battery Check?",
+                    "answer": "Ensure the hybrid battery charge level indicators fluctuate normally during a short test drive."
+                },
+                {
+                    "question": "Honda Connect?",
+                    "answer": "Register and activate Honda Connect at the showroom to ensure the TCU is functioning."
+                },
+                {
+                    "question": "Tyre Noise?",
+                    "answer": "Some models come with harder compound tires. Check for excessive road noise."
+                },
+                {
+                    "question": "AC Performance?",
+                    "answer": "Honda ACs are strong, but check the 'Max Cool' mode works efficiently."
+                }
+            ]
+        },
+        "Toyota": {
+            "brand_info": "Global leader in durability. Validate the hybrid systems and ensure the legendary build quality is intact upon arrival.",
+            "why_pdi_matters": [
+                {
+                    "title": "Hybrid Tech",
+                    "text": "Hyryder and Innova Hycross rely on complex hybrid powertrains. Verify battery and motor switching."
+                },
+                {
+                    "title": "Waiting Periods",
+                    "text": "High demand means cars might be rushed. Ensure dealer accessories are fitted with care."
+                },
+                {
+                    "title": "Interior Plastics",
+                    "text": "Check for scratches on hard plastics in the cabin, easily occurring during pre-delivery cleaning."
+                }
+            ],
+            "common_issues": [
+                {
+                    "title": "Hybrid Battery",
+                    "text": "Confirm the self-charging hybrid system switches between EV and Engine mode seamlessly."
+                },
+                {
+                    "title": "Panel Alignment",
+                    "text": "Check the tailgate and bonnet alignment. Heavy panels sometimes shift during transit."
+                },
+                {
+                    "title": "Accessory Fitment",
+                    "text": "Chrome garnishes are popular. Ensure they are stuck properly and not peeling at edges."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "Battery Warranty?",
+                    "answer": "Verify the separate warranty card/document for the Hybrid high-voltage battery."
+                },
+                {
+                    "question": "DPF Issues?",
+                    "answer": "For diesel Fortuners, ask about DPF regeneration procedures and check for warnings."
+                },
+                {
+                    "question": "Odometer Tampering?",
+                    "answer": "Toyota odometers are digital, but double-check the mileage is realistic (<50-100km)."
+                },
+                {
+                    "question": "Sunroof Check?",
+                    "answer": "On Hyryder, check the thin sunroof shade cloth for any tears or sagging."
+                }
+            ]
+        },
+        "Kia": {
+            "brand_info": "Stylish designs with premium interiors. Your PDI should focus on protecting those glossy finishes and verifying tech features.",
+            "why_pdi_matters": [
+                {
+                    "title": "Glossy Trim Care",
+                    "text": "Piano black interiors look great but scratch easily. Inspect these surfaces closely under torchlight."
+                },
+                {
+                    "title": "Connected Tech",
+                    "text": "Kia Connect involves an embedded SIM. Ensure signal strength and remote commands work."
+                },
+                {
+                    "title": "Transmission Logic",
+                    "text": "iMT and DCT gearboxes are complex. A test drive during PDI is essential to check smoothness."
+                }
+            ],
+            "common_issues": [
+                {
+                    "title": "Headlight Condensation",
+                    "text": "Check LED headlamps for internal moisture or fogging, a sign of poor sealing."
+                },
+                {
+                    "title": "Piano Black Scratches",
+                    "text": "Inspect the center console and door pads. Micro-scratches are common on new units."
+                },
+                {
+                    "title": "DCT Heating",
+                    "text": "If testing a DCT, check for any 'Transmission Overheat' warnings in heavy traffic/idling."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "Kia Connect Activation?",
+                    "answer": "Ensure the dealer completes the KYC and activates the SIM before you drive out."
+                },
+                {
+                    "question": "iMT Rollback?",
+                    "answer": "On iMT cars, check hill-start assist functionality to prevent rollback on slopes."
+                },
+                {
+                    "question": "GT Line Wheels?",
+                    "answer": "Check alloy wheels for curb rash. Low profile tyres offer less rim protection."
+                },
+                {
+                    "question": "Sunroof Action?",
+                    "answer": "Kia sunroofs are fast. Ensure they open/close fully without shuddering."
+                }
+            ]
+        },
+        "MG Motor": {
+            "brand_info": "Tech-heavy British heritage brand. The PDI is crucial for the massive infotainment screens and AI assistant features.",
+            "why_pdi_matters": [
+                {
+                    "title": "Internet Inside",
+                    "text": "The i-SMART system is the car's brain. Verify voice commands and Hello MG responsiveness."
+                },
+                {
+                    "title": "Fit/Finish checks",
+                    "text": "Heavily accessorized models need checks for loose exterior chrome or badge alignment."
+                },
+                {
+                    "title": "Battery Discharge",
+                    "text": "With so much tech, battery drain in stockyards is possible. Check battery health voltage."
+                }
+            ],
+            "common_issues": [
+                {
+                    "title": "Voice Commands",
+                    "text": "Test 'Hello MG' for sunroof and window operations. Lag or no response needs fixing."
+                },
+                {
+                    "title": "Internet Connectivity",
+                    "text": "Ensure the car is receiving 4G signal. Apps like Gaana/MapMyIndia should load."
+                },
+                {
+                    "title": "Screen Bleeding",
+                    "text": "Check the large tablet screens for light bleeding at edges or dead pixels."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "EV Battery Check?",
+                    "answer": "For ZS/Comet EV, check State of Health (SOH) and ensure 100% charge cap."
+                },
+                {
+                    "question": "Internet Pack?",
+                    "answer": "Confirm the validity of the free internet data pack with the dealer."
+                },
+                {
+                    "question": "ADAS Functions?",
+                    "answer": "On Astor/Gloster, ensure the radar/camera sensors on the windshield are clean and calibrated."
+                },
+                {
+                    "question": "Key Fob Range?",
+                    "answer": "Test remote start and window down features from a distance."
+                }
+            ]
+        },
+        "Volkswagen": {
+            "brand_info": "German engineering at its accessible best. Verify the solid build quality and ensure the sophisticated drivetrains are faultless.",
+            "why_pdi_matters": [
+                {
+                    "title": "DSG Box",
+                    "text": "The DSG gearbox is a gem but needs verification. Listen for clunks during shifts."
+                },
+                {
+                    "title": "Door Thud",
+                    "text": "That reassuring thud relies on perfect alignment. Check door hinges and latches."
+                },
+                {
+                    "title": "EPC Errors",
+                    "text": "Electronic Power Control errors can appear if the car was sitting with low battery. Check dash lights."
+                }
+            ],
+            "common_issues": [
+                {
+                    "title": "AC Performance",
+                    "text": "European ACs can struggle in extreme heat. Check cooling efficiency immediately."
+                },
+                {
+                    "title": "Power Windows",
+                    "text": "One-touch up/down is standard. Ensure anti-pinch functionality works correctly."
+                },
+                {
+                    "title": "Roof Liner",
+                    "text": "Check for sagging roof liners or stains, especially near the sunroof edges."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "DSG Jerks?",
+                    "answer": "Slight creep is normal, but violent jerks are not. Test thoroughly in D and S modes."
+                },
+                {
+                    "question": "Fuel Type?",
+                    "answer": "Confirm min RON rating. TSI engines are sensitive to poor quality fuel."
+                },
+                {
+                    "question": "Service Package?",
+                    "answer": "Verify if the SVP (Service Value Package) is activated in the system."
+                },
+                {
+                    "question": "Tyre Brand?",
+                    "answer": "Check which tyres are fitted. Batches vary between Ceat, MRF, or Goodyear."
+                }
+            ]
+        },
+        "Skoda": {
+            "brand_info": "Simply Clever engineering. Ensure all the smart little features and the robust German build quality are present and perfect.",
+            "why_pdi_matters": [
+                {
+                    "title": "Simply Clever Features",
+                    "text": "Check for the umbrella, ticket holder, and other smart accessories usually prone to theft."
+                },
+                {
+                    "title": "Paint Finish",
+                    "text": "Skoda paint is premium. Scrutinize for any damage during transit or yard storage."
+                },
+                {
+                    "title": "Electronic Check",
+                    "text": "Touchscreen and digital cockpit should be bug-free. Software stability is key."
+                }
+            ],
+            "common_issues": [
+                {
+                    "title": "AC Vents",
+                    "text": "Direct air flow sliders are delicate. Move them gently to ensure they aren't stuck."
+                },
+                {
+                    "title": "Door Rattles",
+                    "text": "Check door pads for squeaks. Felt lining is used, but fitment can vary."
+                },
+                {
+                    "title": "EPC Warning",
+                    "text": "Like VW, watch out for EPC lights which might indicate fuel or sensor issues."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "Accessories check?",
+                    "answer": "Ensure the cushions and throw pillows (if part of pack) are in the boot."
+                },
+                {
+                    "question": "Coding Tweaks?",
+                    "answer": "Ask usually dealer if features like acoustic lock confirmation can be enabled."
+                },
+                {
+                    "question": "Warranty Activation?",
+                    "answer": "Double check the 4-year service & warranty package activation date."
+                },
+                {
+                    "question": "Coating Recommendation?",
+                    "answer": "Skoda paint is hard, but ceramic coating is recommended to preserve the luster."
+                }
+            ]
+        },
+        "Mercedes": {
+            "brand_info": "The default luxury choice. Your PDI ensures the 'Best or Nothing' promise is kept, checking intricate luxury features.",
+            "why_pdi_matters": [
+                {
+                    "title": "Complex Electronics",
+                    "text": "MBUX, ambient lighting, and massage seats. The sheer number of electronics demands a long PDI."
+                },
+                {
+                    "title": "Import Damages",
+                    "text": "CBUs travel far. Inspect closely for salt water corrosion or transit mishaps."
+                },
+                {
+                    "title": "Tyre Conditions",
+                    "text": "Run-flat tyres are expensive. Inspect sidewalls for any cuts or bulges."
+                }
+            ],
+            "common_issues": [
+                {
+                    "title": "Ambient Lighting",
+                    "text": "Check all 64 colors cycle correctly and there are no dark spots in the strips."
+                },
+                {
+                    "title": "Chrome Brightwork",
+                    "text": "Window surrounds and grille chrome should be spotless, without water scale marks."
+                },
+                {
+                    "title": "Seat Leather",
+                    "text": "Inspect Nappa leather for any dye transfer or wrinkles from plastic covers."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "MBUX Setup?",
+                    "answer": "Have the product expert set up your profile and Mercedes Me app during PDI."
+                },
+                {
+                    "question": "Tyre Insurance?",
+                    "answer": "Highly recommended for RFTs. Check if it's included in the policy."
+                },
+                {
+                    "question": "Paint Protection?",
+                    "answer": "Dealer detailing is often basic. Inspect thoroughly before accepting."
+                },
+                {
+                    "question": "Spare Wheel?",
+                    "answer": "Usually a space saver. Check its pressure and tool kit placement."
+                }
+            ]
+        },
+        "BMW": {
+            "brand_info": "Sheer Driving Pleasure. Verify the driving dynamics, iDrive systems, and that aggressive sporty stance is flaw-free.",
+            "why_pdi_matters": [
+                {
+                    "title": "iDrive Check",
+                    "text": "The iDrive controller and gesture control need verification for calibration and response."
+                },
+                {
+                    "title": "Run-Flat Tyres",
+                    "text": "Critical check for any sidewall damage on the low-profile RFTs fitted as standard."
+                },
+                {
+                    "title": "Sport Seats",
+                    "text": "Check electric bolster adjustments on sport seats work and hold pressure."
+                }
+            ],
+            "common_issues": [
+                {
+                    "title": "Gesture Control",
+                    "text": "Test if the overhead sensors pick up volume and track change gestures accurately."
+                },
+                {
+                    "title": "Sunroof Rattle",
+                    "text": "Panoramic sunroofs can sometimes creak. Open/close to check for silence."
+                },
+                {
+                    "title": "Wheel Alignment",
+                    "text": "BMWs are sensitive. If the steering is off-center even slightly, ask for alignment."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "BSI Plus?",
+                    "answer": "Verify the Service Inclusive package coverage and duration in the iDrive."
+                },
+                {
+                    "question": "Apple CarPlay?",
+                    "answer": "Wireless CarPlay connection stability should be tested with your phone."
+                },
+                {
+                    "question": "Break-in period?",
+                    "answer": "Ask about the running-in instructions, usually 2000km under 4500rpm."
+                },
+                {
+                    "question": "Digital Key?",
+                    "answer": "If equipped, set up the Digital Key on your smartphone and test unlocking."
+                }
+            ]
+        }
+    }
+}

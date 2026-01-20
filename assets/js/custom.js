@@ -22,4 +22,5 @@ document.addEventListener("DOMContentLoaded", function () {
     if (currentPath.includes('about.php')) {
         document.querySelector('a[href="about.php"]').classList.add('active');
     }
+
 });

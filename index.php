@@ -25,7 +25,8 @@ include 'include/carData.php';
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2 g-md-4 justify-content-center mb-4">
         <?php foreach ($carData as $brandName => $brandDetails): ?>
             <div class="col">
-                <a href="models.php?brand=<?php echo urlencode($brandName); ?>" class="text-decoration-none text-dark">
+                <a href="models.php?brand=<?php echo urlencode(strtolower($brandName)); ?>"
+                    class="text-decoration-none text-dark">
                     <div class="brand-card">
                         <div class="brand-logo-placeholder">
                             <img src="<?php echo $brandDetails['logo']; ?>" alt="<?php echo $brandName; ?>"
@@ -49,7 +50,7 @@ include 'include/carData.php';
                     with your Pre-Delivery Inspection.</p>
             </div>
             <div class="col-lg-4 text-center text-lg-end">
-                <a href="#" class="btn-pdi btn-pdi-primary">Find Expert Near Me &rarr;</a>
+                <a href="#" class="btn-pdi btn-pdi-accent">Find Expert Near Me &rarr;</a>
             </div>
         </div>
     </div>

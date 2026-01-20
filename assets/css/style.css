@@ -1,4 +1,4 @@
-/* --- VARIABLES & RESET --- */
+﻿/* --- VARIABLES & RESET --- */
 :root {
     /* Colors */
     --primary: #1e3a8a;
@@ -658,7 +658,7 @@ header {
 
 /* --- EXPERT CTA --- */
 .expert-banner {
-    background-color: #0f172a;
+    background-color: var(--primary);
     color: white;
     border-radius: var(--radius);
     padding: 3rem 4rem;
@@ -792,21 +792,92 @@ header {
     opacity: 1;
 } */
 
-/* .step-number {
-    font-size: 7rem;
-    font-weight: 900;
-    color: #f1f5f9;
-    position: absolute;
-    top: -25px;
-    right: 5px;
-    z-index: 0;
-    line-height: 1;
-    opacity: 0.8;
-    transition: 0.4s ease-out;
-    /* Subtle against the background */
+/* --- TIMELINE / CHECKLIST GENERATION --- */
+.timeline-container-vertical {
+    position: relative;
+    padding: 1rem 0;
 }
 
-*/ .step-box h4 {
+.timeline-row {
+    display: flex;
+    gap: 2rem;
+    min-height: 150px;
+}
+
+.timeline-spine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 50px;
+}
+
+.timeline-number-circle {
+    width: 45px;
+    height: 45px;
+    background: var(--accent);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 10px rgba(248, 111, 3, 0.4);
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.timeline-line {
+    width: 3px;
+    background: linear-gradient(to bottom, var(--accent) 0%, rgba(248, 111, 3, 0.2) 100%);
+    flex-grow: 1;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.timeline-row:last-child .timeline-line {
+    display: none;
+}
+
+.timeline-card {
+    background: var(--white);
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    flex-grow: 1;
+    border: 1px solid #f1f5f9;
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: fit-content;
+    margin-top: 5px;
+    /* Alignment adjustment */
+}
+
+.timeline-card:hover {
+    transform: translateX(10px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Specific styling for the section background in models.php */
+.methodology-section {
+    background: #fff8f3 !important;
+    /* Very light orange tint */
+}
+
+@media (max-width: 768px) {
+    .timeline-row {
+        gap: 1rem;
+    }
+
+    .timeline-card {
+        padding: 1.25rem;
+    }
+}
+
+.step-box h4 {
     position: relative;
     z-index: 1;
 }
@@ -1289,54 +1360,55 @@ body {
     background-color: var(--primary);
     /* Blue arrows */
     border-radius: 50%;
-
-    /* --- REFINED FORM STYLES (Grid Layout & Shadow-SM) --- */
-    .booking-form-container {
-        background: white;
-        /* padding: 2.5rem; */
-        border-radius: 12px;
-        /* box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important; */
-        /* user requested shadow-sm */
-        /* max-width: 800px; */
-        /* Wider for grid layout */
-        margin: 0 auto;
-        transition: box-shadow 0.3s ease;
-    }
-
-    .booking-form-container:hover {
-        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
-    }
-
-    .vertical-form-label {
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 0.8rem;
-        color: #495057;
-        margin-bottom: 0.5rem;
-        display: block;
-        text-align: left;
-        letter-spacing: 0.5px;
-    }
-
-    .form-control-custom {
-        border-radius: 6px;
-        padding: 12px 15px;
-        border: 1px solid #ced4da;
-        width: 100%;
-        margin-bottom: 0;
-        /* Margin handled by grid gap */
-        font-size: 1rem;
-        background-color: #f8f9fa;
-        transition: all 0.2s;
-    }
-
-    .form-control-custom:focus {
-        background-color: #fff;
-        border-color: var(--primary);
-        box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
-        outline: none;
-    }
 }
+
+/* --- REFINED FORM STYLES (Grid Layout & Shadow-SM) --- */
+.booking-form-container {
+    background: white;
+    /* padding: 2.5rem; */
+    border-radius: 12px;
+    /* box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important; */
+    /* user requested shadow-sm */
+    /* max-width: 800px; */
+    /* Wider for grid layout */
+    margin: 0 auto;
+    transition: box-shadow 0.3s ease;
+}
+
+.booking-form-container:hover {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+}
+
+.vertical-form-label {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #495057;
+    margin-bottom: 0.5rem;
+    display: block;
+    text-align: left;
+    letter-spacing: 0.5px;
+}
+
+.form-control-custom {
+    border-radius: 6px;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    width: 100%;
+    margin-bottom: 0;
+    /* Margin handled by grid gap */
+    font-size: 1rem;
+    background-color: #f8f9fa;
+    transition: all 0.2s;
+}
+
+.form-control-custom:focus {
+    background-color: #fff;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+    outline: none;
+}
+
 
 .booking-form-container {
     max-width: 1100px !important;
@@ -1774,8 +1846,8 @@ body {
 }
 
 .custom-accordion .accordion-button:not(.collapsed) {
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: var(--primary) !important;
+    color: var(--white) !important;
     box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.1);
     border-bottom-left-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
@@ -1798,8 +1870,10 @@ body {
 
 .custom-accordion .accordion-button:not(.collapsed)::after {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-    transform: rotate(-180deg) scale(0.8);
+    transform: scale(0.8) rotate(-180deg);
 }
+
+
 
 /* Checklist Item Styling */
 .checklist-item-row {
@@ -2117,7 +2191,7 @@ body {
 
 .expert-cta-section {
     background-color: var(--primary);
-    background-image: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%);
+    /* background-image: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%); */
     border-radius: var(--radius) !important;
 }
 
@@ -2705,4 +2779,291 @@ body {
 
 .text-light-50 {
     color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* --- MODELS PAGE REDESIGN --- */
+.models-hero {
+    background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%);
+    padding: 60px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 50px;
+}
+
+.model-card {
+    background: var(--white);
+    border-radius: 20px;
+    border: 1px solid #f1f5f9;
+    transition: var(--transition);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.model-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(30, 58, 138, 0.08);
+    border-color: var(--accent);
+}
+
+.model-image-wrapper {
+    padding: 30px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+
+.model-image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.model-card:hover .model-image-wrapper img {
+    transform: scale(1.05);
+}
+
+.model-content {
+    padding: 24px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.model-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--accent-glow);
+    color: var(--accent);
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.inspect-feature-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 40px 30px;
+    border: 1px solid #f1f5f9;
+    transition: var(--transition);
+    position: relative;
+    z-index: 1;
+}
+
+.inspect-feature-card:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.inspect-feature-card:hover .icon-box-pdi {
+    background: var(--white);
+    color: var(--primary);
+}
+
+.inspect-feature-card:hover h4,
+.inspect-feature-card:hover p {
+    color: var(--white) !important;
+}
+
+.icon-box-pdi {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    transition: var(--transition);
+}
+
+.defect-insight-card {
+    background: #ffffff;
+    border-left: 4px solid var(--accent);
+    padding: 25px;
+    border-radius: 0 16px 16px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    height: 100%;
+    transition: var(--transition);
+}
+
+.defect-insight-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* --- NEW MODELS SECTIONS --- */
+.section-glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 24px;
+    padding: 40px;
+}
+
+.pdi-value-card {
+    padding: 30px;
+    border-radius: 20px;
+    background: var(--white);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-bottom: 4px solid var(--primary);
+    transition: var(--transition);
+    height: 100%;
+}
+
+.pdi-value-card:hover {
+    transform: translateY(-5px);
+    border-bottom-color: var(--accent);
+}
+
+
+
+.trust-badge {
+    padding: 20px;
+    text-align: center;
+    background: var(--primary-light);
+    border-radius: 16px;
+    transition: var(--transition);
+}
+
+.trust-badge:hover {
+    background: var(--accent-glow);
+    transform: scale(1.05);
+}
+
+/* --- NEW METHODOLOGY TIMELINE --- */
+.timeline-container-vertical {
+    position: relative;
+    padding: 10px;
+}
+
+.timeline-row {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 20px;
+}
+
+.timeline-row:last-child {
+    margin-bottom: 0;
+}
+
+/* Spine: Number + Line */
+.timeline-spine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 25px;
+    min-width: 50px;
+}
+
+.timeline-number-circle {
+    width: 40px;
+    height: 40px;
+    background-color: var(--accent);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(248, 111, 3, 0.3);
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.timeline-line {
+    width: 3px;
+    background-color: var(--accent);
+    flex-grow: 1;
+    margin-top: 5px;
+    border-radius: 2px;
+    opacity: 0.3;
+}
+
+.timeline-row:last-child .timeline-line {
+    display: none;
+}
+
+/* Content Card */
+.timeline-card {
+    background: var(--white);
+    padding: 20px 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    flex-grow: 1;
+    border-left: 5px solid var(--accent);
+    transition: transform 0.3s ease;
+}
+
+.timeline-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* --- COMMON ISSUES CARD REDESIGN --- */
+.issue-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--primary);
+    border-top: 1px solid #f1f5f9;
+    border-right: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.issue-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-left-color: var(--accent);
+}
+
+.issue-card h4 {
+    color: var(--text-dark);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.issue-card p {
+    color: var(--text-gray);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* --- CAROUSEL INDICATORS --- */
+.custom-indicators {
+    bottom: -15px;
+    /* Position below the cards */
+}
+
+.custom-indicators button {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50%;
+    background-color: #dee2e6 !important;
+    border: none !important;
+    opacity: 1 !important;
+    margin: 0 5px !important;
+    transition: all 0.3s ease;
+}
+
+.custom-indicators button.active {
+    background-color: var(--accent) !important;
+    transform: scale(1.2);
+    width: 12px !important;
+    height: 12px !important;
 }

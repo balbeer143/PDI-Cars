@@ -1,15 +1,37 @@
 <?php
 include 'include/header.php';
 
-$brand = isset($_GET['brand']) ? htmlspecialchars($_GET['brand']) : 'Car';
-$model = isset($_GET['model']) ? htmlspecialchars($_GET['model']) : 'Model';
+$brand_param = isset($_GET['brand']) ? strtolower($_GET['brand']) : '';
+$model_param = isset($_GET['model']) ? strtolower($_GET['model']) : '';
+
+$brand = 'Brand Not Found';
+$model = 'Model Not Found';
+$model_features = [];
 
 include 'include/carData.php';
 
-// Get model specific features
-$model_features = [];
-if (isset($carData[$brand]['models'][$model])) {
-    $model_features = $carData[$brand]['models'][$model]['features'];
+// 1. Find Brand (Same logic as models.php)
+$brand_data = null;
+foreach ($carData as $key => $data) {
+    if (strtolower($key) === $brand_param) {
+        $brand = $key;
+        $brand_data = $data;
+        break;
+    }
+}
+
+// 2. Find Model
+if ($brand_data && isset($brand_data['models'])) {
+    foreach ($brand_data['models'] as $key => $details) {
+        if (strtolower($key) === $model_param) {
+            $model = $key;
+            // Get features directly inside this loop
+            if (isset($details['features'])) {
+                $model_features = $details['features'];
+            }
+            break;
+        }
+    }
 }
 
 // Combine static checklist with model features
@@ -34,17 +56,15 @@ if (!empty($model_features)) {
         <!-- Actions -->
         <!-- Actions -->
         <div class="d-flex flex-wrap align-items-center gap-3 mt-4 border-bottom pb-4">
-            <button class="btn-pdi btn-pdi-primary">
-                <i class="fas fa-print"></i> Print
-            </button>
+
             <button class="btn-pdi btn-pdi-accent">
                 <i class="fas fa-file-pdf"></i> Download PDF
             </button>
-            <button class="btn-pdi btn-pdi-outline" data-bs-toggle="modal" data-bs-target="#shareModal">
+            <button class="btn-pdi btn-pdi-primary" data-bs-toggle="modal" data-bs-target="#shareModal">
                 <i class="fas fa-share-nodes"></i> Share
             </button>
 
-            <a href="models.php?brand=<?php echo urlencode($brand); ?>" class="btn-pdi btn-pdi-outline ms-auto">
+            <a href="models.php?brand=<?php echo urlencode($brand_param); ?>" class="btn-pdi btn-pdi-outline ms-auto">
                 <i class="fas fa-arrow-left"></i> Back to Models
             </a>
         </div>
@@ -59,7 +79,7 @@ if (!empty($model_features)) {
                 foreach ($checklist_categories as $category => $items):
                     $collapseId = "collapse" . $index;
                     $headerId = "heading" . $index;
-                ?>
+                    ?>
                     <div class="accordion-item mb-3 border-0 shadow-sm overflow-hidden radius-theme">
                         <h2 class="accordion-header" id="<?php echo $headerId; ?>">
                             <button
@@ -99,7 +119,7 @@ if (!empty($model_features)) {
                             </div>
                         </div>
                     </div>
-                <?php
+                    <?php
                     $index++;
                 endforeach;
                 ?>
@@ -164,13 +184,13 @@ if (!empty($model_features)) {
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const copyBtn = document.getElementById('copyBtn');
         const shareUrlInput = document.getElementById('shareUrlInput');
         const copySuccess = document.getElementById('copySuccess');
 
         if (copyBtn) {
-            copyBtn.addEventListener('click', function() {
+            copyBtn.addEventListener('click', function () {
                 shareUrlInput.select();
                 shareUrlInput.setSelectionRange(0, 99999); // For mobile devices
 
