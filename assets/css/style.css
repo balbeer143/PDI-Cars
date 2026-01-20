@@ -111,6 +111,8 @@ p {
     border: 2px solid transparent;
     font-size: 1rem;
     text-decoration: none !important;
+    white-space: nowrap;
+    width: fit-content;
 }
 
 .btn-pdi-primary {
@@ -710,7 +712,7 @@ header {
     overflow: hidden;
 }
 
-.info-card::after {
+/* .info-card::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -722,11 +724,11 @@ header {
     border-color: transparent transparent var(--accent-soft) transparent;
     transition: var(--transition);
     opacity: 0;
-}
+} */
 
-.info-card:hover::after {
+/* .info-card:hover::after {
     opacity: 1;
-}
+} */
 
 .info-card:hover {
     transform: translateY(-5px);

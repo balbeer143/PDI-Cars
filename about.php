@@ -3,8 +3,9 @@
 <!-- Hero Section -->
 <section class="hero text-white">
     <div class="container">
-        <h1 class="display-4">About PDICARS</h1>
-        <p>We empower car buyers with the knowledge and tools to ensure a flawless delivery experience.</p>
+        <h1 class="display-5 text-white">About PDICARS</h1>
+        <p class="text-white">We empower car buyers with the knowledge and tools to ensure a flawless delivery
+            experience.</p>
     </div>
 </section>
 
@@ -111,19 +112,19 @@
     <div class="row text-center g-4">
         <div class="col-md-4">
             <div class="p-4 rounded-4 bg-white border h-100 shadow-sm transition-hover">
-                <div class="display-5 fw-bold text-primary mb-2">15k+</div>
+                <div class="display-5 fw-bold text-accent-theme mb-2">15k+</div>
                 <p class="mb-0 fw-semibold text-secondary">Checklists Downloaded</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="p-4 rounded-4 bg-white border h-100 shadow-sm transition-hover">
-                <div class="display-5 fw-bold text-primary mb-2">50+</div>
+                <div class="display-5 fw-bold text-accent-theme mb-2">50+</div>
                 <p class="mb-0 fw-semibold text-secondary">Car Models Covered</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="p-4 rounded-4 bg-white border h-100 shadow-sm transition-hover">
-                <div class="display-5 fw-bold text-primary mb-2">4.9/5</div>
+                <div class="display-5 fw-bold text-accent-theme mb-2">4.9/5</div>
                 <p class="mb-0 fw-semibold text-secondary">User Satisfaction</p>
             </div>
         </div>
@@ -133,8 +134,8 @@
 <!-- CTA Section -->
 <div class="container mb-5">
     <div class="expert-banner text-center">
-        <h2 class="fw-bold mb-3">Ready to Inspect Your Car?</h2>
-        <p class="mb-5">Download your checklist today or hire an expert to do it for you.</p>
+        <h2 class="text-white fw-bold mb-3">Ready to Inspect Your Car?</h2>
+        <p class="text-white mb-4">Download your checklist today or hire an expert to do it for you.</p>
         <a href="index.php#select-brand" class="btn-pdi btn-pdi-primary">Get Started</a>
     </div>
 </div>

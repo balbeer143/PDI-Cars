@@ -7,9 +7,9 @@
             <div class="col-lg-6 mb-5 mb-lg-0">
                 <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill"><i
                         class="fas fa-star me-2"></i>Rated #1 PDI Service</span>
-                <h1 class="display-4 fw-bold mb-3">Don't Buy a New Car <br> Without a <span
+                <h1 class="display-5 text-white fw-bold mb-3">Don't Buy a New Car <br> Without a <span
                         class="text-accent-theme">PDI Expert</span></h1>
-                <p class="lead mb-4 opacity-90">Discover hidden scratches, repainted parts, and engine faults
+                <p class="text-white mb-4">Discover hidden scratches, repainted parts, and engine faults
                     before you sign the papers. Get a 200-point professional inspection for complete peace of mind.</p>
                 <div class="d-flex gap-3">
                     <div class="d-flex align-items-center">
@@ -55,10 +55,10 @@
                             <input type="text" id="location" class="form-control" placeholder="City/Dealer">
                         </div>
                         <div class="col-12 mt-4 text-center">
-                            <button type="submit" class="btn-pdi btn-pdi-accent w-100 w-md-50">
+                            <button type="submit" class="btn-pdi btn-pdi-accent">
                                 HIRE OUR EXPERT <i class="fas fa-arrow-right ms-2"></i>
                             </button>
-                            <p class="text-muted small mt-2"><i class="fas fa-lock me-1"></i> No payment required
+                            <p class="text-muted small mt-4"><i class="fas fa-lock me-1"></i> No payment required
                                 upfront.</p>
                         </div>
                     </div>
@@ -274,8 +274,9 @@
         <div class="report-section p-5">
             <div class="row align-items-center">
                 <div class="col-md-7">
-                    <h2 class="fw-bold mb-3">See What You Get</h2>
-                    <p class="lead mb-4">Our reports are easy to understand, digital, and come with high-res evidence of
+                    <h2 class="text-white fw-bold mb-3">See What You Get</h2>
+                    <p class="text-white mb-4">Our reports are easy to understand, digital, and come with high-res
+                        evidence of
                         any issues found.</p>
                     <button class="btn-pdi btn-pdi-accent"><i class="fas fa-download me-2"></i> Download Sample
                         Report</button>
