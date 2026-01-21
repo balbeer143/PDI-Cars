@@ -3,7 +3,7 @@
 $carData = [
     'Maruti Suzuki' => [
         'id' => 'maruti',
-        'logo' => 'assets/images/Maruti Suzuki.png',
+        'logo' => 'assets/images/maruti suzuki.png',
         'models' => [
             'Swift' => [
                 'image' => 'assets/images/MarutiSuzukiSwift.png',
@@ -149,7 +149,7 @@ $carData = [
     ],
     'Hyundai' => [
         'id' => 'hyundai',
-        'logo' => 'assets/images/Hyundai.png',
+        'logo' => 'assets/images/hyundayi.png',
         'models' => [
             'Creta' => [
                 'image' => 'assets/images/creta.jpg',
@@ -335,7 +335,7 @@ $carData = [
     ],
     'Tata Motors' => [
         'id' => 'tata',
-        'logo' => 'assets/images/tata.jpg',
+        'logo' => 'assets/images/tata.png',
         'models' => [
             'Nexon' => [
                 'image' => 'assets/images/nexon.webp',
@@ -501,7 +501,7 @@ $carData = [
     ],
     'Mahindra' => [
         'id' => 'mahindra',
-        'logo' => 'assets/images/Mahindra.webp',
+        'logo' => 'assets/images/mahindra.png',
         'models' => [
             'Thar' => [
                 'image' => 'assets/images/thar.webp',
@@ -727,7 +727,7 @@ $carData = [
     ],
     'Honda' => [
         'id' => 'honda',
-        'logo' => 'assets/images/honda logo.webp',
+        'logo' => 'assets/images/honda.png',
         'models' => [
             'City' => [
                 'image' => 'assets/images/honda city.avif',
@@ -1311,7 +1311,7 @@ $carData = [
     ],
     'Volkswagen' => [
         'id' => 'volkswagen',
-        'logo' => 'assets/images/volkswagen.png',
+        'logo' => 'assets/images/volkswagon.png',
         'models' => [
             'Taigun' => [
                 'image' => 'assets/images/taigun.avif',
@@ -1397,7 +1397,7 @@ $carData = [
     ],
     'Mercedes' => [
         'id' => 'mercedes',
-        'logo' => 'assets/images/Mercedes logo.jpg',
+        'logo' => 'assets/images/mercedes.png',
         'models' => [
             'C-Class' => [
                 'image' => 'assets/images/c-class.avif',
@@ -1523,7 +1523,7 @@ $carData = [
     ],
     'BMW' => [
         'id' => 'bmw',
-        'logo' => 'assets/images/bmw logo.webp',
+        'logo' => 'assets/images/bmw.png',
         'models' => [
             '3 Series' => [
                 'image' => 'assets/images/bmw 3 series.avif',
@@ -1732,105 +1732,6 @@ $carData = [
                 ]
             ]
         ]
-    ]
-];
-
-// PDI Checklist Data
-$pdiChecklist = [
-    'Exterior Inspection' => [
-        "Check for any dents, scratches or paint imperfections on all body panels",
-        "Inspect all glass surfaces for cracks or chips",
-        "Verify all exterior lights (headlights, taillights, indicators, fog lights) are working properly",
-        "Check wheel rims for any damage",
-        "Inspect tire condition, tread depth and manufacturing date",
-        "Verify tire pressure matches recommended levels",
-        "Check all door handles and locks operation",
-        "Inspect windshield wipers and washer fluid operation",
-        "Verify antenna/mount is properly installed",
-        "Check fuel filler cap operation",
-        "Inspect exhaust pipe and underbody for damage",
-        "Verify all badges and emblems are properly affixed",
-        "Check panel gaps for consistency (doors, hood, trunk)",
-        "Inspect roof rails (if equipped) for proper installation",
-        "Verify paint color consistency across all panels"
-    ],
-    'Interior Inspection' => [
-        "Check all upholstery for stains, tears or defects",
-        "Inspect dashboard and trim for scratches or imperfections",
-        "Verify all interior lights are working",
-        "Test power windows operation (all switches)",
-        "Check central locking system operation",
-        "Test all seat adjustments (front and rear)",
-        "Inspect seat belts for proper operation",
-        "Verify steering wheel adjustment",
-        "Check rearview mirror adjustment",
-        "Test all air conditioning and heating functions",
-        "Verify infotainment system functions",
-        "Test all audio system speakers",
-        "Check USB/charging ports functionality",
-        "Verify Bluetooth connectivity",
-        "Test navigation system (if equipped)",
-        "Check all storage compartments and cup holders",
-        "Inspect headliner for proper installation",
-        "Verify sun visors operation",
-        "Test rear AC vents (if equipped)",
-        "Check rear windshield defogger operation"
-    ],
-    'Engine Bay' => [
-        "Check engine oil level and condition",
-        "Verify coolant level",
-        "Inspect brake fluid level",
-        "Check windshield washer fluid level",
-        "Inspect power steering fluid (if applicable)",
-        "Verify battery terminals are properly connected",
-        "Check for any fluid leaks under the hood",
-        "Inspect all belts for proper tension",
-        "Verify all hoses are properly connected",
-        "Check air filter condition",
-        "Inspect engine bay for any loose components"
-    ],
-    'Underbody' => [
-        "Inspect underbody for any signs of damage",
-        "Check for proper underbody coating",
-        "Verify exhaust system installation",
-        "Inspect suspension components",
-        "Check for any fluid leaks",
-        "Verify all protective covers are in place"
-    ],
-    'Test Drive' => [
-        "Check engine start/stop operation",
-        "Verify smooth acceleration",
-        "Test brakes for proper operation",
-        "Check steering for proper alignment",
-        "Listen for any unusual noises",
-        "Verify transmission smooth shifting",
-        "Test cruise control (if equipped)",
-        "Check hill hold assist (if equipped)",
-        "Verify parking brake operation",
-        "Test all drive modes (if equipped)"
-    ],
-    'Documentation' => [
-        "Verify vehicle registration certificate",
-        "Check insurance documents",
-        "Verify invoice matches VIN number",
-        "Check warranty booklet",
-        "Verify service manual",
-        "Check road tax payment receipt",
-        "Verify accessories invoice (if any)",
-        "Check PDI checklist signed by dealer",
-        "Verify number plate allocation",
-        "Check FASTag activation (if equipped)"
-    ],
-    'Accessories' => [
-        "Verify all standard accessories are included",
-        "Check tool kit and jack availability",
-        "Verify spare wheel condition",
-        "Check floor mats installation",
-        "Verify seat covers (if provided)",
-        "Check sunshades (if provided)",
-        "Verify first aid kit (if provided)",
-        "Check car cover (if provided)",
-        "Verify any dealer-installed accessories"
     ]
 ];
 ?>

@@ -12,6 +12,12 @@
     --accent-soft: #fff5ed;
     --accent-glow: rgba(248, 111, 3, 0.15);
 
+    /* Social Colors */
+    --whatsapp: #25d366;
+    --facebook: #1877f2;
+    --twitter: #1da1f2;
+    --email: #64748b;
+
     --text-dark: #0f172a;
     --text-gray: #475569;
     --bg-light: #f8fafc;
@@ -1144,7 +1150,7 @@ header {
 .brand-logo-placeholder {
     height: 75px;
     width: 75px;
-    background: var(--primary-light);
+    /* background: var(--primary-light); */
     border-radius: 50%;
     margin: 0 auto 1.5rem;
     display: flex;
@@ -3576,4 +3582,92 @@ body {
     transform: scale(1.2);
     width: 12px !important;
     height: 12px !important;
+}
+
+/* --- SHARE MODAL STYLES --- */
+.btn-share {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    color: var(--white) !important;
+    border: none;
+    transition: all 0.2s ease;
+    width: 100%;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    text-decoration: none !important;
+}
+
+.btn-share:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    color: var(--white) !important;
+}
+
+.btn-share-whatsapp {
+    background-color: var(--whatsapp);
+}
+
+.btn-share-facebook {
+    background-color: var(--facebook);
+}
+
+.btn-share-twitter {
+    background-color: var(--twitter);
+}
+
+.btn-share-email {
+    background-color: var(--email);
+}
+
+.copy-link-container {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 6px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.copy-input {
+    border: none;
+    background: transparent;
+    color: var(--text-gray);
+    padding: 10px;
+    flex-grow: 1;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.btn-copy-link {
+    background: var(--facebook);
+    /* Creates that bright blue look */
+    color: white;
+    font-weight: 700;
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: none;
+    transition: var(--transition);
+}
+
+.btn-copy-link:hover {
+    background: var(--primary);
+    transform: translateY(-1px);
+}
+
+.modal-header-clean {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.modal-title-clean {
+    color: var(--facebook);
+    /* Using the brighter blue for title as seen in image */
+    font-weight: 800;
+    font-size: 1.75rem;
 }

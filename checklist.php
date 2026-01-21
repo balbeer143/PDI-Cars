@@ -34,8 +34,31 @@ if ($brand_data && isset($brand_data['models'])) {
     }
 }
 
-// Combine static checklist with model features
-$checklist_categories = $pdiChecklist;
+// 3a. Load Checklist Data (JSON)
+$checklist_categories = [];
+$checklist_json_file = 'assets/data/checklist_data.json';
+
+if (file_exists($checklist_json_file)) {
+    $checklist_json_content = file_get_contents($checklist_json_file);
+    $all_checklist_data = json_decode($checklist_json_content, true);
+
+    if ($all_checklist_data) {
+        // 1. Check for specific model data
+        if (isset($all_checklist_data['brands'][$brand]['models'][$model])) {
+            $checklist_categories = $all_checklist_data['brands'][$brand]['models'][$model];
+        }
+        // 2. Check for brand default
+        elseif (isset($all_checklist_data['brands'][$brand]['default'])) {
+            $checklist_categories = $all_checklist_data['brands'][$brand]['default'];
+        }
+        // 3. Global default fallback
+        elseif (isset($all_checklist_data['default'])) {
+            $checklist_categories = $all_checklist_data['default'];
+        }
+    }
+}
+
+// Combine with model features
 if (!empty($model_features)) {
     $checklist_categories['Model Specific Features'] = $model_features;
 }
@@ -57,8 +80,6 @@ if (file_exists($json_file)) {
         }
     }
 }
-
-
 
 ?>
 
@@ -98,7 +119,6 @@ if (file_exists($json_file)) {
             <button class="btn-pdi btn-pdi-primary" data-bs-toggle="modal" data-bs-target="#shareModal">
                 <i class="fas fa-share-nodes"></i> Share
             </button>
-
             <a href="models.php?brand=<?php echo urlencode($brand_param); ?>" class="btn-pdi btn-pdi-outline ms-auto">
                 <i class="fas fa-arrow-left"></i> Back to Models
             </a>
@@ -260,54 +280,46 @@ if (file_exists($json_file)) {
         <!-- Share Modal -->
         <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content border-0 radius-theme shadow-lg">
-                    <div class="modal-header border-0 pb-0">
-                        <h5 class="modal-title fw-bold text-primary fs-3" id="shareModalLabel">Share Your Checklist</h5>
+                <div class="modal-content border-0 radius-theme shadow-lg p-3">
+                    <div class="modal-header modal-header-clean">
+                        <h5 class="modal-title modal-title-clean" id="shareModalLabel">Share Your Checklist</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body p-4">
+                    <div class="modal-body">
                         <div class="row g-3 mb-4">
                             <div class="col-6">
                                 <a href="https://wa.me/?text=Check out my Custom PDI Checklist: <?php echo "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>"
-                                    target="_blank" class="btn btn-share w-100 d-flex align-items-center justify-content-center gap-2
-                                    py-3 border-0 text-white rounded-3 fw-bold"
-                                    style="background-color: #25d366; font-size: 1.1rem;">
+                                    target="_blank" class="btn-share btn-share-whatsapp">
                                     <i class="fab fa-whatsapp"></i> WhatsApp
                                 </a>
                             </div>
                             <div class="col-6">
                                 <a href="mailto:?subject=My PDI Checklist&body=Check out my Custom PDI Checklist: <?php echo "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>"
-                                    class="btn btn-share w-100 d-flex align-items-center justify-content-center gap-2
-                                    py-3 border-0 text-white rounded-3 fw-bold"
-                                    style="background-color: #6c757d; font-size: 1.1rem;">
+                                    class="btn-share btn-share-email">
                                     <i class="fas fa-envelope"></i> Email
                                 </a>
                             </div>
                             <div class="col-6">
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode("https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']); ?>"
-                                    target="_blank" class="btn btn-share w-100 d-flex align-items-center justify-content-center gap-2
-                                    py-3 border-0 text-white rounded-3 fw-bold"
-                                    style="background-color: #3b5998; font-size: 1.1rem;">
+                                    target="_blank" class="btn-share btn-share-facebook">
                                     <i class="fab fa-facebook-f"></i> Facebook
                                 </a>
                             </div>
                             <div class="col-6">
                                 <a href="https://twitter.com/intent/tweet?text=Check out my Custom PDI Checklist&url=<?php echo urlencode("https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']); ?>"
-                                    target="_blank" class="btn btn-share w-100 d-flex align-items-center justify-content-center gap-2
-                                    py-3 border-0 text-white rounded-3 fw-bold"
-                                    style="background-color: #1da1f2; font-size: 1.1rem;">
+                                    target="_blank" class="btn-share btn-share-twitter">
                                     <i class="fab fa-twitter"></i> Twitter
                                 </a>
                             </div>
                         </div>
 
-                        <div class="input-group mb-2 custom-copy-group">
-                            <input type="text" class="form-control border-end-0 py-2" id="shareUrlInput"
+                        <div class="copy-link-container">
+                            <input type="text" class="copy-input" id="shareUrlInput"
                                 value="<?php echo "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>"
                                 readonly>
-                            <button class="btn btn-primary px-4 fw-bold" type="button" id="copyBtn">Copy Link</button>
+                            <button class="btn-copy-link" type="button" id="copyBtn">Copy Link</button>
                         </div>
-                        <div id="copySuccess" class="text-success small fw-bold"
+                        <div id="copySuccess" class="text-success small fw-bold mt-2"
                             style="display: none; text-align: right;">
                             Copied to clipboard!</div>
                     </div>
@@ -349,7 +361,6 @@ if (file_exists($json_file)) {
                 element.classList.toggle('is-checked');
             }
         </script>
-
     </div>
 </div>
 
