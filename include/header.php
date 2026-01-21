@@ -42,27 +42,34 @@
         </button>
 
         <div class="collapse navbar-collapse main-nav" id="navbarTogglerDemo02">
+          <?php $currentPage = basename($_SERVER['PHP_SELF']); ?>
           <ul class="navbar-nav m-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a class="nav-link <?php echo ($currentPage == 'index.php' || $currentPage == '') ? 'active' : ''; ?>"
+                aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.php">About PDI</a>
+              <a class="nav-link <?php echo ($currentPage == 'about.php') ? 'active' : ''; ?>" href="about.php">About
+                PDI</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog/car-news/">Cars News</a>
+              <a class="nav-link <?php echo (strpos($_SERVER['REQUEST_URI'], 'blog/car-news') !== false) ? 'active' : ''; ?>"
+                href="blog/car-news/">Cars News</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog/bike-news/">Bike News</a>
+              <a class="nav-link <?php echo (strpos($_SERVER['REQUEST_URI'], 'blog/bike-news') !== false) ? 'active' : ''; ?>"
+                href="blog/bike-news/">Bike News</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="hire-expert.php">Hire Expert 🕵️</a>
+              <a class="nav-link <?php echo ($currentPage == 'hire-expert.php') ? 'active' : ''; ?>"
+                href="hire-expert.php">Hire Expert 🕵️</a>
             </li>
           </ul>
           <form class="d-flex" role="search">
             <div id="google_translate_element" style="display:none"></div>
             <div class="language-switcher notranslate" translate="no">
-              <select id="language-selector" class="form-select form-select-sm lang-select">
+              <!-- Hidden native select for functionality -->
+              <select id="language-selector" class="form-select form-select-sm" style="display:none">
                 <option value="en">English</option>
                 <option value="hi">हिंदी (Hindi)</option>
                 <option value="bn">বাংলা (Bengali)</option>
@@ -72,6 +79,24 @@
                 <option value="gu">ગુજરાતી (Gujarati)</option>
                 <option value="kn">ಕನ್ನಡ (Kannada)</option>
               </select>
+
+              <!-- Custom UI -->
+              <div class="custom-lang-switcher" id="custom-lang-switcher">
+                <div class="lang-btn" id="lang-btn">
+                  <span id="current-lang">English</span>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="lang-menu">
+                  <span class="lang-option" data-value="en">English</span>
+                  <span class="lang-option" data-value="hi">हिंदी (Hindi)</span>
+                  <span class="lang-option" data-value="bn">বাংলা (Bengali)</span>
+                  <span class="lang-option" data-value="mr">मराठी (Marathi)</span>
+                  <span class="lang-option" data-value="te">తెలుగు (Telugu)</span>
+                  <span class="lang-option" data-value="ta">தமிழ் (Tamil)</span>
+                  <span class="lang-option" data-value="gu">ગુજરાતી (Gujarati)</span>
+                  <span class="lang-option" data-value="kn">ಕನ್ನಡ (Kannada)</span>
+                </div>
+              </div>
             </div>
           </form>
         </div>
@@ -95,9 +120,44 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const langSelector = document.getElementById('language-selector');
+      const customSwitcher = document.getElementById('custom-lang-switcher');
+      const langBtn = document.getElementById('lang-btn');
+      const currentLangSpan = document.getElementById('current-lang');
+      const langOptions = document.querySelectorAll('.lang-option');
+
+      // Toggle Dropdown
+      langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        customSwitcher.classList.toggle('active');
+        const icon = langBtn.querySelector('i');
+        icon.style.transform = customSwitcher.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+      });
+
+      // Close on outside click
+      document.addEventListener('click', () => {
+        customSwitcher.classList.remove('active');
+        langBtn.querySelector('i').style.transform = 'rotate(0deg)';
+      });
+
+      // Handle Option Click
+      langOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          const value = this.getAttribute('data-value');
+          const text = this.textContent;
+
+          // Update UI
+          currentLangSpan.textContent = text;
+          customSwitcher.classList.remove('active');
+          langBtn.querySelector('i').style.transform = 'rotate(0deg)';
+
+          // Update Native Select
+          langSelector.value = value;
+          langSelector.dispatchEvent(new Event('change'));
+        });
+      });
 
       // Sync with Google Translate
-      langSelector.addEventListener('change', function () {
+      langSelector.addEventListener('change', function() {
         const lang = this.value;
         const googleCombo = document.querySelector('select.goog-te-combo');
         if (googleCombo) {
