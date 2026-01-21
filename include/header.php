@@ -26,10 +26,10 @@
 
 <body>
   <header class="header">
-    <nav class="navbar navbar-expand-lg p-0">
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
         <div class="logo">
-          <a class="navbar-brand" href="/" aria-label="Home">
+          <a class="navbar-brand" href="#" aria-label="Home">
             <img src="assets/images/pdicars-logo.svg" alt="carpdi Logo" width="200" height="auto" class="img-fluid">
           </a>
         </div>
