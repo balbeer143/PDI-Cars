@@ -1,7 +1,7 @@
 <?php
 // Car Data - All major Indian car brands and models
 $carData = [
-    'Maruti Suzuki' => [
+    'Maruti-Suzuki' => [
         'id' => 'maruti',
         'logo' => 'assets/images/maruti suzuki.png',
         'models' => [
@@ -333,7 +333,7 @@ $carData = [
             ]
         ]
     ],
-    'Tata Motors' => [
+    'Tata-Motors' => [
         'id' => 'tata',
         'logo' => 'assets/images/tata.png',
         'models' => [
@@ -1183,7 +1183,7 @@ $carData = [
             ]
         ]
     ],
-    'MG Motor' => [
+    'MG-Motor' => [
         'id' => 'mg',
         'logo' => 'assets/images/mg.png',
         'models' => [

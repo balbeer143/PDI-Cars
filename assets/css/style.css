@@ -2784,13 +2784,7 @@ body {
 }
 
 .placeholder-car-block {
-    background: #cbd5e1 !important;
-    height: 350px !important;
-    border-radius: 16px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    color: #64748b !important;
+    overflow: hidden;
 }
 
 /* Translate Cleanup (Consolidated) */

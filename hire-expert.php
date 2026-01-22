@@ -170,10 +170,11 @@
                         class="fas fa-arrow-right ms-2"></i></a>
             </div>
             <div class="col-lg-6">
-                <div class="bg-white p-3 rounded-4 shadow-sm">
+                <div class="bg-white p-2 rounded-4 shadow-sm">
                     <!-- Using a colored block to simulate an image if none provided -->
                     <div class="placeholder-car-block">
-                        <i class="fas fa-car fa-5x"></i>
+                        <img src="assets/images/Comprehensive Coverage.webp" alt="Comprehensive Coverage"
+                            class="img-fluid rounded-4">
                     </div>
                 </div>
             </div>
