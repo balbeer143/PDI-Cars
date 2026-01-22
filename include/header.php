@@ -2,12 +2,15 @@
 <html lang="en">
 
 <head>
+  <!-- SEO & Metadata -->
+  <?php include __DIR__ . '/meta-data.php'; ?>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><?php echo htmlspecialchars(isset($title) ? $title : 'PDICARS | Ultimate Inspection Tool'); ?></title>
   <meta name="description"
-    content="PDICARS - Professional Pre-Delivery Inspection (PDI) Service. Don't buy a new car without a PDI Expert. Get a comprehensive 200-point inspection report.">
+    content="<?php echo htmlspecialchars(isset($description) ? $description : 'PDICARS - Professional Pre-Delivery Inspection (PDI) Service.'); ?>">
+  <meta name="keywords" content="<?php echo htmlspecialchars(isset($keywords) ? $keywords : ''); ?>">
   <meta name="theme-color" content="#1e3a8a">
-  <title>PDICARS | Ultimate Inspection Tool</title>
 
   <!-- Performance Hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +33,7 @@
       <div class="container">
         <div class="logo">
           <a class="navbar-brand" href="#" aria-label="Home">
-            <img src="assets/images/pdicars-logo.svg" alt="carpdi Logo" width="200" height="auto" class="img-fluid">
+            <img src="assets/images/pdicars-logo.svg" alt="carpdi Logo" width="200" height="50" class="img-fluid">
           </a>
         </div>
         <button class="navbar-toggler custom-toggler collapsed" type="button" data-bs-toggle="collapse"
@@ -114,7 +117,7 @@
     }
   </script>
 
-  <script type="text/javascript"
+  <script type="text/javascript" defer
     src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <script>
@@ -141,7 +144,7 @@
 
       // Handle Option Click
       langOptions.forEach(option => {
-        option.addEventListener('click', function() {
+        option.addEventListener('click', function () {
           const value = this.getAttribute('data-value');
           const text = this.textContent;
 
@@ -157,7 +160,7 @@
       });
 
       // Sync with Google Translate
-      langSelector.addEventListener('change', function() {
+      langSelector.addEventListener('change', function () {
         const lang = this.value;
         const googleCombo = document.querySelector('select.goog-te-combo');
         if (googleCombo) {

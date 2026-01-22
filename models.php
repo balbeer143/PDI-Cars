@@ -93,7 +93,7 @@ if (isset($dynamic_data['brands'][$brand_title]) && isset($dynamic_data['brands'
                         <div class="brand-card h-100 p-3">
                             <div class="model-img-container mb-3">
                                 <img src="<?php echo $car['image']; ?>" alt="<?php echo $car['name']; ?>"
-                                    class="img-fluid model-img">
+                                    class="img-fluid model-img" loading="lazy">
                             </div>
                             <div class="brand-name fs-5"><?php echo $car['name']; ?></div>
                             <div class="text-muted fs-6"><?php echo $brand_title; ?></div>

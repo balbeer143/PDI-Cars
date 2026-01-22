@@ -30,7 +30,7 @@ include 'include/carData.php';
                     <div class="brand-card">
                         <div class="brand-logo-placeholder">
                             <img src="<?php echo $brandDetails['logo']; ?>" alt="<?php echo $brandName; ?>"
-                                class="img-fluid brand-logo-round">
+                                class="img-fluid brand-logo-round" loading="lazy" width="75" height="75">
                         </div>
                         <div class="brand-name"><?php echo $brandName; ?></div>
                     </div>
@@ -153,7 +153,7 @@ include 'include/carData.php';
             <!-- Card 1 -->
             <div class="gallery-card">
                 <img src="https://images.unsplash.com/photo-1600661653561-629509216228?q=80&w=600&auto=format&fit=crop"
-                    class="gallery-img" alt="Micro Scratches">
+                    class="gallery-img" alt="Micro Scratches" loading="lazy" width="600" height="400">
                 <div class="gallery-overlay">
                     <div class="overlay-content">
                         <h4>Micro Scratches</h4>
@@ -164,7 +164,7 @@ include 'include/carData.php';
             <!-- Card 2 -->
             <div class="gallery-card">
                 <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=600&auto=format&fit=crop"
-                    class="gallery-img" alt="Interior Gaps">
+                    class="gallery-img" alt="Interior Gaps" loading="lazy" width="600" height="400">
                 <div class="gallery-overlay">
                     <div class="overlay-content">
                         <h4>Interior Gaps</h4>
@@ -175,7 +175,7 @@ include 'include/carData.php';
             <!-- Card 3 -->
             <div class="gallery-card">
                 <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=600&auto=format&fit=crop"
-                    class="gallery-img" alt="Rust Issues">
+                    class="gallery-img" alt="Rust Issues" loading="lazy" width="600" height="400">
                 <div class="gallery-overlay">
                     <div class="overlay-content">
                         <h4>Rust Issues</h4>
@@ -210,7 +210,7 @@ include 'include/carData.php';
             <div class="col-lg-6 order-lg-2 text-center">
                 <div class="layout-img-wrapper accent-bg-glow">
                     <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=800&auto=format&fit=crop"
-                        alt="Engine Tech" class="img-fluid rounded-4">
+                        alt="Paint Finish" class="img-fluid rounded-4" loading="lazy" width="800" height="533">
                 </div>
             </div>
         </div>
@@ -240,7 +240,7 @@ include 'include/carData.php';
             <div class="col-lg-6 order-lg-1 text-center">
                 <div class="layout-img-wrapper accent-bg-glow">
                     <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=800&auto=format&fit=crop"
-                        alt="Engine Tech" class="img-fluid rounded-4">
+                        alt="Engine Tech" class="img-fluid rounded-4" loading="lazy" width="800" height="533">
                 </div>
             </div>
         </div>
