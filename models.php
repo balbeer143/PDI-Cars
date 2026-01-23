@@ -38,6 +38,13 @@ function get_brand_content($section_key, $brand_title, $dynamic_data)
     if (isset($dynamic_data['brands'][$brand_title]) && isset($dynamic_data['brands'][$brand_title][$section_key])) {
         return $dynamic_data['brands'][$brand_title][$section_key];
     }
+
+    // 1b. Try replacing hyphens with spaces (e.g. 'Maruti-Suzuki' -> 'Maruti Suzuki')
+    $brand_title_spaced = str_replace('-', ' ', $brand_title);
+    if (isset($dynamic_data['brands'][$brand_title_spaced]) && isset($dynamic_data['brands'][$brand_title_spaced][$section_key])) {
+        return $dynamic_data['brands'][$brand_title_spaced][$section_key];
+    }
+
     // 2. Fallback to default (at root or in default object)
     if (isset($dynamic_data['default']) && isset($dynamic_data['default'][$section_key])) {
         return $dynamic_data['default'][$section_key];

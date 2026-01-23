@@ -1732,6 +1732,324 @@ $carData = [
                 ]
             ]
         ]
+    ],
+    'Land-Rover' => [
+        'id' => 'land-rover',
+        'logo' => 'assets/images/land rover.png',
+        'models' => [
+            'Defender' => [
+                'image' => 'assets/images/defender.avif',
+                'features' => [
+                    "11.4-inch touchscreen infotainment",
+                    "Pivi Pro system",
+                    "Six airbags",
+                    "ABS with EBD",
+                    "20-inch alloy wheels",
+                    "Wireless charger",
+                    "Digital cockpit",
+                    "Push-button start",
+                    "Two-zone climate control",
+                    "360-degree camera",
+                    "Meridian audio system",
+                    "Panoramic sunroof",
+                    "Air suspension",
+                    "ClearSight ground view",
+                    "Wade sensing"
+                ]
+            ],
+            'Range Rover' => [
+                'image' => 'assets/images/land rover range rover.avif',
+                'features' => [
+                    "13.1-inch touchscreen infotainment",
+                    "Pivi Pro system",
+                    "Eight airbags",
+                    "ABS with EBD",
+                    "21-inch alloy wheels",
+                    "Wireless charger",
+                    "Digital cockpit",
+                    "Push-button start",
+                    "Four-zone climate control",
+                    "Level 2 ADAS",
+                    "Meridian Signature sound system",
+                    "Panoramic sunroof",
+                    "All-wheel steering",
+                    "Hot stone massage seats",
+                    "Tailgate event suite"
+                ]
+            ],
+            'Range Rover Sport' => [
+                'image' => 'assets/images/land rover range rover sport.avif',
+                'features' => [
+                    "13.1-inch touchscreen infotainment",
+                    "Pivi Pro system",
+                    "Six airbags",
+                    "ABS with EBD",
+                    "21-inch alloy wheels",
+                    "Wireless charger",
+                    "Digital cockpit",
+                    "Push-button start",
+                    "Four-zone climate control",
+                    "Level 2 ADAS",
+                    "Meridian 3D surround sound",
+                    "Panoramic sunroof",
+                    "Dynamic air suspension",
+                    "Digital LED headlights",
+                    "Soft close doors"
+                ]
+            ],
+            'Velar' => [
+                'image' => 'assets/images/land rover range rover velar.avif',
+                'features' => [
+                    "11.4-inch touchscreen infotainment",
+                    "Pivi Pro system",
+                    "Six airbags",
+                    "ABS with EBD",
+                    "20-inch alloy wheels",
+                    "Wireless charger",
+                    "Digital cockpit",
+                    "Push-button start",
+                    "Two-zone climate control",
+                    "360-degree camera",
+                    "Meridian audio system",
+                    "Panoramic sunroof",
+                    "Terrain response 2",
+                    "Flush door handles",
+                    "Pixel LED headlights"
+                ]
+            ],
+            'Discovery' => [
+                'image' => 'assets/images/Discovery.webp',
+                'features' => [
+                    "11.4-inch touchscreen infotainment",
+                    "Pivi Pro system",
+                    "Eight airbags",
+                    "ABS with EBD",
+                    "20-inch alloy wheels",
+                    "Wireless charger",
+                    "Digital cockpit",
+                    "Push-button start",
+                    "Four-zone climate control",
+                    "Level 2 ADAS",
+                    "Meridian audio system",
+                    "Panoramic sunroof",
+                    "Intelligent seat fold",
+                    "Activity key",
+                    "Air suspension"
+                ]
+            ]
+        ]
+    ],
+    'Ford' => [
+        'id' => 'ford',
+        'logo' => 'assets/images/ford.png',
+        'models' => [
+            'Mustang' => [
+                'image' => 'assets/images/Ford Mustang.avif',
+                'features' => [
+                    "8-inch touchscreen infotainment",
+                    "SYNC 3 system",
+                    "Eight airbags",
+                    "ABS with EBD",
+                    "19-inch alloy wheels",
+                    "Digital cockpit",
+                    "Push-button start",
+                    "Dual-zone climate control",
+                    "B&O sound system",
+                    "Ventilated seats",
+                    "Leather upholstery",
+                    "Paddle shifters",
+                    "Line lock",
+                    "Active valve exhaust",
+                    "Track apps"
+                ]
+            ],
+            'Endeavour' => [
+                'image' => 'assets/images/endeavour.avif',
+                'features' => [
+                    "8-inch touchscreen infotainment",
+                    "Sync 3 system",
+                    "Seven airbags",
+                    "ABS with EBD",
+                    "18-inch alloy wheels",
+                    "Panoramic sunroof",
+                    "Semi-auto parallel park assist",
+                    "Push-button start",
+                    "Dual-zone climate control",
+                    "Power tailgate",
+                    "Power folding 3rd row",
+                    "Active noise cancellation",
+                    "Terrain management system",
+                    "Diff lock",
+                    "Electric driver seat"
+                ]
+            ],
+            'EcoSport' => [
+                'image' => 'assets/images/ford ecosport.avif',
+                'features' => [
+                    "8-inch touchscreen infotainment",
+                    "Sync 3 system",
+                    "Six airbags",
+                    "ABS with EBD",
+                    "16-inch alloy wheels",
+                    "Electric sunroof",
+                    "Push-button start",
+                    "Auto climate control",
+                    "Rain-sensing wipers",
+                    "Paddle shifters",
+                    "Cruise control",
+                    "Tyre pressure monitoring",
+                    "Hill launch assist",
+                    "Traction control",
+                    "Ambient lighting"
+                ]
+            ],
+            'Figo' => [
+                'image' => 'assets/images/ford figo.avif',
+                'features' => [
+                    "7-inch touchscreen infotainment",
+                    "Six airbags",
+                    "ABS with EBD",
+                    "15-inch alloy wheels",
+                    "Auto climate control",
+                    "Rain-sensing wipers",
+                    "Auto headlamps",
+                    "Push-button start",
+                    "Rear parking camera",
+                    "Ford Pass connect",
+                    "Steering-mounted controls",
+                    "Height-adjustable driver seat",
+                    "Fog lamps",
+                    "Rear wiper washer",
+                    "Remote keyless entry"
+                ]
+            ],
+            'Aspire' => [
+                'image' => 'assets/images/ford aspire.avif',
+                'features' => [
+                    "7-inch touchscreen infotainment",
+                    "Six airbags",
+                    "ABS with EBD",
+                    "15-inch alloy wheels",
+                    "Auto climate control",
+                    "Rain-sensing wipers",
+                    "Auto headlamps",
+                    "Push-button start",
+                    "Rear parking camera",
+                    "Ford Pass connect",
+                    "Steering-mounted controls",
+                    "Height-adjustable driver seat",
+                    "Fog lamps",
+                    "Rear armrest",
+                    "Remote keyless entry"
+                ]
+            ]
+        ]
+    ],
+    'Citroen' => [
+        'id' => 'citroen',
+        'logo' => 'assets/images/citroen.png',
+        'models' => [
+            'C3' => [
+                'image' => 'assets/images/citroen c3.avif',
+                'features' => [
+                    "10.2-inch touchscreen infotainment",
+                    "Wireless Apple CarPlay and Android Auto",
+                    "Dual airbags",
+                    "ABS with EBD",
+                    "15-inch alloy wheels",
+                    "Digital instrument cluster",
+                    "Steering-mounted controls",
+                    "Manual AC",
+                    "Drls",
+                    "Rear parking sensors",
+                    "Height-adjustable driver seat",
+                    "Remote keyless entry",
+                    "Front and rear power windows",
+                    "USB fast charger",
+                    "Bluetooth connectivity"
+                ]
+            ],
+            'eC3' => [
+                'image' => 'assets/images/ec3.avif',
+                'features' => [
+                    "10.2-inch touchscreen infotainment",
+                    "Electric vehicle powertrain",
+                    "Wireless Apple CarPlay and Android Auto",
+                    "Dual airbags",
+                    "ABS with EBD",
+                    "15-inch alloy wheels",
+                    "Digital instrument cluster",
+                    "MyCitroen connect app",
+                    "Manual AC",
+                    "Regenerative braking",
+                    "Automatic transmission",
+                    "Fast charging support",
+                    "Rear parking sensors",
+                    "Height-adjustable driver seat",
+                    "Remote keyless entry"
+                ]
+            ],
+            'C5 Aircross' => [
+                'image' => 'assets/images/citroen c5 aircross.avif',
+                'features' => [
+                    "10-inch touchscreen infotainment",
+                    "Panoramic sunroof",
+                    "Six airbags",
+                    "ABS with EBD",
+                    "18-inch alloy wheels",
+                    "Progressive hydraulic cushions suspension",
+                    "Digital cockpit",
+                    "Push-button start",
+                    "Dual-zone climate control",
+                    "Hands-free electric tailgate",
+                    "Comfort seats",
+                    "Grip control",
+                    "Hill descent assist",
+                    "Blind spot monitoring",
+                    "Coffee break alert"
+                ]
+            ],
+            'Basalt' => [
+                'image' => 'assets/images/citroen basalt.avif',
+                'features' => [
+                    "10.2-inch touchscreen infotainment",
+                    "Wireless Apple CarPlay and Android Auto",
+                    "Six airbags",
+                    "ABS with EBD",
+                    "16-inch alloy wheels",
+                    "Digital instrument cluster",
+                    "Automatic climate control",
+                    "Wireless charger",
+                    "Rear AC vents",
+                    "Projector headlamps",
+                    "Rear parking camera",
+                    "Steering-mounted controls",
+                    "Height-adjustable driver seat",
+                    "Electric ORVMs",
+                    "Tyre pressure monitoring system"
+                ]
+            ],
+            'C3 Aircross' => [
+                'image' => 'assets/images/citroen aircross.avif',
+                'features' => [
+                    "10.2-inch touchscreen infotainment",
+                    "Wireless Apple CarPlay and Android Auto",
+                    "7-seater configuration",
+                    "Digital instrument cluster",
+                    "Roof-mounted rear AC vents",
+                    "Dual airbags",
+                    "ABS with EBD",
+                    "17-inch alloy wheels",
+                    "MyCitroen connect app",
+                    "Removable third-row seats",
+                    "Tyre pressure monitoring system",
+                    "Hill hold assist",
+                    "Reverse parking camera",
+                    "Steering-mounted controls",
+                    "Electric ORVMs"
+                ]
+            ]
+        ]
     ]
 ];
 ?>

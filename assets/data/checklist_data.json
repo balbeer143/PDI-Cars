@@ -10062,6 +10062,98 @@
                     ]
                 }
             }
+        },
+        "Land Rover": {
+            "default": {
+                "Exterior Inspection": [
+                    "Inspect all body panels for alignment, especially tailgate and bonnet",
+                    "Check paint finish for any transit damage or swirls",
+                    "Verify operation of deployable side steps (if equipped)",
+                    "Check all glass surfaces, especially panoramic roof",
+                    "Inspect alloy wheels for curb rash",
+                    "Verify operation of LED headlights and animation"
+                ],
+                "Interior Inspection": [
+                    "Check leather upholstery for scratches or creases",
+                    "Verify operation of Pivi Pro infotainment system",
+                    "Test all seat adjustments including massage functions",
+                    "Check Meridian sound system performance",
+                    "Verify operation of digital instrument cluster",
+                    "Inspect ambient lighting colors and zones"
+                ],
+                "Functionality": [
+                    "Test Air Suspension height adjustment (Access/Normal/Off-Road)",
+                    "Check 360-degree camera feed clarity",
+                    "Verify 4x4 Terrain Response modes engagement",
+                    "Test soft-close door operation",
+                    "Check heads-up display clarity and position"
+                ],
+                "Engine & Underbody": [
+                    "Inspect engine bay for fluid leaks",
+                    "Check AdBlue level (for diesel models)",
+                    "Inspect underbody protection plates",
+                    "Verify tire pressure (including spare)"
+                ]
+            }
+        },
+        "Ford": {
+            "default": {
+                "Exterior Inspection": [
+                    "Check for panel gaps, especially around the bonnet",
+                    "Inspect paint quality for any orange peel effect",
+                    "Verify operation of power tailgate",
+                    "Check sunroof drainage channels (pour water test)",
+                    "Inspect tires and alloys for damage"
+                ],
+                "Interior Inspection": [
+                    "Check SYNC system responsiveness",
+                    "Verify AC cooling performance",
+                    "Inspect dashboard plastics for rattles",
+                    "Test power folding seats (Endeavour)",
+                    "Check ambient lighting operation"
+                ],
+                "Functionality": [
+                    "Test 10-speed automatic smooth shifting",
+                    "Verify 4x4 engagement (Low/High range)",
+                    "Check Ford Pass connectivity",
+                    "Test cruise control and speed limiter",
+                    "Verify active noise cancellation system"
+                ],
+                "Engine & Underbody": [
+                    "Check engine oil and coolant levels",
+                    "Inspect battery health (load test)",
+                    "Look for any fluid leaks underneath"
+                ]
+            }
+        },
+        "Citroen": {
+            "default": {
+                "Exterior Inspection": [
+                    "Check dual-tone paint finish lines",
+                    "Inspect plastic cladding for scratches",
+                    "Verify operation of DRLs and headlamps",
+                    "Check door handles operation",
+                    "Inspect roof rails strength"
+                ],
+                "Interior Inspection": [
+                    "Check touchscreen connectivity (CarPlay/Android Auto)",
+                    "Verify manual/auto AC cooling efficiency",
+                    "Inspect upholstery stitching",
+                    "Check digital cluster readout",
+                    "Test all power windows"
+                ],
+                "Functionality": [
+                    "Test suspension for 'flying carpet' effect (no knocks)",
+                    "Check steering weight and response",
+                    "Verify MyCitroen app connectivity",
+                    "Test reverse parking camera/sensors"
+                ],
+                "Engine & Underbody": [
+                    "Check engine mount condition (vibration test)",
+                    "Inspect underbody for scrapes",
+                    "Verify tire pressures"
+                ]
+            }
         }
     }
 }

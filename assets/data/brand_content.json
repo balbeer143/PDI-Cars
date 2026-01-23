@@ -632,6 +632,153 @@
                     "answer": "If equipped, set up the Digital Key on your smartphone and test unlocking."
                 }
             ]
+        },
+        "Land Rover": {
+            "brand_info": "The epitome of luxury off-roading. Your Land Rover PDI should focus on the sophisticated air suspension and heavy electronics.",
+            "why_pdi_matters": [
+                {
+                    "title": "Air Suspension",
+                    "text": "The complex air suspension system needs verifyication. Check for leaks or sagging after the car has been parked."
+                },
+                {
+                    "title": "Pivi Pro System",
+                    "text": "The infotainment is central to the car's function. Ensure it boots up correctly and connects to networks."
+                },
+                {
+                    "title": "Leather Quality",
+                    "text": "Windsor or semi-aniline leather is expensive. Inspect for any scratches or discoloration from transport."
+                }
+            ],
+            "common_issues": [
+                {
+                    "title": "Software Glitches",
+                    "text": "Screen freezing or rebooting is a known quirk. Ensure the latest software patch is installed."
+                },
+                {
+                    "title": "Panel Alignment",
+                    "text": "Check the alignment of the tailgate and bonnet, common areas for slight deviations."
+                },
+                {
+                    "title": "Camera Calibration",
+                    "text": "The 360-degree cameras must be perfectly stitched. Check for 'ghosting' in the image feed."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "InControl Account?",
+                    "answer": "Ensure the dealer sets up your InControl Remote account for app connectivity."
+                },
+                {
+                    "question": "Spare Wheel?",
+                    "answer": "Verify if you have a full-size spare (often an option) or a repair kit."
+                },
+                {
+                    "question": "Run-in period?",
+                    "answer": "Land Rover recommends gentle driving for the first 3,000 km."
+                },
+                {
+                    "question": "Deployable Side Steps?",
+                    "answer": "If fitted, cycle them multiple times to ensure they extend and retract fully."
+                }
+            ]
+        },
+        "Ford": {
+            "brand_info": "Built Ford Tough. While rugged, checking the American build quality and ensuring accessories are up to mark is vital.",
+            "why_pdi_matters": [
+                {
+                    "title": "Gearbox shift",
+                    "text": "The 10-speed auto on Endeavour or Mustang needs to be smooth. Watch for hunting between gears."
+                },
+                {
+                    "title": "Sunroof leaks",
+                    "text": "Drainage channels on older stock can get clogged. Pour water to test flow."
+                },
+                {
+                    "title": "Sync System",
+                    "text": "Ford's Sync 3 is great but check for touch responsiveness and voice command calibration."
+                }
+            ],
+            "common_issues": [
+                {
+                    "title": "Battery Health",
+                    "text": "Fords are power hungry. Stockyard cars often have weak batteries causing random errors."
+                },
+                {
+                    "title": "Rattles",
+                    "text": "Check the dashboard and tailgate for any loose plastics or rattles on test run."
+                },
+                {
+                    "title": "Paint Swirls",
+                    "text": "Dark colors like Absolute Black are prone to washing swirls. Inspect under direct sun."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "Ford Pass?",
+                    "answer": "Activate the modem at delivery to use remote start and lock/unlock features."
+                },
+                {
+                    "question": "AdBlue capability?",
+                    "answer": "For diesel BS6 models, check the AdBlue tank level is full."
+                },
+                {
+                    "question": "Tyre Pressure?",
+                    "answer": "Ford specifies high pressures for Eco/Haul mode. Ensure it's set to 'Comfort' for delivery."
+                },
+                {
+                    "question": "Warranty Start?",
+                    "answer": "Confirm the warranty starts from the invoice date, not the dispatch date."
+                }
+            ]
+        },
+        "Citroen": {
+            "brand_info": "French avant-garde design. Focus on the unique suspension comfort and the quirky interior ergonomics.",
+            "why_pdi_matters": [
+                {
+                    "title": "Suspension Comfort",
+                    "text": "The 'Flying Carpet' ride effect relies on perfect shock absorbers. Listen for knocks."
+                },
+                {
+                    "title": "Interior Quirks",
+                    "text": "Citroens have unique switchgear. Verify all buttons and toggles feel solid and work."
+                },
+                {
+                    "title": "Paint Customization",
+                    "text": "With many dual-tone options, check the masking line between the roof and body colors."
+                }
+            ],
+            "common_issues": [
+                {
+                    "title": "Touchscreen Lag",
+                    "text": "The infotainment can be basic. Check for lag when switching between CarPlay and radio."
+                },
+                {
+                    "title": "AC Performance",
+                    "text": "Ensure the AC cools effectively, especially in the C3 which has manual controls."
+                },
+                {
+                    "title": "Brake Noise",
+                    "text": "Check for any squealing from the front brakes during the short PDI drive."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "MyCitroen Connect?",
+                    "answer": "Verify the dongle is fitted and the app is pairing with the vehicle."
+                },
+                {
+                    "question": "Service Pack?",
+                    "answer": "Citroen offers various service packs. Confirm which one is applied to your VIN."
+                },
+                {
+                    "question": "Tyre Brand?",
+                    "answer": "Check if the car comes with the promised tyre brand (often Ceat or MRF)."
+                },
+                {
+                    "question": "Accessories?",
+                    "answer": "Citroen sells many custom packs. Tally every item with the 'Vibe' pack list."
+                }
+            ]
         }
     }
 }

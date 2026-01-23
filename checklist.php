@@ -44,12 +44,18 @@ if (file_exists($checklist_json_file)) {
 
     if ($all_checklist_data) {
         // 1. Check for specific model data
+        $brand_spaced = str_replace('-', ' ', $brand);
+
         if (isset($all_checklist_data['brands'][$brand]['models'][$model])) {
             $checklist_categories = $all_checklist_data['brands'][$brand]['models'][$model];
+        } elseif (isset($all_checklist_data['brands'][$brand_spaced]['models'][$model])) {
+            $checklist_categories = $all_checklist_data['brands'][$brand_spaced]['models'][$model];
         }
         // 2. Check for brand default
         elseif (isset($all_checklist_data['brands'][$brand]['default'])) {
             $checklist_categories = $all_checklist_data['brands'][$brand]['default'];
+        } elseif (isset($all_checklist_data['brands'][$brand_spaced]['default'])) {
+            $checklist_categories = $all_checklist_data['brands'][$brand_spaced]['default'];
         }
         // 3. Global default fallback
         elseif (isset($all_checklist_data['default'])) {
@@ -75,8 +81,14 @@ if (file_exists($json_file)) {
         // Try to find the brand in the content JSON
         if (isset($all_brand_content['brands'][$brand])) {
             $content_data = $all_brand_content['brands'][$brand];
-        } elseif (isset($all_brand_content['default'])) {
-            $content_data = $all_brand_content['default'];
+        } else {
+            // Try replacing hyphens with spaces (e.g., 'Maruti-Suzuki' -> 'Maruti Suzuki')
+            $brand_spaced = str_replace('-', ' ', $brand);
+            if (isset($all_brand_content['brands'][$brand_spaced])) {
+                $content_data = $all_brand_content['brands'][$brand_spaced];
+            } elseif (isset($all_brand_content['default'])) {
+                $content_data = $all_brand_content['default'];
+            }
         }
     }
 }
