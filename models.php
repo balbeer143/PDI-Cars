@@ -68,7 +68,7 @@ if (isset($dynamic_data['brands'][$brand_title]) && isset($dynamic_data['brands'
         <span class="section-subtitle-pdi">Premium Portal</span>
         <h1 class="display-5 fw-bold mb-3">Your Journey to <span class="text-accent"><?php echo $brand_title; ?></span>
             Perfection</h1>
-        <p class="mx-auto" style="max-width: 700px;"><?php echo $brand_bio; ?></p>
+        <p class="mx-auto max-w-700"><?php echo $brand_bio; ?></p>
     </div>
 </div>
 
@@ -141,7 +141,7 @@ if (isset($dynamic_data['brands'][$brand_title]) && isset($dynamic_data['brands'
             <h3 class="fw-bold">How We Generate Your Checklist</h3>
             <p class="text-muted">A structured approach to ensure nothing is missed.</p>
         </div>
-        <div class="timeline-container-vertical mx-auto" style="max-width: 800px;">
+        <div class="timeline-container-vertical mx-auto max-w-800">
             <div class="timeline-row">
                 <div class="timeline-spine">
                     <div class="timeline-number-circle">1</div>
@@ -251,8 +251,8 @@ if (isset($dynamic_data['brands'][$brand_title]) && isset($dynamic_data['brands'
 
     <!-- NEW: Common Issues Section -->
     <div class="section-title text-center mb-5">
-        <h2 class="fw-bold" style="color: var(--primary);">Common <span
-                class="text-accent"><?php echo $brand_title; ?></span> Issues</h2>
+        <h2 class="fw-bold text-primary-var">Common <span class="text-accent"><?php echo $brand_title; ?></span> Issues
+        </h2>
         <p class="text-muted">Pay extra attention to these components during your inspection.</p>
     </div>
     <div class="row g-4 mb-5">

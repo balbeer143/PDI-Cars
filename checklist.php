@@ -91,7 +91,7 @@ if (file_exists($json_file)) {
                 <?php echo "$brand $model"; ?>
             </span>
             Perfection</h1>
-        <p class="hero-desc text-muted mx-auto" style="max-width: 700px; font-size: 1.1rem; line-height: 1.6;">
+        <p class="hero-desc text-muted mx-auto hero-desc-custom">
             <?php echo isset($content_data['brand_info']) ? $content_data['brand_info'] : "Ensure your new car is defect-free with our comprehensive inspection checklist."; ?>
         </p>
     </div>
@@ -183,21 +183,19 @@ if (file_exists($json_file)) {
             <div class="premium-section-spacer">
                 <div class="text-center mb-5">
                     <span class="section-subtitle-pdi">Vital Checks</span>
-                    <h2 class="fw-bold mt-2" style="font-size: 2.5rem; color: #0f172a;">Why <span
+                    <h2 class="fw-bold mt-2 section-title-large">Why <span
                             class="text-dark"><?php echo $brand; ?></span> PDI Matters</h2>
                 </div>
 
                 <div class="row g-4 justify-content-center">
                     <!-- Card 1 -->
                     <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm p-4 card-hover-premium"
-                            style="border-radius: 24px; background: #fff;">
-                            <div class="d-inline-flex align-items-center justify-content-center mb-4"
-                                style="width: 56px; height: 56px; background-color: #fff7ed; border-radius: 50%;">
+                        <div class="card h-100 border-0 shadow-sm p-4 card-hover-premium card-rounded-white">
+                            <div class="d-inline-flex align-items-center justify-content-center mb-4 icon-circle-bg">
                                 <i class="fas fa-check text-accent fs-5"></i>
                             </div>
-                            <h4 class="fw-bold mb-3" style="color: #0f172a; font-size: 1.25rem;">Internet Inside</h4>
-                            <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
+                            <h4 class="fw-bold mb-3 card-title-dark">Internet Inside</h4>
+                            <p class="text-muted mb-0 card-text-small">
                                 The i-SMART system is the car's brain. Verify voice commands and Hello MG
                                 responsiveness.
                             </p>
@@ -206,14 +204,12 @@ if (file_exists($json_file)) {
 
                     <!-- Card 2 -->
                     <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm p-4 card-hover-premium"
-                            style="border-radius: 24px; background: #fff;">
-                            <div class="d-inline-flex align-items-center justify-content-center mb-4"
-                                style="width: 56px; height: 56px; background-color: #fff7ed; border-radius: 50%;">
+                        <div class="card h-100 border-0 shadow-sm p-4 card-hover-premium card-rounded-white mb-3">
+                            <div class="d-inline-flex align-items-center justify-content-center mb-4 icon-circle-bg">
                                 <i class="fas fa-check text-accent fs-5"></i>
                             </div>
-                            <h4 class="fw-bold mb-3" style="color: #0f172a; font-size: 1.25rem;">Fit/Finish checks</h4>
-                            <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
+                            <h4 class="fw-bold mb-3 card-title-dark">Fit/Finish checks</h4>
+                            <p class="text-muted mb-0 card-text-small">
                                 Heavily accessorized models need checks for loose exterior chrome or badge alignment.
                             </p>
                         </div>
@@ -221,14 +217,12 @@ if (file_exists($json_file)) {
 
                     <!-- Card 3 -->
                     <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm p-4 card-hover-premium"
-                            style="border-radius: 24px; background: #fff;">
-                            <div class="d-inline-flex align-items-center justify-content-center mb-4"
-                                style="width: 56px; height: 56px; background-color: #fff7ed; border-radius: 50%;">
+                        <div class="card h-100 border-0 shadow-sm p-4 card-hover-premium card-rounded-white">
+                            <div class="d-inline-flex align-items-center justify-content-center mb-4 icon-circle-bg">
                                 <i class="fas fa-check text-accent fs-5"></i>
                             </div>
-                            <h4 class="fw-bold mb-3" style="color: #0f172a; font-size: 1.25rem;">Battery Discharge</h4>
-                            <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
+                            <h4 class="fw-bold mb-3 card-title-dark">Battery Discharge</h4>
+                            <p class="text-muted mb-0 card-text-small">
                                 With so much tech, battery drain in stockyards is possible. Check battery health
                                 voltage.
                             </p>
@@ -319,8 +313,7 @@ if (file_exists($json_file)) {
                                 readonly>
                             <button class="btn-copy-link" type="button" id="copyBtn">Copy Link</button>
                         </div>
-                        <div id="copySuccess" class="text-success small fw-bold mt-2"
-                            style="display: none; text-align: right;">
+                        <div id="copySuccess" class="text-success small fw-bold mt-2 copy-success-msg">
                             Copied to clipboard!</div>
                     </div>
                 </div>

@@ -69,10 +69,10 @@
             </li>
           </ul>
           <form class="d-flex" role="search">
-            <div id="google_translate_element" style="display:none"></div>
+            <div id="google_translate_element" class="d-none-check"></div>
             <div class="language-switcher notranslate" translate="no">
               <!-- Hidden native select for functionality -->
-              <select id="language-selector" class="form-select form-select-sm" style="display:none">
+              <select id="language-selector" class="form-select form-select-sm d-none-check">
                 <option value="en">English</option>
                 <option value="hi">हिंदी (Hindi)</option>
                 <option value="bn">বাংলা (Bengali)</option>

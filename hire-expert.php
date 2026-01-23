@@ -104,13 +104,13 @@
 <section class="section-padding">
     <div class="container">
         <div class="text-center mb-5">
-            <span class="section-subtitle">The Problem</span>
+            <span class="section-subtitle-pdi">The Problem</span>
             <h2 class="section-title">Why Inspect a Brand New Car?</h2>
             <p class="text-muted">Dealers often hide transit damages and defects. Once you gate-pass, it's your
                 liability.</p>
         </div>
-        <div class="row g-4">
-            <div class="col-md-4">
+        <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+            <div class="col">
                 <div class="feature-box">
                     <div class="icon-wrap"><i class="fas fa-car-crash"></i></div>
                     <h5>Transit Damage</h5>
@@ -118,7 +118,7 @@
                         repainted by dealers without telling you.</p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col">
                 <div class="feature-box">
                     <div class="icon-wrap"><i class="fas fa-cogs"></i></div>
                     <h5>Manufacturing Defects</h5>
@@ -126,7 +126,7 @@
                         missing accessories.</p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col">
                 <div class="feature-box">
                     <div class="icon-wrap"><i class="fas fa-file-contract"></i></div>
                     <h5>Documentation Fraud</h5>
@@ -143,20 +143,20 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">
-                <span class="section-subtitle">Comprehensive Coverage</span>
+                <span class="section-subtitle-pdi">Comprehensive Coverage</span>
                 <h2 class="section-title text-start">What We Check</h2>
                 <p class="text-muted mb-4">Our engineers spend 2-3 hours meticulously checking every inch of your
                     vehicle.</p>
 
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12 col-md-6">
                         <div class="check-item"><i class="fas fa-check-circle text-accent"></i> Exterior Paint & Body
                         </div>
                         <div class="check-item"><i class="fas fa-check-circle text-accent"></i> Engine & Fluids</div>
                         <div class="check-item"><i class="fas fa-check-circle text-accent"></i> Electrical Systems</div>
                         <div class="check-item"><i class="fas fa-check-circle text-accent"></i> Tyre & Wheels</div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-md-6">
                         <div class="check-item"><i class="fas fa-check-circle text-accent"></i> Interiors & Upholstery
                         </div>
                         <div class="check-item"><i class="fas fa-check-circle text-accent"></i> Underbody Rust Check
@@ -186,7 +186,7 @@
 <section class="section-padding">
     <div class="container">
         <div class="text-center mb-5">
-            <span class="section-subtitle">Simple Process</span>
+            <span class="section-subtitle-pdi">Simple Process</span>
             <h2 class="section-title">How It Works</h2>
         </div>
         <div class="row g-4">
@@ -234,7 +234,7 @@
                     <table class="table mb-0 table-responsive">
                         <thead>
                             <tr>
-                                <th style="width: 40%;">Feature</th>
+                                <th class="w-40-pct">Feature</th>
                                 <th class="text-center bg-primary-light-theme">Our PDI Expert</th>
                                 <th class="text-center bg-gray-light-theme">Dealer PDI</th>
                             </tr>

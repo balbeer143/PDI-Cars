@@ -4,7 +4,7 @@
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
             <div class="footer-col col">
                 <h4>PDICARS</h4>
-                <p style="color:#94a3b8;" class="fs-6">India's most trusted car pre-delivery inspection tool since 2023.
+                <p class="fs-6 text-slate-400">India's most trusted car pre-delivery inspection tool since 2023.
                     Helping
                     car
                     buyers make informed
@@ -26,9 +26,8 @@
             </div>
             <div class="footer-col col">
                 <h4>Newsletter</h4>
-                <p style="margin-bottom:10px; color:#94a3b8;" class="fs-6">Get car tips & updates.</p>
-                <input type="email" class="email-input" placeholder="Enter Email"
-                    style="padding:8px; border-radius:4px; border:none; width:100%; margin-bottom:10px;">
+                <p class="fs-6 footer-note">Get car tips & updates.</p>
+                <input type="email" class="email-input footer-input-custom" placeholder="Enter Email">
                 <button class="btn-pdi btn-pdi-accent w-100">Subscribe</button>
             </div>
         </div>
