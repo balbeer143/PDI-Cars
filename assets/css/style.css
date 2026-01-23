@@ -3667,18 +3667,77 @@ body {
 }
 
 /* --- UTILITY CLASSES (Refactored from Inline) --- */
-.d-none-check { display: none !important; }
-.text-slate-400 { color: #94a3b8 !important; }
-.footer-note { margin-bottom: 10px; color: #94a3b8; }
-.footer-input-custom { padding: 8px; border-radius: 4px; border: none; width: 100%; margin-bottom: 10px !important; }
-.w-40-pct { width: 40% !important; }
-.hero-desc-custom { max-width: 700px; font-size: 1.1rem; line-height: 1.6; }
-.section-title-large { font-size: 2.5rem; color: #0f172a; }
-.card-rounded-white { border-radius: 24px; background: #fff; }
-.icon-circle-bg { width: 56px; height: 56px; background-color: #fff7ed; border-radius: 50%; }
-.card-title-dark { color: #0f172a; font-size: 1.25rem; }
-.card-text-small { font-size: 0.95rem; line-height: 1.6; }
-.copy-success-msg { display: none; text-align: right; }
-.max-w-700 { max-width: 700px; }
-.max-w-800 { max-width: 800px; }
-.text-primary-var { color: var(--primary) !important; }
+.d-none-check {
+    display: none !important;
+}
+
+.text-slate-400 {
+    color: #94a3b8 !important;
+}
+
+.footer-note {
+    margin-bottom: 10px;
+    color: #94a3b8;
+}
+
+.footer-input-custom {
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    width: 100%;
+    margin-bottom: 10px !important;
+}
+
+.w-40-pct {
+    width: 40% !important;
+}
+
+.hero-desc-custom {
+    max-width: 700px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.section-title-large {
+    font-size: 2.5rem;
+    color: #0f172a;
+}
+
+.card-rounded-white {
+    border-radius: 24px;
+    background: #fff;
+}
+
+.icon-circle-bg {
+    width: 56px;
+    height: 56px;
+    background-color: #fff7ed;
+    border-radius: 50%;
+}
+
+.card-title-dark {
+    color: #0f172a;
+    font-size: 1.25rem;
+}
+
+.card-text-small {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.copy-success-msg {
+    display: none;
+    text-align: right;
+}
+
+.max-w-700 {
+    max-width: 700px;
+}
+
+.max-w-800 {
+    max-width: 800px;
+}
+
+.text-primary-var {
+    color: var(--primary) !important;
+}

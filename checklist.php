@@ -113,7 +113,7 @@ if (file_exists($json_file)) {
         <!-- Actions -->
         <div class="d-flex flex-wrap align-items-center gap-3 mt-4 border-bottom pb-4">
 
-            <button class="btn-pdi btn-pdi-accent">
+            <button class="btn-pdi btn-pdi-accent" id="downloadPdfBtn">
                 <i class="fas fa-file-pdf"></i> Download PDF
             </button>
             <button class="btn-pdi btn-pdi-primary" data-bs-toggle="modal" data-bs-target="#shareModal">
@@ -353,6 +353,198 @@ if (file_exists($json_file)) {
             function toggleChecklistItem(element) {
                 element.classList.toggle('is-checked');
             }
+        </script>
+
+        <!-- HTML2PDF Library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+        <script>
+            // ROBUST PDF GENERATION SCRIPT
+            document.getElementById('downloadPdfBtn').addEventListener('click', function () {
+                // Library Check
+                if (typeof html2pdf === 'undefined') {
+                    alert('PDF Generator library is not loaded. Please reload the page or check your connection.');
+                    return;
+                }
+
+                const button = this;
+                const originalText = button.innerHTML;
+
+                // Use pointer-events none instead of disabled to maintain visibility
+                button.innerHTML = '<span class="d-flex align-items-center gap-2 justify-content-center"><i class="fas fa-spinner fa-spin"></i> Generating...</span>';
+                button.style.pointerEvents = 'none';
+                button.style.opacity = '1'; // Slight feedback but keep legible
+
+                setTimeout(() => {
+                    try {
+                        // 1. Get Brand/Model Title
+                        const brandModelElement = document.querySelector('.badge-value');
+                        const titleText = brandModelElement ? brandModelElement.innerText : 'PDI Checklist';
+
+                        // 2. Create a CLEAN container for the PDF
+                        // Instead of cloning hidden DOM elements (which causes blank PDFs), 
+                        // we will reconstruct the list manually.
+                        const reportContainer = document.createElement('div');
+                        reportContainer.style.width = '100%';
+                        reportContainer.style.background = '#fff';
+                        reportContainer.style.fontFamily = 'Helvetica, Arial, sans-serif';
+                        reportContainer.style.color = '#333';
+
+                        // 3. Add Header
+                        const header = document.createElement('div');
+                        header.style.textAlign = 'center';
+                        header.style.marginBottom = '30px';
+                        header.style.borderBottom = '2px solid #1e3a8a';
+                        header.style.paddingBottom = '20px';
+
+                        header.innerHTML = `
+                            <h1 style="color: #1e3a8a; margin: 0; font-size: 28px;">${titleText}</h1>
+                            <p style="color: #666; margin: 5px 0 0 0; font-size: 14px;">Vital Inspection Points - Generated from PDICARS.COM</p>
+                        `;
+                        reportContainer.appendChild(header);
+
+                        // 4. Extract Data from the Accordion
+                        const accordionItems = document.querySelectorAll('.accordion-item');
+
+                        if (accordionItems.length === 0) {
+                            throw new Error('No checklist items found on the page.');
+                        }
+
+                        accordionItems.forEach((item, index) => {
+                            // Extract Category Name
+                            const btn = item.querySelector('.accordion-button');
+                            const categoryName = btn ? btn.innerText.trim() : 'Category ' + (index + 1);
+
+                            // Extract List Items
+                            const listItems = item.querySelectorAll('.checklist-item-row .item-text');
+
+                            if (listItems.length > 0) {
+                                // Create Category Header
+                                const catHeader = document.createElement('h3');
+                                catHeader.style.backgroundColor = '#f1f5f9';
+                                catHeader.style.color = '#0f172a';
+                                catHeader.style.padding = '10px 15px';
+                                catHeader.style.fontSize = '18px';
+                                catHeader.style.margin = '20px 0 0 0'; // Removed bottom margin to keep close to list
+                                catHeader.style.borderLeft = '5px solid #F86F03'; // Accent color border
+                                catHeader.innerText = categoryName;
+                                reportContainer.appendChild(catHeader);
+
+                                // Create UL
+                                const ul = document.createElement('ul');
+                                ul.style.listStyleType = 'none';
+                                ul.style.padding = '0';
+                                ul.style.margin = '0 0 20px 0'; // Add bottom spacing for the whole block
+
+                                listItems.forEach(liText => {
+                                    const parentRow = liText.closest('.checklist-item-row');
+                                    const isChecked = parentRow && parentRow.classList.contains('is-checked');
+
+                                    const li = document.createElement('li');
+                                    li.style.borderBottom = '1px solid #eee';
+                                    li.style.padding = '10px 15px';
+                                    li.style.fontSize = '14px';
+                                    li.style.display = 'flex';
+                                    li.style.alignItems = 'center';
+                                    li.style.pageBreakInside = 'avoid'; // Prevent item splitting
+                                    li.style.breakInside = 'avoid';
+
+                                    if (isChecked) {
+                                        li.style.backgroundColor = '#ecfdf5'; // Light green background like UI
+                                    }
+
+                                    // Checkbox visual
+                                    const checkbox = document.createElement('span');
+                                    checkbox.style.display = 'inline-flex';
+                                    checkbox.style.alignItems = 'center';
+                                    checkbox.style.justifyContent = 'center';
+                                    checkbox.style.width = '16px';
+                                    checkbox.style.height = '16px';
+                                    checkbox.style.marginRight = '12px';
+                                    checkbox.style.borderRadius = '4px';
+                                    checkbox.style.flexShrink = '0';
+
+                                    if (isChecked) {
+                                        checkbox.style.backgroundColor = '#F86F03'; // Accent Color
+                                        checkbox.style.border = '1px solid #F86F03';
+                                        checkbox.style.color = '#fff';
+                                        checkbox.style.fontSize = '10px';
+                                        checkbox.innerHTML = '✔'; // Checkmark
+                                    } else {
+                                        checkbox.style.border = '2px solid #cbd5e1';
+                                        checkbox.style.backgroundColor = 'transparent';
+                                    }
+
+                                    const textSpan = document.createElement('span');
+                                    textSpan.innerText = liText.innerText.trim();
+                                    if (isChecked) {
+                                        textSpan.style.color = '#065f46'; // Darker green text
+                                        textSpan.style.fontWeight = 'bold';
+                                    } else {
+                                        textSpan.style.color = '#334155';
+                                    }
+
+                                    li.appendChild(checkbox);
+                                    li.appendChild(textSpan);
+                                    ul.appendChild(li);
+                                });
+                                reportContainer.appendChild(ul);
+                            }
+                        });
+
+                        // 5. Append footer
+                        const footer = document.createElement('div');
+                        footer.style.marginTop = '40px';
+                        footer.style.textAlign = 'center';
+                        footer.style.fontSize = '12px';
+                        footer.style.color = '#999';
+                        footer.innerText = '© ' + new Date().getFullYear() + ' PDICARS.COM | Ensure your new car is defect-free.';
+                        reportContainer.appendChild(footer);
+
+                        // 6. Append to body for rendering
+                        const wrapper = document.createElement('div');
+                        wrapper.style.position = 'fixed';
+                        wrapper.style.top = '-10000px';
+                        wrapper.style.left = '0';
+                        wrapper.style.width = '794px'; // Exact A4 width
+                        wrapper.style.backgroundColor = 'white';
+                        wrapper.style.zIndex = '-1';
+                        wrapper.appendChild(reportContainer);
+                        document.body.appendChild(wrapper);
+
+                        // 7. Generate PDF
+                        const opt = {
+                            margin: [10, 10, 10, 10],
+                            filename: titleText.replace(/\s+/g, '_') + '_Checklist.pdf',
+                            image: { type: 'jpeg', quality: 0.98 },
+                            html2canvas: { scale: 2, useCORS: true, logging: false, scrollY: 0 },
+                            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                            pagebreak: { mode: ['css', 'legacy'] } // REMOVED 'avoid-all' to allow lists to break naturally
+                        };
+
+                        html2pdf().from(reportContainer).set(opt).save().then(() => {
+                            if (document.body.contains(wrapper)) document.body.removeChild(wrapper);
+                            button.innerHTML = originalText;
+                            button.style.pointerEvents = 'auto';
+                            button.style.opacity = '1';
+                        }).catch(err => {
+                            console.error(err);
+                            if (document.body.contains(wrapper)) document.body.removeChild(wrapper);
+                            alert('Error generating PDF. Please try again.');
+                            button.innerHTML = originalText;
+                            button.style.pointerEvents = 'auto';
+                            button.style.opacity = '1';
+                        });
+
+                    } catch (e) {
+                        console.error(e);
+                        alert('Error: ' + e.message);
+                        button.innerHTML = originalText;
+                        button.style.pointerEvents = 'auto';
+                        button.style.opacity = '1';
+                    }
+                }, 100);
+            });
         </script>
     </div>
 </div>
