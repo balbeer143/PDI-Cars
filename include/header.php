@@ -11,6 +11,10 @@
     content="<?php echo htmlspecialchars(isset($description) ? $description : 'PDICARS - Professional Pre-Delivery Inspection (PDI) Service.'); ?>">
   <meta name="keywords" content="<?php echo htmlspecialchars(isset($keywords) ? $keywords : ''); ?>">
   <meta name="theme-color" content="#1e3a8a">
+  <link rel="canonical" href="<?php echo 'https://' . $_SERVER['HTTP_HOST'] . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>">
+  <link rel="icon" type="image/png" href="assets/images/fevicon.png">
+  <!-- Robots removed to allow indexing -->
+
 
   <!-- Performance Hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,7 +76,7 @@
             <div id="google_translate_element" class="d-none-check"></div>
             <div class="language-switcher notranslate" translate="no">
               <!-- Hidden native select for functionality -->
-              <select id="language-selector" class="form-select form-select-sm d-none-check">
+              <select id="language-selector" class="form-select form-select-sm d-none-check" aria-label="Language Selector">
                 <option value="en">English</option>
                 <option value="hi">हिंदी (Hindi)</option>
                 <option value="bn">বাংলা (Bengali)</option>

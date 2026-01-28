@@ -12,22 +12,23 @@
             </div>
             <div class="footer-col col">
                 <h4>Quick Links</h4>
-                <a href="#">About Us</a>
-                <a href="#">Official Blog</a>
-                <a href="#">Contact Us</a>
+                <a href="about.php">About Us</a>
+                <a href="blog/car-news/">Official Blog</a>
+                <a href="hire-expert.php">Contact Us</a>
                 <a href="#">Terms of Service</a>
             </div>
             <div class="footer-col col">
                 <h4>Popular Brands</h4>
-                <a href="#">Maruti Suzuki</a>
-                <a href="#">Hyundai</a>
-                <a href="#">Tata Motors</a>
-                <a href="#">Mahindra</a>
+                <a href="models.php?brand=maruti-suzuki">Maruti Suzuki</a>
+                <a href="models.php?brand=hyundai">Hyundai</a>
+                <a href="models.php?brand=tata-motors">Tata Motors</a>
+                <a href="models.php?brand=mahindra">Mahindra</a>
             </div>
             <div class="footer-col col">
                 <h4>Newsletter</h4>
                 <p class="fs-6 footer-note">Get car tips & updates.</p>
-                <input type="email" class="email-input footer-input-custom" placeholder="Enter Email">
+                <input type="email" class="email-input footer-input-custom" placeholder="Enter Email"
+                    aria-label="Email Address for Newsletter">
                 <button class="btn-pdi btn-pdi-accent w-100">Subscribe</button>
             </div>
         </div>

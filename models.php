@@ -258,7 +258,7 @@ if (isset($dynamic_data['brands'][$brand_title]) && isset($dynamic_data['brands'
 
     <!-- NEW: Common Issues Section -->
     <div class="section-title text-center mb-5">
-        <h2 class="fw-bold text-primary-var">Common <span class="text-accent"><?php echo $brand_title; ?></span> Issues
+        <h2 class="fw-bold">Common <span class="text-accent"><?php echo $brand_title; ?></span> Issues
         </h2>
         <p class="text-muted">Pay extra attention to these components during your inspection.</p>
     </div>

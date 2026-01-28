@@ -581,7 +581,6 @@ $seo_data = [
     ]
 ];
 
-
 // --- LOGIC TO APPLY METADATA ---
 
 $found_override = null;

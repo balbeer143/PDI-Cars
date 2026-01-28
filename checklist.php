@@ -122,7 +122,6 @@ if (file_exists($json_file)) {
         </div>
 
         <!-- Actions -->
-        <!-- Actions -->
         <div class="d-flex flex-wrap align-items-center gap-3 mt-4 border-bottom pb-4">
 
             <button class="btn-pdi btn-pdi-accent" id="downloadPdfBtn">

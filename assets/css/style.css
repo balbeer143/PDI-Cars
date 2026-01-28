@@ -3741,3 +3741,14 @@ body {
 .text-primary-var {
     color: var(--primary) !important;
 }
+/* Mobile Footer Fixes */
+@media (max-width: 768px) {
+    .footer-col a {
+        display: block;
+        padding: 8px 0;
+        font-size: 16px;
+    }
+    .footer-col h4 {
+        margin-top: 20px;
+    }
+}
