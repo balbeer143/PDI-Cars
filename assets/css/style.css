@@ -3752,3 +3752,8 @@ body {
         margin-top: 20px;
     }
 }
+
+/* Fix for modal shift with scrollbar-gutter */
+body.modal-open {
+    padding-right: 0 !important;
+}
