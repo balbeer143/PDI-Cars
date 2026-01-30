@@ -370,6 +370,29 @@ if (file_exists($json_file)) {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
         <script>
+            // Helper to get base64 image (with opacity handling if needed, though jsPDF opacity is complex, we'll try straight image first)
+            function getBase64ImageFromURL(url) {
+                return new Promise((resolve, reject) => {
+                    var img = new Image();
+                    img.setAttribute("crossOrigin", "anonymous");
+                    img.onload = () => {
+                        var canvas = document.createElement("canvas");
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        var ctx = canvas.getContext("2d");
+                        // Set global alpha for transparency
+                        ctx.globalAlpha = 0.08; 
+                        ctx.drawImage(img, 0, 0);
+                        var dataURL = canvas.toDataURL("image/png");
+                        resolve(dataURL);
+                    };
+                    img.onerror = error => {
+                        reject(error);
+                    };
+                    img.src = url;
+                });
+            }
+
             // ROBUST PDF GENERATION SCRIPT
             document.getElementById('downloadPdfBtn').addEventListener('click', function () {
                 // Library Check
@@ -386,8 +409,16 @@ if (file_exists($json_file)) {
                 button.style.pointerEvents = 'none';
                 button.style.opacity = '1'; // Slight feedback but keep legible
 
-                setTimeout(() => {
+                setTimeout(async () => {
                     try {
+                        // Preload Watermark
+                        let logoBase64 = null;
+                        try {
+                            logoBase64 = await getBase64ImageFromURL('assets/images/pdiacar-logo.png');
+                        } catch (err) {
+                            console.warn('Could not load watermark image', err);
+                        }
+
                         // 1. Get Brand/Model Title
                         const brandModelElement = document.querySelector('.badge-value');
                         const titleText = brandModelElement ? brandModelElement.innerText : 'PDI Checklist';
@@ -400,6 +431,7 @@ if (file_exists($json_file)) {
                         reportContainer.style.background = '#fff';
                         reportContainer.style.fontFamily = 'Helvetica, Arial, sans-serif';
                         reportContainer.style.color = '#333';
+                        reportContainer.style.position = 'relative'; // Enable absolute positioning for children
 
                         // 3. Add Header
                         const header = document.createElement('div');
@@ -430,23 +462,38 @@ if (file_exists($json_file)) {
                             const listItems = item.querySelectorAll('.checklist-item-row .item-text');
 
                             if (listItems.length > 0) {
+                                // Create a Wrapper to keep things organized
+                                const categoryWrapper = document.createElement('div');
+                                categoryWrapper.style.marginBottom = '20px'; 
+                                
+                                // Create Header Wrapper (The element to avoid breaking)
+                                const headerWrapper = document.createElement('div');
+                                headerWrapper.className = 'pdf-header-wrapper'; // Targeted by pagebreak setting
+                                headerWrapper.style.pageBreakInside = 'avoid';
+                                headerWrapper.style.breakInside = 'avoid';
+                                // Add small padding to ensure box model is detected correctly by html2canvas
+                                headerWrapper.style.paddingTop = '1px'; 
+                                headerWrapper.style.marginTop = '20px'; // Spacing
+                                
                                 // Create Category Header
                                 const catHeader = document.createElement('h3');
                                 catHeader.style.backgroundColor = '#f1f5f9';
                                 catHeader.style.color = '#0f172a';
                                 catHeader.style.padding = '10px 15px';
                                 catHeader.style.fontSize = '18px';
-                                catHeader.style.margin = '20px 0 0 0'; // Removed bottom margin to keep close to list
+                                catHeader.style.margin = '0'; 
                                 catHeader.style.borderLeft = '5px solid #F86F03'; // Accent color border
                                 catHeader.innerText = categoryName;
-                                reportContainer.appendChild(catHeader);
+                                
+                                headerWrapper.appendChild(catHeader);
+                                categoryWrapper.appendChild(headerWrapper);
 
                                 // Create UL
                                 const ul = document.createElement('ul');
                                 ul.style.listStyleType = 'none';
                                 ul.style.padding = '0';
-                                ul.style.margin = '0 0 20px 0'; // Add bottom spacing for the whole block
-
+                                ul.style.margin = '0'; 
+                                
                                 listItems.forEach(liText => {
                                     const parentRow = liText.closest('.checklist-item-row');
                                     const isChecked = parentRow && parentRow.classList.contains('is-checked');
@@ -499,7 +546,8 @@ if (file_exists($json_file)) {
                                     li.appendChild(textSpan);
                                     ul.appendChild(li);
                                 });
-                                reportContainer.appendChild(ul);
+                                categoryWrapper.appendChild(ul);
+                                reportContainer.appendChild(categoryWrapper);
                             }
                         });
 
@@ -511,6 +559,9 @@ if (file_exists($json_file)) {
                         footer.style.color = '#999';
                         footer.innerText = '© ' + new Date().getFullYear() + ' PDICARS.COM | Ensure your new car is defect-free.';
                         reportContainer.appendChild(footer);
+
+                        // 6. Add Watermark REMOVED (Old Method)
+                        // We will add it per-page in the PDF generation step
 
                         // 6. Append to body for rendering
                         const wrapper = document.createElement('div');
@@ -530,10 +581,29 @@ if (file_exists($json_file)) {
                             image: { type: 'jpeg', quality: 0.98 },
                             html2canvas: { scale: 2, useCORS: true, logging: false, scrollY: 0 },
                             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-                            pagebreak: { mode: ['css', 'legacy'] } // REMOVED 'avoid-all' to allow lists to break naturally
+                            pagebreak: { mode: ['css', 'legacy'], avoid: '.pdf-header-wrapper' } // Avoid splitting the header wrapper
                         };
 
-                        html2pdf().from(reportContainer).set(opt).save().then(() => {
+                        html2pdf().from(reportContainer).set(opt).toPdf().get('pdf').then(function (pdf) {
+                            // Add Watermark to Every Page
+                            if (logoBase64) {
+                                const totalPages = pdf.internal.getNumberOfPages();
+                                const pageWidth = pdf.internal.pageSize.getWidth();
+                                const pageHeight = pdf.internal.pageSize.getHeight();
+                                const imgWidth = 120; // mm
+                                const imgHeight = (imgWidth * 464) / 1673; // Aspect ratio based on typical logo, or just let it scale. 
+                                // Actually let's assume square or landscape. Logo is usually landscape.
+                                // Let's use a fixed width and calculate height if we knew ratio, or just trial.
+                                // Better: centered.
+                                const x = (pageWidth - imgWidth) / 2;
+                                const y = (pageHeight - 60) / 2; // Center vertically roughly
+
+                                for (let i = 1; i <= totalPages; i++) {
+                                    pdf.setPage(i);
+                                    pdf.addImage(logoBase64, 'PNG', x, y, imgWidth, 0); // 0 height = auto keep aspect ratio
+                                }
+                            }
+                        }).save().then(() => {
                             if (document.body.contains(wrapper)) document.body.removeChild(wrapper);
                             button.innerHTML = originalText;
                             button.style.pointerEvents = 'auto';

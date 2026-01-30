@@ -1151,7 +1151,7 @@ header {
     height: 75px;
     width: 75px;
     /* background: var(--primary-light); */
-    border-radius: 50%;
+    /* border-radius: 50%; */
     margin: 0 auto 1.5rem;
     display: flex;
     align-items: center;
@@ -2619,9 +2619,6 @@ body {
 }
 
 /* --- GLOBAL UTILITY CLASSES --- */
-.brand-logo-round {
-    border-radius: 50% !important;
-}
 
 .text-accent-theme {
     color: var(--accent) !important;
@@ -2681,7 +2678,7 @@ body {
 .brand-card {
     transition: all 0.3s ease;
     border: 1px solid #eee;
-    border-radius: 16px;
+    /* border-radius: 16px; */
     background: #fff;
 }
 
@@ -3741,6 +3738,7 @@ body {
 .text-primary-var {
     color: var(--primary) !important;
 }
+
 /* Mobile Footer Fixes */
 @media (max-width: 768px) {
     .footer-col a {
@@ -3748,6 +3746,7 @@ body {
         padding: 8px 0;
         font-size: 16px;
     }
+
     .footer-col h4 {
         margin-top: 20px;
     }
