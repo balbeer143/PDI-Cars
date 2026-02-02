@@ -25,11 +25,11 @@ include 'include/carData.php';
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2 g-md-4 justify-content-center mb-4">
         <?php foreach ($carData as $brandName => $brandDetails): ?>
             <div class="col">
-                <a href="models.php?brand=<?php echo urlencode(strtolower($brandName)); ?>"
+                <a href="<?php echo $base_url . urlencode(strtolower(str_replace(' ', '-', $brandName))); ?>"
                     class="text-decoration-none text-dark">
                     <div class="brand-card">
                         <div class="brand-logo-placeholder">
-                            <img src="<?php echo $brandDetails['logo']; ?>" alt="<?php echo $brandName; ?>"
+                            <img src="<?php echo $base_url . $brandDetails['logo']; ?>" alt="<?php echo $brandName; ?>"
                                 class="img-fluid brand-logo-round" loading="lazy" width="75" height="75">
                         </div>
                         <div class="brand-name"><?php echo $brandName; ?></div>
@@ -50,7 +50,8 @@ include 'include/carData.php';
                     with your Pre-Delivery Inspection.</p>
             </div>
             <div class="col-lg-4 text-center text-lg-end">
-                <a href="#" class="btn-pdi btn-pdi-accent">Find Expert Near Me &rarr;</a>
+                <a href="<?php echo $base_url; ?>hire-expert" class="btn-pdi btn-pdi-accent">Find Expert Near Me
+                    &rarr;</a>
             </div>
         </div>
     </div>

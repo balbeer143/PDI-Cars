@@ -3,7 +3,7 @@
 $carData = [
     'Maruti-Suzuki' => [
         'id' => 'maruti',
-        'logo' => 'assets/images/maruti suzuki.png',
+        'logo' => 'assets/images/Maruti Suzuki.png',
         'models' => [
             'Swift' => [
                 'image' => 'assets/images/MarutiSuzukiSwift.png',
@@ -489,7 +489,7 @@ $carData = [
 $jsonChecklistPath = __DIR__ . '/../assets/data/checklist_data.json';
 if (file_exists($jsonChecklistPath)) {
     $checklistData = json_decode(file_get_contents($jsonChecklistPath), true);
-    
+
     // Brand name mapping (PHP key => JSON key)
     $brandNameMap = [
         'Maruti-Suzuki' => 'Maruti Suzuki',
@@ -504,7 +504,7 @@ if (file_exists($jsonChecklistPath)) {
         foreach ($carData as $brandKey => &$brandInfo) {
             // Determine JSON brand key
             $jsonBrandKey = $brandNameMap[$brandKey] ?? str_replace('-', ' ', $brandKey);
-            
+
             if (isset($checklistData['brands'][$jsonBrandKey]['models'])) {
                 foreach ($brandInfo['models'] as $modelKey => &$modelInfo) {
                     if (isset($checklistData['brands'][$jsonBrandKey]['models'][$modelKey]['features'])) {

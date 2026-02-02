@@ -13,7 +13,7 @@ include 'include/carData.php';
 // 1. Find Brand (Same logic as models.php)
 $brand_data = null;
 foreach ($carData as $key => $data) {
-    if (strtolower($key) === $brand_param) {
+    if (strtolower(str_replace(' ', '-', $key)) === $brand_param) {
         $brand = $key;
         $brand_data = $data;
         break;
@@ -23,7 +23,7 @@ foreach ($carData as $key => $data) {
 // 2. Find Model
 if ($brand_data && isset($brand_data['models'])) {
     foreach ($brand_data['models'] as $key => $details) {
-        if (strtolower($key) === $model_param) {
+        if (strtolower(str_replace(' ', '-', $key)) === $model_param) {
             $model = $key;
             // Get features directly inside this loop
             if (isset($details['features'])) {
@@ -130,7 +130,7 @@ if (file_exists($json_file)) {
             <button class="btn-pdi btn-pdi-primary" data-bs-toggle="modal" data-bs-target="#shareModal">
                 <i class="fas fa-share-nodes"></i> Share
             </button>
-            <a href="models.php?brand=<?php echo urlencode($brand_param); ?>" class="btn-pdi btn-pdi-outline ms-auto">
+            <a href="<?php echo $base_url . urlencode($brand_param); ?>" class="btn-pdi btn-pdi-outline ms-auto">
                 <i class="fas fa-arrow-left"></i> Back to Models
             </a>
         </div>
@@ -381,7 +381,7 @@ if (file_exists($json_file)) {
                         canvas.height = img.height;
                         var ctx = canvas.getContext("2d");
                         // Set global alpha for transparency
-                        ctx.globalAlpha = 0.08; 
+                        ctx.globalAlpha = 0.08;
                         ctx.drawImage(img, 0, 0);
                         var dataURL = canvas.toDataURL("image/png");
                         resolve(dataURL);
@@ -414,7 +414,7 @@ if (file_exists($json_file)) {
                         // Preload Watermark
                         let logoBase64 = null;
                         try {
-                            logoBase64 = await getBase64ImageFromURL('assets/images/pdiacar-logo.png');
+                            logoBase64 = await getBase64ImageFromURL('<?php echo $base_url; ?>assets/images/pdiacar-logo.png');
                         } catch (err) {
                             console.warn('Could not load watermark image', err);
                         }
@@ -464,27 +464,27 @@ if (file_exists($json_file)) {
                             if (listItems.length > 0) {
                                 // Create a Wrapper to keep things organized
                                 const categoryWrapper = document.createElement('div');
-                                categoryWrapper.style.marginBottom = '20px'; 
-                                
+                                categoryWrapper.style.marginBottom = '20px';
+
                                 // Create Header Wrapper (The element to avoid breaking)
                                 const headerWrapper = document.createElement('div');
                                 headerWrapper.className = 'pdf-header-wrapper'; // Targeted by pagebreak setting
                                 headerWrapper.style.pageBreakInside = 'avoid';
                                 headerWrapper.style.breakInside = 'avoid';
                                 // Add small padding to ensure box model is detected correctly by html2canvas
-                                headerWrapper.style.paddingTop = '1px'; 
+                                headerWrapper.style.paddingTop = '1px';
                                 headerWrapper.style.marginTop = '20px'; // Spacing
-                                
+
                                 // Create Category Header
                                 const catHeader = document.createElement('h3');
                                 catHeader.style.backgroundColor = '#f1f5f9';
                                 catHeader.style.color = '#0f172a';
                                 catHeader.style.padding = '10px 15px';
                                 catHeader.style.fontSize = '18px';
-                                catHeader.style.margin = '0'; 
+                                catHeader.style.margin = '0';
                                 catHeader.style.borderLeft = '5px solid #F86F03'; // Accent color border
                                 catHeader.innerText = categoryName;
-                                
+
                                 headerWrapper.appendChild(catHeader);
                                 categoryWrapper.appendChild(headerWrapper);
 
@@ -492,8 +492,8 @@ if (file_exists($json_file)) {
                                 const ul = document.createElement('ul');
                                 ul.style.listStyleType = 'none';
                                 ul.style.padding = '0';
-                                ul.style.margin = '0'; 
-                                
+                                ul.style.margin = '0';
+
                                 listItems.forEach(liText => {
                                     const parentRow = liText.closest('.checklist-item-row');
                                     const isChecked = parentRow && parentRow.classList.contains('is-checked');

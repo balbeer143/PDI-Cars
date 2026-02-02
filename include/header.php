@@ -11,8 +11,9 @@
     content="<?php echo htmlspecialchars(isset($description) ? $description : 'PDICARS - Professional Pre-Delivery Inspection (PDI) Service.'); ?>">
   <meta name="keywords" content="<?php echo htmlspecialchars(isset($keywords) ? $keywords : ''); ?>">
   <meta name="theme-color" content="#1e3a8a">
-  <link rel="canonical" href="<?php echo 'https://' . $_SERVER['HTTP_HOST'] . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>">
-  <link rel="icon" type="image/png" href="assets/images/fevicon.png">
+  <link rel="canonical"
+    href="<?php echo 'https://' . $_SERVER['HTTP_HOST'] . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>">
+  <link rel="icon" type="image/png" href="<?php echo $base_url; ?>assets/images/fevicon.png">
   <!-- Robots removed to allow indexing -->
 
 
@@ -25,7 +26,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -36,8 +37,9 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <div class="logo">
-          <a class="navbar-brand" href="#" aria-label="Home">
-            <img src="assets/images/pdicars-logo.svg" alt="carpdi Logo" width="200" height="50" class="img-fluid">
+          <a class="navbar-brand" href="<?php echo $base_url; ?>" aria-label="Home">
+            <img src="<?php echo $base_url; ?>assets/images/pdicars-logo.svg" alt="carpdi Logo" width="200" height="50"
+              class="img-fluid">
           </a>
         </div>
         <button class="navbar-toggler custom-toggler collapsed" type="button" data-bs-toggle="collapse"
@@ -53,30 +55,32 @@
           <ul class="navbar-nav m-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link <?php echo ($currentPage == 'index.php' || $currentPage == '') ? 'active' : ''; ?>"
-                aria-current="page" href="index.php">Home</a>
+                aria-current="page" href="<?php echo $base_url; ?>">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link <?php echo ($currentPage == 'about.php') ? 'active' : ''; ?>" href="about.php">About
+              <a class="nav-link <?php echo ($currentPage == 'about.php') ? 'active' : ''; ?>"
+                href="<?php echo $base_url; ?>about">About
                 PDI</a>
             </li>
             <li class="nav-item">
               <a class="nav-link <?php echo (strpos($_SERVER['REQUEST_URI'], 'blog/car-news') !== false) ? 'active' : ''; ?>"
-                href="blog/car-news/">Cars News</a>
+                href="<?php echo $base_url; ?>blog/car-news/">Cars News</a>
             </li>
             <li class="nav-item">
               <a class="nav-link <?php echo (strpos($_SERVER['REQUEST_URI'], 'blog/bike-news') !== false) ? 'active' : ''; ?>"
-                href="blog/bike-news/">Bike News</a>
+                href="<?php echo $base_url; ?>blog/bike-news/">Bike News</a>
             </li>
             <li class="nav-item">
               <a class="nav-link <?php echo ($currentPage == 'hire-expert.php') ? 'active' : ''; ?>"
-                href="hire-expert.php">Hire Expert 🕵️</a>
+                href="<?php echo $base_url; ?>hire-expert">Hire Expert 🕵️</a>
             </li>
           </ul>
           <form class="d-flex" role="search">
             <div id="google_translate_element" class="d-none-check"></div>
             <div class="language-switcher notranslate" translate="no">
               <!-- Hidden native select for functionality -->
-              <select id="language-selector" class="form-select form-select-sm d-none-check" aria-label="Language Selector">
+              <select id="language-selector" class="form-select form-select-sm d-none-check"
+                aria-label="Language Selector">
                 <option value="en">English</option>
                 <option value="hi">हिंदी (Hindi)</option>
                 <option value="bn">বাংলা (Bengali)</option>

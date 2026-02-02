@@ -12,17 +12,17 @@
             </div>
             <div class="footer-col col">
                 <h4>Quick Links</h4>
-                <a href="about.php">About Us</a>
-                <a href="blog/car-news/">Official Blog</a>
-                <a href="hire-expert.php">Contact Us</a>
+                <a href="<?php echo $base_url; ?>about">About Us</a>
+                <a href="<?php echo $base_url; ?>blog/car-news/">Official Blog</a>
+                <a href="<?php echo $base_url; ?>hire-expert">Contact Us</a>
                 <a href="#">Terms of Service</a>
             </div>
             <div class="footer-col col">
                 <h4>Popular Brands</h4>
-                <a href="models.php?brand=maruti-suzuki">Maruti Suzuki</a>
-                <a href="models.php?brand=hyundai">Hyundai</a>
-                <a href="models.php?brand=tata-motors">Tata Motors</a>
-                <a href="models.php?brand=mahindra">Mahindra</a>
+                <a href="<?php echo $base_url; ?>maruti-suzuki">Maruti Suzuki</a>
+                <a href="<?php echo $base_url; ?>hyundai">Hyundai</a>
+                <a href="<?php echo $base_url; ?>tata-motors">Tata Motors</a>
+                <a href="<?php echo $base_url; ?>mahindra">Mahindra</a>
             </div>
             <div class="footer-col col">
                 <h4>Newsletter</h4>
@@ -41,7 +41,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
-<script src="assets/js/custom.js"></script>
+<script src="<?php echo $base_url; ?>assets/js/custom.js"></script>
 
 <!-- Scroll Reveal Script -->
 <script>

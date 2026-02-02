@@ -22,8 +22,8 @@
             </div>
             <!-- The Form (Visual anchor will be below) -->
             <div class="col-lg-6 d-none d-lg-block text-center">
-                <img src="assets/images/defender.avif" alt="Car Shape" class="img-fluid rounded-5 expert-hero-img"
-                    width="600" height="400" fetchpriority="high">
+                <img src="<?php echo $base_url; ?>assets/images/defender.avif" alt="Car Shape"
+                    class="img-fluid rounded-5 expert-hero-img" width="600" height="400" fetchpriority="high">
                 <!-- Placeholder to balance space, actual form is overlapping next section -->
             </div>
         </div>
@@ -173,8 +173,8 @@
                 <div class="bg-white p-2 rounded-4 shadow-sm">
                     <!-- Using a colored block to simulate an image if none provided -->
                     <div class="placeholder-car-block">
-                        <img src="assets/images/Comprehensive Coverage.webp" alt="Comprehensive Coverage"
-                            class="img-fluid rounded-4">
+                        <img src="<?php echo $base_url; ?>assets/images/Comprehensive Coverage.webp"
+                            alt="Comprehensive Coverage" class="img-fluid rounded-4">
                     </div>
                 </div>
             </div>

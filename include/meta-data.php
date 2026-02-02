@@ -5,6 +5,12 @@ if (!isset($carData)) {
     include_once __DIR__ . '/carData.php';
 }
 
+// Define Base URL for assets and links
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+$domainName = $_SERVER['HTTP_HOST'];
+$path = dirname($_SERVER['SCRIPT_NAME']);
+$base_url = $protocol . $domainName . rtrim($path, '/\\') . '/';
+
 $page = basename($_SERVER['PHP_SELF'], ".php");
 
 // Default global metadata

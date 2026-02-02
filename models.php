@@ -10,7 +10,7 @@ include 'include/carData.php';
 
 // Case-insensitive search for brand
 foreach ($carData as $key => $data) {
-    if (strtolower($key) === $selected_brand_param) {
+    if (strtolower(str_replace(' ', '-', $key)) === $selected_brand_param) {
         $brand_data = $data;
         $brand_title = $key; // Keep original casing for display
         break;
@@ -88,18 +88,18 @@ if (isset($dynamic_data['brands'][$brand_title]) && isset($dynamic_data['brands'
             <p class="text-muted mb-0">Choose your <span class="text-accent"><?php echo $brand_title; ?></span> model to
                 generate a checklist.</p>
         </div>
-        <a href="index.php" class="btn-pdi btn-pdi-outline m-auto me-lg-0">&larr; Back to Brands</a>
+        <a href="<?php echo $base_url; ?>" class="btn-pdi btn-pdi-outline m-auto me-lg-0">&larr; Back to Brands</a>
     </div>
 
     <?php if (!empty($selected_cars)): ?>
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 mb-5">
             <?php foreach ($selected_cars as $car): ?>
                 <div class="col">
-                    <a href="checklist.php?brand=<?php echo urlencode($selected_brand_param); ?>&model=<?php echo urlencode(strtolower($car['name'])); ?>"
+                    <a href="<?php echo $base_url . urlencode($selected_brand_param) . '/' . urlencode(strtolower(str_replace(' ', '-', $car['name']))); ?>"
                         class="text-decoration-none text-dark">
                         <div class="brand-card h-100 p-3">
                             <div class="model-img-container mb-3">
-                                <img src="<?php echo $car['image']; ?>" alt="<?php echo $car['name']; ?>"
+                                <img src="<?php echo $base_url . $car['image']; ?>" alt="<?php echo $car['name']; ?>"
                                     class="img-fluid model-img" loading="lazy">
                             </div>
                             <div class="brand-name fs-5"><?php echo $car['name']; ?></div>
@@ -114,7 +114,7 @@ if (isset($dynamic_data['brands'][$brand_title]) && isset($dynamic_data['brands'
             <div class="display-1 text-muted mb-3">🚗</div>
             <h3 class="text-muted">No models found for <span class="text-accent"><?php echo $brand_title; ?></span>.</h3>
             <p>We are constantly updating our database.</p>
-            <a href="index.php" class="btn-pdi btn-pdi-primary mt-3">Choose Another Brand</a>
+            <a href="<?php echo $base_url; ?>" class="btn-pdi btn-pdi-primary mt-3">Choose Another Brand</a>
         </div>
     <?php endif; ?>
 
@@ -139,8 +139,6 @@ if (isset($dynamic_data['brands'][$brand_title]) && isset($dynamic_data['brands'
             </div>
         <?php endforeach; ?>
     </div>
-
-    <!-- Removed Section 3 (Brand Info) as it was redundant/empty -->
 
     <!-- New Section 3: Inspection Methodology -->
     <div class="methodology-section py-5 mb-5 bg-light rounded-4">
@@ -279,7 +277,7 @@ if (isset($dynamic_data['brands'][$brand_title]) && isset($dynamic_data['brands'
         <p class="text-white fs-5 mb-4">Hire a certified PDI expert to inspect your
             <span class="text-accent"><?php echo $brand_title; ?></span> for you.
         </p>
-        <a href="hire-expert.php" class="btn-pdi btn-pdi-accent w-auto">Hire an Expert Now</a>
+        <a href="<?php echo $base_url; ?>hire-expert" class="btn-pdi btn-pdi-accent w-auto">Hire an Expert Now</a>
     </div>
 
     <!-- New Section 5: Extended FAQ -->

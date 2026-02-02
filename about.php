@@ -136,7 +136,7 @@
     <div class="expert-banner text-center">
         <h2 class="text-white fw-bold mb-3">Ready to Inspect Your Car?</h2>
         <p class="text-white mb-4">Download your checklist today or hire an expert to do it for you.</p>
-        <a href="index.php#select-brand" class="btn-pdi btn-pdi-accent">Get Started</a>
+        <a href="<?php echo $base_url; ?>#select-brand" class="btn-pdi btn-pdi-accent">Get Started</a>
     </div>
 </div>
 
