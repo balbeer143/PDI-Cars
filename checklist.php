@@ -3,6 +3,7 @@ include 'include/header.php';
 
 $brand_param = isset($_GET['brand']) ? strtolower($_GET['brand']) : '';
 $model_param = isset($_GET['model']) ? strtolower($_GET['model']) : '';
+$city = isset($_GET['city']) ? ucwords(str_replace('-', ' ', $_GET['city'])) : 'your city';
 
 $brand = 'Brand Not Found';
 $model = 'Model Not Found';
@@ -186,449 +187,177 @@ if (file_exists($json_file)) {
 </div>
 
 <!-- 4. SEO Content Sections -->
-<div class="container">
-    <div class="row justify-content-center pt-4">
-        <div class="col-lg-12">
+<section>
+    <div class="container">
+        <div class="row justify-content-center pt-4">
+            <div class="col-lg-12 mb-5">
 
-            <!-- A. Why PDI Matters -->
-            <div class="premium-section-spacer">
-                <div class="text-center mb-5">
-                    <span class="section-subtitle-pdi">Vital Checks</span>
-                    <h2 class="fw-bold mt-2 section-title-large">Why <span
-                            class="text-dark"><?php echo $brand; ?></span> PDI Matters</h2>
-                </div>
-
-                <div class="row g-4 justify-content-center">
-                    <!-- Card 1 -->
-                    <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm p-4 card-hover-premium card-rounded-white">
-                            <div class="d-inline-flex align-items-center justify-content-center mb-4 icon-circle-bg">
-                                <i class="fas fa-check text-accent fs-5"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 card-title-dark">Internet Inside</h4>
-                            <p class="text-muted mb-0 card-text-small">
-                                The i-SMART system is the car's brain. Verify voice commands and Hello MG
-                                responsiveness.
-                            </p>
-                        </div>
+                <!-- A. Why PDI Matters -->
+                <div class="premium-section-spacer mb-5">
+                    <div class="text-center mb-5">
+                        <span class="section-subtitle-pdi">Vital Checks</span>
+                        <h2 class="fw-bold mt-2 section-title-large">Why <span
+                                class="text-dark"><?php echo $brand; ?></span> PDI Matters</h2>
                     </div>
 
-                    <!-- Card 2 -->
-                    <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm p-4 card-hover-premium card-rounded-white mb-3">
-                            <div class="d-inline-flex align-items-center justify-content-center mb-4 icon-circle-bg">
-                                <i class="fas fa-check text-accent fs-5"></i>
+                    <div class="row g-4 justify-content-center">
+                        <!-- Card 1 -->
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm p-4 card-hover-premium card-rounded-white">
+                                <div
+                                    class="d-inline-flex align-items-center justify-content-center mb-4 icon-circle-bg">
+                                    <i class="fas fa-check text-accent fs-5"></i>
+                                </div>
+                                <h4 class="fw-bold mb-3 card-title-dark">Internet Inside</h4>
+                                <p class="text-muted mb-0 card-text-small">
+                                    The i-SMART system is the car's brain. Verify voice commands and Hello MG
+                                    responsiveness.
+                                </p>
                             </div>
-                            <h4 class="fw-bold mb-3 card-title-dark">Fit/Finish checks</h4>
-                            <p class="text-muted mb-0 card-text-small">
-                                Heavily accessorized models need checks for loose exterior chrome or badge alignment.
-                            </p>
                         </div>
-                    </div>
 
-                    <!-- Card 3 -->
-                    <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm p-4 card-hover-premium card-rounded-white">
-                            <div class="d-inline-flex align-items-center justify-content-center mb-4 icon-circle-bg">
-                                <i class="fas fa-check text-accent fs-5"></i>
+                        <!-- Card 2 -->
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm p-4 card-hover-premium card-rounded-white mb-3">
+                                <div
+                                    class="d-inline-flex align-items-center justify-content-center mb-4 icon-circle-bg">
+                                    <i class="fas fa-check text-accent fs-5"></i>
+                                </div>
+                                <h4 class="fw-bold mb-3 card-title-dark">Fit/Finish checks</h4>
+                                <p class="text-muted mb-0 card-text-small">
+                                    Heavily accessorized models need checks for loose exterior chrome or badge
+                                    alignment.
+                                </p>
                             </div>
-                            <h4 class="fw-bold mb-3 card-title-dark">Battery Discharge</h4>
-                            <p class="text-muted mb-0 card-text-small">
-                                With so much tech, battery drain in stockyards is possible. Check battery health
-                                voltage.
-                            </p>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm p-4 card-hover-premium card-rounded-white">
+                                <div
+                                    class="d-inline-flex align-items-center justify-content-center mb-4 icon-circle-bg">
+                                    <i class="fas fa-check text-accent fs-5"></i>
+                                </div>
+                                <h4 class="fw-bold mb-3 card-title-dark">Battery Discharge</h4>
+                                <p class="text-muted mb-0 card-text-small">
+                                    With so much tech, battery drain in stockyards is possible. Check battery health
+                                    voltage.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <div class="mt-5">
-        <div class="text-center mb-5">
-            <span class="section-subtitle-pdi">HOW IT WORKS</span>
-            <h2 class="fw-bold">Your Path to Perfection</h2>
-        </div>
-        <div class="row g-4 text-center">
-            <div class="col-md-4">
-                <div class="process-card h-100">
-                    <div class="process-icon-wrapper shadow-sm">
-                        <i class="fas fa-calendar-check fs-3"></i>
-                    </div>
-                    <h4 class="fw-bold">1. Book Inspection</h4>
-                    <p class="text-muted small mb-0">Schedule a verified PDI expert visit before your car delivery date.
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="process-card h-100">
-                    <div class="process-icon-wrapper shadow-sm">
-                        <i class="fas fa-search-plus fs-3"></i>
-                    </div>
-                    <h4 class="fw-bold">2. Expert Verification</h4>
-                    <p class="text-muted small mb-0">Our engineer performs a 500+ point check on your vehicle at the
-                        stockyard.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="process-card h-100">
-                    <div class="process-icon-wrapper shadow-sm">
-                        <i class="fas fa-file-contract fs-3"></i>
-                    </div>
-                    <h4 class="fw-bold">3. Detailed Report</h4>
-                    <p class="text-muted small mb-0">Receive a comprehensive report highlighting any defects or issues
-                        instantly.</p>
-                </div>
-            </div>
-        </div>
 
-        <!-- Share Modal -->
-        <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content border-0 radius-theme shadow-lg p-3">
-                    <div class="modal-header modal-header-clean">
-                        <h5 class="modal-title modal-title-clean" id="shareModalLabel">Share Your Checklist</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<!-- 8. FINAL CTA (Fixed Dark Mode) -->
+<section class="section-padding position-relative overflow-hidden cta-dark-mode-fixed" id="book-form">
+    <div class="container position-relative z-2">
+        <div class="row align-items-center g-5">
+            <!-- Text Content -->
+            <div class="col-lg-7 text-center text-lg-start">
+                <div class="d-inline-flex align-items-center gap-2 mb-4">
+                    <span class="badge bg-accent text-white py-2 px-3 rounded-pill fw-bold">HIGH DEMAND</span>
+                    <span class="text-white text-uppercase fw-bold">15+ Bookings in
+                        <?php echo $city; ?> today
+                    </span>
+                </div>
+
+                <h2 class="display-6 fw-bold text-white mb-4">
+                    Don't Risk It. <br>
+                    <span class="text-accent">Verify It.</span>
+                </h2>
+
+                <p class="text-white mb-5">
+                    Get the most detailed 500+ point car inspection report in
+                    <strong>
+                        <?php echo $city; ?>
+                    </strong>.
+                    Uncover hidden repaints, meter tampering, and engine faults before you pay.
+                </p>
+
+                <div class="d-flex flex-wrap gap-4 justify-content-center justify-content-lg-start">
+                    <div class="d-flex align-items-center gap-3 text-white">
+                        <div
+                            class="icon-box-sm bg-accent rounded-circle text-white shadow-lg d-flex align-items-center justify-content-center cta-icon-box">
+                            <i class="fas fa-shield-alt fs-5"></i>
+                        </div>
+                        <div class="text-start">
+                            <h6 class="fw-bold mb-0 text-white">Risk-Free</h6>
+                            <small class="text-white-50">Money back guarantee</small>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <div class="row g-3 mb-4">
-                            <div class="col-6">
-                                <a href="https://wa.me/?text=Check out my Custom PDI Checklist: <?php echo "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>"
-                                    target="_blank" class="btn-share btn-share-whatsapp">
-                                    <i class="fab fa-whatsapp"></i> WhatsApp
-                                </a>
-                            </div>
-                            <div class="col-6">
-                                <a href="mailto:?subject=My PDI Checklist&body=Check out my Custom PDI Checklist: <?php echo "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>"
-                                    class="btn-share btn-share-email">
-                                    <i class="fas fa-envelope"></i> Email
-                                </a>
-                            </div>
-                            <div class="col-6">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode("https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']); ?>"
-                                    target="_blank" class="btn-share btn-share-facebook">
-                                    <i class="fab fa-facebook-f"></i> Facebook
-                                </a>
-                            </div>
-                            <div class="col-6">
-                                <a href="https://twitter.com/intent/tweet?text=Check out my Custom PDI Checklist&url=<?php echo urlencode("https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']); ?>"
-                                    target="_blank" class="btn-share btn-share-twitter">
-                                    <i class="fab fa-twitter"></i> Twitter
-                                </a>
+                    <div class="d-flex align-items-center gap-3 text-white">
+                        <div
+                            class="icon-box-sm bg-success rounded-circle text-white shadow-lg d-flex align-items-center justify-content-center cta-icon-box">
+                            <i class="fas fa-bolt fs-5"></i>
+                        </div>
+                        <div class="text-start">
+                            <h6 class="fw-bold mb-0 text-white">Fast Service</h6>
+                            <small class="text-white-50">Same day report</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lead Form -->
+            <div class="col-lg-5">
+                <div class="bg-white p-4 p-md-5 rounded-5 position-relative">
+                    <div class="text-center mb-4 pt-2">
+                        <h3 class="fw-bold text-dark mb-1">Get Instant Callback</h3>
+                        <p class="text-secondary small mb-0">Our expert engineer will call you shortly.</p>
+                    </div>
+
+                    <form id="checklistForm" onsubmit="submitToSheet(event, 'ChecklistLead')">
+                        <div class="mb-3">
+                            <label class="small text-secondary fw-bold ms-3 mb-1 cta-form-label">YOUR NAME</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-0 text-accent rounded-start-pill ps-3"><i
+                                        class="fas fa-user"></i></span>
+                                <input type="text" name="name"
+                                    class="form-control bg-light border-0 text-dark fw-medium rounded-end-pill py-3 cta-form-input-shadow-none"
+                                    placeholder="e.g. Rahul Sharma" required>
                             </div>
                         </div>
 
-                        <div class="copy-link-container">
-                            <input type="text" class="copy-input" id="shareUrlInput"
-                                value="<?php echo "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>"
-                                readonly>
-                            <button class="btn-copy-link" type="button" id="copyBtn">Copy Link</button>
+                        <div class="mb-4">
+                            <label class="small text-secondary fw-bold ms-3 mb-1 cta-form-label">PHONE NUMBER</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-0 text-accent rounded-start-pill ps-3"><i
+                                        class="fas fa-phone-alt"></i></span>
+                                <input type="tel" name="phone"
+                                    class="form-control bg-light border-0 text-dark fw-medium rounded-end-pill py-3 cta-form-input-shadow-none"
+                                    placeholder="+91 99999 99999" pattern="\d{10}" maxlength="10" minlength="10"
+                                    title="Please enter exactly 10 digits" required>
+                            </div>
                         </div>
-                        <div id="copySuccess" class="text-success small fw-bold mt-2 copy-success-msg">
-                            Copied to clipboard!</div>
-                    </div>
+
+                        <button type="submit"
+                            class="btn w-100 rounded-pill fw-bold shadow-lg hover-scale py-3 text-uppercase text-white ls-1 mb-4 cta-submit-btn-gradient">
+                            Check Availability <i class="fas fa-arrow-right ms-2"></i>
+                        </button>
+
+                        <div class="text-center">
+                            <p class="small text-muted mb-3">Or connect instantly via</p>
+                            <div class="d-flex justify-content-center gap-3">
+                                <a href="https://wa.me/919999999999"
+                                    class="btn btn-outline-success rounded-circle d-flex align-items-center justify-content-center hover-fill cta-social-btn cta-social-whatsapp">
+                                    <i class="fab fa-whatsapp fs-5"></i>
+                                </a>
+                                <a href="tel:+919999999999"
+                                    class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center hover-fill cta-social-btn cta-social-phone">
+                                    <i class="fas fa-phone-alt fs-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const copyBtn = document.getElementById('copyBtn');
-                const shareUrlInput = document.getElementById('shareUrlInput');
-                const copySuccess = document.getElementById('copySuccess');
-
-                if (copyBtn) {
-                    copyBtn.addEventListener('click', function () {
-                        shareUrlInput.select();
-                        shareUrlInput.setSelectionRange(0, 99999); // For mobile devices
-
-                        navigator.clipboard.writeText(shareUrlInput.value).then(() => {
-                            const originalText = copyBtn.innerText;
-                            copyBtn.innerText = 'Copied!';
-                            copyBtn.classList.remove('btn-primary');
-                            copyBtn.classList.add('btn-success');
-                            copySuccess.style.display = 'block';
-
-                            setTimeout(() => {
-                                copyBtn.innerText = originalText;
-                                copyBtn.classList.remove('btn-success');
-                                copyBtn.classList.add('btn-primary');
-                                copySuccess.style.display = 'none';
-                            }, 2000);
-                        });
-                    });
-                }
-            });
-
-            // Function to toggle checklist item state
-            function toggleChecklistItem(element) {
-                element.classList.toggle('is-checked');
-            }
-        </script>
-
-        <!-- HTML2PDF Library -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-        <script>
-            // Helper to get base64 image (with opacity handling if needed, though jsPDF opacity is complex, we'll try straight image first)
-            function getBase64ImageFromURL(url) {
-                return new Promise((resolve, reject) => {
-                    var img = new Image();
-                    img.setAttribute("crossOrigin", "anonymous");
-                    img.onload = () => {
-                        var canvas = document.createElement("canvas");
-                        canvas.width = img.width;
-                        canvas.height = img.height;
-                        var ctx = canvas.getContext("2d");
-                        // Set global alpha for transparency
-                        ctx.globalAlpha = 0.08;
-                        ctx.drawImage(img, 0, 0);
-                        var dataURL = canvas.toDataURL("image/png");
-                        resolve(dataURL);
-                    };
-                    img.onerror = error => {
-                        reject(error);
-                    };
-                    img.src = url;
-                });
-            }
-
-            // ROBUST PDF GENERATION SCRIPT
-            document.getElementById('downloadPdfBtn').addEventListener('click', function () {
-                // Library Check
-                if (typeof html2pdf === 'undefined') {
-                    alert('PDF Generator library is not loaded. Please reload the page or check your connection.');
-                    return;
-                }
-
-                const button = this;
-                const originalText = button.innerHTML;
-
-                // Use pointer-events none instead of disabled to maintain visibility
-                button.innerHTML = '<span class="d-flex align-items-center gap-2 justify-content-center"><i class="fas fa-spinner fa-spin"></i> Generating...</span>';
-                button.style.pointerEvents = 'none';
-                button.style.opacity = '1'; // Slight feedback but keep legible
-
-                setTimeout(async () => {
-                    try {
-                        // Preload Watermark
-                        let logoBase64 = null;
-                        try {
-                            logoBase64 = await getBase64ImageFromURL('<?php echo $base_url; ?>assets/images/pdiacar-logo.png');
-                        } catch (err) {
-                            console.warn('Could not load watermark image', err);
-                        }
-
-                        // 1. Get Brand/Model Title
-                        const brandModelElement = document.querySelector('.badge-value');
-                        const titleText = brandModelElement ? brandModelElement.innerText : 'PDI Checklist';
-
-                        // 2. Create a CLEAN container for the PDF
-                        // Instead of cloning hidden DOM elements (which causes blank PDFs), 
-                        // we will reconstruct the list manually.
-                        const reportContainer = document.createElement('div');
-                        reportContainer.style.width = '100%';
-                        reportContainer.style.background = '#fff';
-                        reportContainer.style.fontFamily = 'Helvetica, Arial, sans-serif';
-                        reportContainer.style.color = '#333';
-                        reportContainer.style.position = 'relative'; // Enable absolute positioning for children
-
-                        // 3. Add Header
-                        const header = document.createElement('div');
-                        header.style.textAlign = 'center';
-                        header.style.marginBottom = '30px';
-                        header.style.borderBottom = '2px solid #1e3a8a';
-                        header.style.paddingBottom = '20px';
-
-                        header.innerHTML = `
-                            <h1 style="color: #1e3a8a; margin: 0; font-size: 28px;">${titleText}</h1>
-                            <p style="color: #666; margin: 5px 0 0 0; font-size: 14px;">Vital Inspection Points - Generated from PDICARS.COM</p>
-                        `;
-                        reportContainer.appendChild(header);
-
-                        // 4. Extract Data from the Accordion
-                        const accordionItems = document.querySelectorAll('.accordion-item');
-
-                        if (accordionItems.length === 0) {
-                            throw new Error('No checklist items found on the page.');
-                        }
-
-                        accordionItems.forEach((item, index) => {
-                            // Extract Category Name
-                            const btn = item.querySelector('.accordion-button');
-                            const categoryName = btn ? btn.innerText.trim() : 'Category ' + (index + 1);
-
-                            // Extract List Items
-                            const listItems = item.querySelectorAll('.checklist-item-row .item-text');
-
-                            if (listItems.length > 0) {
-                                // Create a Wrapper to keep things organized
-                                const categoryWrapper = document.createElement('div');
-                                categoryWrapper.style.marginBottom = '20px';
-
-                                // Create Header Wrapper (The element to avoid breaking)
-                                const headerWrapper = document.createElement('div');
-                                headerWrapper.className = 'pdf-header-wrapper'; // Targeted by pagebreak setting
-                                headerWrapper.style.pageBreakInside = 'avoid';
-                                headerWrapper.style.breakInside = 'avoid';
-                                // Add small padding to ensure box model is detected correctly by html2canvas
-                                headerWrapper.style.paddingTop = '1px';
-                                headerWrapper.style.marginTop = '20px'; // Spacing
-
-                                // Create Category Header
-                                const catHeader = document.createElement('h3');
-                                catHeader.style.backgroundColor = '#f1f5f9';
-                                catHeader.style.color = '#0f172a';
-                                catHeader.style.padding = '10px 15px';
-                                catHeader.style.fontSize = '18px';
-                                catHeader.style.margin = '0';
-                                catHeader.style.borderLeft = '5px solid #F86F03'; // Accent color border
-                                catHeader.innerText = categoryName;
-
-                                headerWrapper.appendChild(catHeader);
-                                categoryWrapper.appendChild(headerWrapper);
-
-                                // Create UL
-                                const ul = document.createElement('ul');
-                                ul.style.listStyleType = 'none';
-                                ul.style.padding = '0';
-                                ul.style.margin = '0';
-
-                                listItems.forEach(liText => {
-                                    const parentRow = liText.closest('.checklist-item-row');
-                                    const isChecked = parentRow && parentRow.classList.contains('is-checked');
-
-                                    const li = document.createElement('li');
-                                    li.style.borderBottom = '1px solid #eee';
-                                    li.style.padding = '10px 15px';
-                                    li.style.fontSize = '14px';
-                                    li.style.display = 'flex';
-                                    li.style.alignItems = 'center';
-                                    li.style.pageBreakInside = 'avoid'; // Prevent item splitting
-                                    li.style.breakInside = 'avoid';
-
-                                    if (isChecked) {
-                                        li.style.backgroundColor = '#ecfdf5'; // Light green background like UI
-                                    }
-
-                                    // Checkbox visual
-                                    const checkbox = document.createElement('span');
-                                    checkbox.style.display = 'inline-flex';
-                                    checkbox.style.alignItems = 'center';
-                                    checkbox.style.justifyContent = 'center';
-                                    checkbox.style.width = '16px';
-                                    checkbox.style.height = '16px';
-                                    checkbox.style.marginRight = '12px';
-                                    checkbox.style.borderRadius = '4px';
-                                    checkbox.style.flexShrink = '0';
-
-                                    if (isChecked) {
-                                        checkbox.style.backgroundColor = '#F86F03'; // Accent Color
-                                        checkbox.style.border = '1px solid #F86F03';
-                                        checkbox.style.color = '#fff';
-                                        checkbox.style.fontSize = '10px';
-                                        checkbox.innerHTML = '✔'; // Checkmark
-                                    } else {
-                                        checkbox.style.border = '2px solid #cbd5e1';
-                                        checkbox.style.backgroundColor = 'transparent';
-                                    }
-
-                                    const textSpan = document.createElement('span');
-                                    textSpan.innerText = liText.innerText.trim();
-                                    if (isChecked) {
-                                        textSpan.style.color = '#065f46'; // Darker green text
-                                        textSpan.style.fontWeight = 'bold';
-                                    } else {
-                                        textSpan.style.color = '#334155';
-                                    }
-
-                                    li.appendChild(checkbox);
-                                    li.appendChild(textSpan);
-                                    ul.appendChild(li);
-                                });
-                                categoryWrapper.appendChild(ul);
-                                reportContainer.appendChild(categoryWrapper);
-                            }
-                        });
-
-                        // 5. Append footer
-                        const footer = document.createElement('div');
-                        footer.style.marginTop = '40px';
-                        footer.style.textAlign = 'center';
-                        footer.style.fontSize = '12px';
-                        footer.style.color = '#999';
-                        footer.innerText = '© ' + new Date().getFullYear() + ' PDICARS.COM | Ensure your new car is defect-free.';
-                        reportContainer.appendChild(footer);
-
-                        // 6. Add Watermark REMOVED (Old Method)
-                        // We will add it per-page in the PDF generation step
-
-                        // 6. Append to body for rendering
-                        const wrapper = document.createElement('div');
-                        wrapper.style.position = 'fixed';
-                        wrapper.style.top = '-10000px';
-                        wrapper.style.left = '0';
-                        wrapper.style.width = '794px'; // Exact A4 width
-                        wrapper.style.backgroundColor = 'white';
-                        wrapper.style.zIndex = '-1';
-                        wrapper.appendChild(reportContainer);
-                        document.body.appendChild(wrapper);
-
-                        // 7. Generate PDF
-                        const opt = {
-                            margin: [10, 10, 10, 10],
-                            filename: titleText.replace(/\s+/g, '_') + '_Checklist.pdf',
-                            image: { type: 'jpeg', quality: 0.98 },
-                            html2canvas: { scale: 2, useCORS: true, logging: false, scrollY: 0 },
-                            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-                            pagebreak: { mode: ['css', 'legacy'], avoid: '.pdf-header-wrapper' } // Avoid splitting the header wrapper
-                        };
-
-                        html2pdf().from(reportContainer).set(opt).toPdf().get('pdf').then(function (pdf) {
-                            // Add Watermark to Every Page
-                            if (logoBase64) {
-                                const totalPages = pdf.internal.getNumberOfPages();
-                                const pageWidth = pdf.internal.pageSize.getWidth();
-                                const pageHeight = pdf.internal.pageSize.getHeight();
-                                const imgWidth = 120; // mm
-                                const imgHeight = (imgWidth * 464) / 1673; // Aspect ratio based on typical logo, or just let it scale. 
-                                // Actually let's assume square or landscape. Logo is usually landscape.
-                                // Let's use a fixed width and calculate height if we knew ratio, or just trial.
-                                // Better: centered.
-                                const x = (pageWidth - imgWidth) / 2;
-                                const y = (pageHeight - 60) / 2; // Center vertically roughly
-
-                                for (let i = 1; i <= totalPages; i++) {
-                                    pdf.setPage(i);
-                                    pdf.addImage(logoBase64, 'PNG', x, y, imgWidth, 0); // 0 height = auto keep aspect ratio
-                                }
-                            }
-                        }).save().then(() => {
-                            if (document.body.contains(wrapper)) document.body.removeChild(wrapper);
-                            button.innerHTML = originalText;
-                            button.style.pointerEvents = 'auto';
-                            button.style.opacity = '1';
-                        }).catch(err => {
-                            console.error(err);
-                            if (document.body.contains(wrapper)) document.body.removeChild(wrapper);
-                            alert('Error generating PDF. Please try again.');
-                            button.innerHTML = originalText;
-                            button.style.pointerEvents = 'auto';
-                            button.style.opacity = '1';
-                        });
-
-                    } catch (e) {
-                        console.error(e);
-                        alert('Error: ' + e.message);
-                        button.innerHTML = originalText;
-                        button.style.pointerEvents = 'auto';
-                        button.style.opacity = '1';
-                    }
-                }, 100);
-            });
-        </script>
     </div>
-</div>
-
+</section>
 
 <?php include 'include/footer.php'; ?>

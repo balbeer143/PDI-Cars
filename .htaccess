@@ -13,5 +13,8 @@ RewriteRule ^([^/]+)/?$ $1.php [L,QSA]
 # 3. Handle Brand/Model (2 segments) -> checklist.php
 RewriteRule ^([^/]+)/([^/]+)/?$ checklist.php?brand=$1&model=$2 [L,QSA]
 
+# 3.5 Handle Location Service (e.g., car-pdi-service-in-gurgaon)
+RewriteRule ^car-pdi-service-in-([^/]+)/?$ location-service.php?city=$1 [L,QSA]
+
 # 4. Handle Brand (1 segment) -> models.php
 RewriteRule ^([^/]+)/?$ models.php?brand=$1 [L,QSA]

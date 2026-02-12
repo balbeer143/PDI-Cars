@@ -1,6 +1,7 @@
 <?php
 include 'include/header.php';
 include 'include/carData.php';
+$city = isset($_GET['city']) ? ucwords(str_replace('-', ' ', $_GET['city'])) : 'your city';
 ?>
 
 <!-- Hero -->
@@ -107,87 +108,6 @@ include 'include/carData.php';
     </div>
 </div>
 
-<!-- How to Use / Steps -->
-<div class="container">
-    <div class="steps-container">
-        <div class="section-title text-center mb-5">
-            <span class="section-subtitle-pdi">Process</span>
-            <h2 class="fw-bold">How to Use Our <span class="text-accent">Tool</span></h2>
-        </div>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-            <div class="col mb-4 mb-md-0">
-                <div class="step-box h-100">
-                    <h4>Select Brand</h4>
-                    <p>Choose from top Indian car brands like Maruti, Tata, or Hyundai.</p>
-                </div>
-            </div>
-            <div class="col mb-4 mb-md-0">
-                <div class="step-box h-100">
-                    <h4>Choose Model</h4>
-                    <p>Pick your specific model (e.g., Baleno, Harrier) for a custom list.</p>
-                </div>
-            </div>
-            <div class="col mb-4 mb-md-0">
-                <div class="step-box h-100">
-                    <h4>Generate PDF</h4>
-                    <p>Receive a detailed, printable checklist covering all points.</p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="step-box h-100">
-                    <h4>Inspect</h4>
-                    <p>Follow the checklist digitally or on paper during your visit.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- SECTION: The Unseen Dangers (Gallery) -->
-<div class="gallery-section section-padding">
-    <div class="container container-custom">
-        <div class="section-title text-center mb-5">
-            <h2 class="fw-bold text-white">Don't Let These <span class="text-accent">Slip By</span></h2>
-            <p class="text-white">Common defects our users catch during PDI.</p>
-        </div>
-        <div class="gallery-grid">
-            <!-- Card 1 -->
-            <div class="gallery-card">
-                <img src="https://images.unsplash.com/photo-1600661653561-629509216228?q=80&w=600&auto=format&fit=crop"
-                    class="gallery-img" alt="Micro Scratches" loading="lazy" width="600" height="400">
-                <div class="gallery-overlay">
-                    <div class="overlay-content">
-                        <h4>Micro Scratches</h4>
-                        <p>Often invisible under showroom lights.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="gallery-card">
-                <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=600&auto=format&fit=crop"
-                    class="gallery-img" alt="Interior Gaps" loading="lazy" width="600" height="400">
-                <div class="gallery-overlay">
-                    <div class="overlay-content">
-                        <h4>Interior Gaps</h4>
-                        <p>Loose panels and rattling dashboards.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="gallery-card">
-                <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=600&auto=format&fit=crop"
-                    class="gallery-img" alt="Rust Issues" loading="lazy" width="600" height="400">
-                <div class="gallery-overlay">
-                    <div class="overlay-content">
-                        <h4>Rust Issues</h4>
-                        <p>Common in cars stored in open yards.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- SECTION: Aesthetic Focus (New Layout) -->
 <section class="image-layout-section section-padding">
     <div class="container">
@@ -248,46 +168,93 @@ include 'include/carData.php';
     </div>
 </section>
 
-<!-- Brand Specific Tips -->
-<div class="container section-padding">
-    <div class="section-title">
-        <h2 class="fw-bold">Brand-Specific <span class="text-accent">Considerations</span></h2>
-    </div>
-    <div class="row g-4 mt-2">
-        <div class="col-md-6">
-            <div class="tip-card h-100">
-                <h4 class="fw-bold h5">Maruti Suzuki / Nexa</h4>
-                <p class="mb-0">High-volume production can lead to minor quality control issues. Check paint finish,
-                    panel alignment, and
-                    accessories specifically.</p>
-            </div>
+<!-- SECTION 8: TESTIMONIALS -->
+<section class="section-padding bg-light-custom">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Happy Car Owners</h2>
         </div>
-        <div class="col-md-6">
-            <div class="tip-card h-100">
-                <h4 class="fw-bold h5">Hyundai / Kia</h4>
-                <p class="mb-0">Feature-rich cars. Test all tech components: touchscreen infotainment, parking sensors,
-                    and sunroof
-                    functionality thoroughly.</p>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="tip-card h-100">
-                <h4 class="fw-bold h5">Tata Motors / Mahindra</h4>
-                <p class="mb-0">Rugged Indian roads. Requires thorough underbody checks for coating and suspension
-                    integrity. Check
-                    rubber seals.</p>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="tip-card h-100">
-                <h4 class="fw-bold h5">Luxury (BMW, Mercedes)</h4>
-                <p class="mb-0">Verify imported features like adaptive cruise control. Check for transit damage on CBU
-                    models.</p>
-            </div>
-        </div>
-    </div>
-</div>
 
+        <!-- Swiper -->
+        <div class="swiper testimonialSwiper pb-5">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card h-100">
+                        <div class="stars mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-muted fst-italic">"Saved me from buying a repainted Creta! The dealer denied it
+                            until the PDI expert showed the paint meter reading."</p>
+                        <h6 class="fw-bold mt-3">- Rahul S., Mumbai</h6>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card h-100">
+                        <div class="stars mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-muted fst-italic">"Professional service. The engineer reached the showroom before
+                            me and had the report ready by evening."</p>
+                        <h6 class="fw-bold mt-3">- Priya K., Bangalore</h6>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card h-100">
+                        <div class="stars mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="text-muted fst-italic">"Highly recommended for peace of mind. Small investment
+                            compared to the price of the car."</p>
+                        <h6 class="fw-bold mt-3">- Amit D., Delhi</h6>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card h-100">
+                        <div class="stars mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-muted fst-italic">"The report was detailed with photos. Helped me negotiate
+                            getting the tires changed before delivery."</p>
+                        <h6 class="fw-bold mt-3">- Vikram J., Pune</h6>
+                    </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card h-100">
+                        <div class="stars mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-muted fst-italic">"Found a scratch on the roof that I would never have seen.
+                            Worth every penny."</p>
+                        <h6 class="fw-bold mt-3">- Sneha M., Hyderabad</h6>
+                    </div>
+                </div>
+                <!-- Slide 6 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card h-100">
+                        <div class="stars mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-muted fst-italic">"Excellent service. The engineer was very knowledgeable about
+                            EV batteries."</p>
+                        <h6 class="fw-bold mt-3">- Arjun R., Chennai</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
 
 
 <!-- FAQ -->
@@ -421,4 +388,119 @@ include 'include/carData.php';
         </div>
     </div>
 </div>
+
+<!-- 8. FINAL CTA (Fixed Dark Mode) -->
+<section class="section-padding position-relative overflow-hidden cta-dark-mode-fixed" id="book-form">
+    <!-- Background Decor (Fixed Position & Opacity) -->
+    <div class="position-absolute pe-none cta-bg-decor">
+        <svg width="500" height="500" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="150" stroke="#F86F03" stroke-width="30" />
+        </svg>
+    </div>
+
+    <div class="container position-relative z-2">
+        <div class="row align-items-center g-5">
+            <!-- Text Content -->
+            <div class="col-lg-7 text-center text-lg-start">
+                <div class="d-inline-flex align-items-center gap-2 mb-4">
+                    <span class="badge bg-accent text-white py-2 px-3 rounded-pill fw-bold">HIGH DEMAND</span>
+                    <span class="text-white text-uppercase fw-bold">15+ Bookings in
+                        <?php echo $city; ?> today
+                    </span>
+                </div>
+
+                <h2 class="display-6 fw-bold text-white mb-4">
+                    Don't Risk It. <br>
+                    <span class="text-accent">Verify It.</span>
+                </h2>
+
+                <p class="text-white mb-5">
+                    Get the most detailed 500+ point car inspection report in
+                    <strong>
+                        <?php echo $city; ?>
+                    </strong>.
+                    Uncover hidden repaints, meter tampering, and engine faults before you pay.
+                </p>
+
+                <div class="d-flex flex-wrap gap-4 justify-content-center justify-content-lg-start">
+                    <div class="d-flex align-items-center gap-3 text-white">
+                        <div
+                            class="icon-box-sm bg-accent rounded-circle text-white shadow-lg d-flex align-items-center justify-content-center cta-icon-box">
+                            <i class="fas fa-shield-alt fs-5"></i>
+                        </div>
+                        <div class="text-start">
+                            <h6 class="fw-bold mb-0 text-white">Risk-Free</h6>
+                            <small class="text-white-50">Money back guarantee</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 text-white">
+                        <div
+                            class="icon-box-sm bg-success rounded-circle text-white shadow-lg d-flex align-items-center justify-content-center cta-icon-box">
+                            <i class="fas fa-bolt fs-5"></i>
+                        </div>
+                        <div class="text-start">
+                            <h6 class="fw-bold mb-0 text-white">Fast Service</h6>
+                            <small class="text-white-50">Same day report</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lead Form -->
+            <div class="col-lg-5">
+                <div class="bg-white p-4 p-md-5 rounded-5 position-relative">
+                    <div class="text-center mb-4 pt-2">
+                        <h3 class="fw-bold text-dark mb-1">Get Instant Callback</h3>
+                        <p class="text-secondary small mb-0">Our expert engineer will call you shortly.</p>
+                    </div>
+
+                    <form id="homeLeadForm" onsubmit="submitToSheet(event, 'HomeLead')">
+                        <div class="mb-3">
+                            <label class="small text-secondary fw-bold ms-3 mb-1 cta-form-label">YOUR NAME</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-0 text-accent rounded-start-pill ps-3"><i
+                                        class="fas fa-user"></i></span>
+                                <input type="text" name="name"
+                                    class="form-control bg-light border-0 text-dark fw-medium rounded-end-pill py-3 cta-form-input-shadow-none"
+                                    placeholder="e.g. Rahul Sharma" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="small text-secondary fw-bold ms-3 mb-1 cta-form-label">PHONE NUMBER</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-0 text-accent rounded-start-pill ps-3"><i
+                                        class="fas fa-phone-alt"></i></span>
+                                <input type="tel" name="phone"
+                                    class="form-control bg-light border-0 text-dark fw-medium rounded-end-pill py-3 cta-form-input-shadow-none"
+                                    placeholder="+91 99999 99999" pattern="\d{10}" maxlength="10" minlength="10"
+                                    title="Please enter exactly 10 digits" required>
+                            </div>
+                        </div>
+
+                        <button type="submit"
+                            class="btn w-100 rounded-pill fw-bold shadow-lg hover-scale py-3 text-uppercase text-white ls-1 mb-4 cta-submit-btn-gradient">
+                            Check Availability <i class="fas fa-arrow-right ms-2"></i>
+                        </button>
+
+                        <div class="text-center">
+                            <p class="small text-muted mb-3">Or connect instantly via</p>
+                            <div class="d-flex justify-content-center gap-3">
+                                <a href="https://wa.me/919999999999"
+                                    class="btn btn-outline-success rounded-circle d-flex align-items-center justify-content-center hover-fill cta-social-btn cta-social-whatsapp">
+                                    <i class="fab fa-whatsapp fs-5"></i>
+                                </a>
+                                <a href="tel:+919999999999"
+                                    class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center hover-fill cta-social-btn cta-social-phone">
+                                    <i class="fas fa-phone-alt fs-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <?php include 'include/footer.php'; ?>

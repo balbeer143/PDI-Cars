@@ -14,8 +14,6 @@
   <link rel="canonical"
     href="<?php echo 'https://' . $_SERVER['HTTP_HOST'] . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>">
   <link rel="icon" type="image/png" href="<?php echo $base_url; ?>assets/images/fevicon.png">
-  <!-- Robots removed to allow indexing -->
-
 
   <!-- Performance Hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +32,7 @@
 
 <body>
   <header class="header">
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg p-0">
       <div class="container">
         <div class="logo">
           <a class="navbar-brand" href="<?php echo $base_url; ?>" aria-label="Home">
@@ -136,48 +134,57 @@
       const currentLangSpan = document.getElementById('current-lang');
       const langOptions = document.querySelectorAll('.lang-option');
 
-      // Toggle Dropdown
-      langBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        customSwitcher.classList.toggle('active');
-        const icon = langBtn.querySelector('i');
-        icon.style.transform = customSwitcher.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
-      });
-
-      // Close on outside click
-      document.addEventListener('click', () => {
-        customSwitcher.classList.remove('active');
-        langBtn.querySelector('i').style.transform = 'rotate(0deg)';
-      });
-
-      // Handle Option Click
-      langOptions.forEach(option => {
-        option.addEventListener('click', function () {
-          const value = this.getAttribute('data-value');
-          const text = this.textContent;
-
-          // Update UI
-          currentLangSpan.textContent = text;
-          customSwitcher.classList.remove('active');
-          langBtn.querySelector('i').style.transform = 'rotate(0deg)';
-
-          // Update Native Select
-          langSelector.value = value;
-          langSelector.dispatchEvent(new Event('change'));
+      // Check if elements exist to prevent console errors
+      if (langBtn && customSwitcher && langSelector) {
+        // Toggle Dropdown
+        langBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          customSwitcher.classList.toggle('active');
+          const icon = langBtn.querySelector('i');
+          if (icon) {
+            icon.style.transform = customSwitcher.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+          }
         });
-      });
 
-      // Sync with Google Translate
-      langSelector.addEventListener('change', function () {
-        const lang = this.value;
-        const googleCombo = document.querySelector('select.goog-te-combo');
-        if (googleCombo) {
-          googleCombo.value = lang;
-          googleCombo.dispatchEvent(new Event('change'));
-        }
-      });
+        // Close on outside click
+        document.addEventListener('click', () => {
+          customSwitcher.classList.remove('active');
+          const icon = langBtn.querySelector('i');
+          if (icon) {
+            icon.style.transform = 'rotate(0deg)';
+          }
+        });
+
+        // Handle Option Click
+        langOptions.forEach(option => {
+          option.addEventListener('click', function () {
+            const value = this.getAttribute('data-value');
+            const text = this.textContent;
+
+            // Update UI
+            if (currentLangSpan) currentLangSpan.textContent = text;
+            customSwitcher.classList.remove('active');
+            const icon = langBtn.querySelector('i');
+            if (icon) {
+              icon.style.transform = 'rotate(0deg)';
+            }
+
+            // Update Native Select
+            langSelector.value = value;
+            langSelector.dispatchEvent(new Event('change'));
+          });
+        });
+
+        // Sync with Google Translate
+        langSelector.addEventListener('change', function () {
+          const lang = this.value;
+          const googleCombo = document.querySelector('select.goog-te-combo');
+          if (googleCombo) {
+            googleCombo.value = lang;
+            googleCombo.dispatchEvent(new Event('change'));
+          }
+        });
+      }
     });
-  </script>
-
   </script>
   <?php // External CSS in style.css handles Google Translate cleanup ?>

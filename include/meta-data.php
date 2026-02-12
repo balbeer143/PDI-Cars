@@ -21,6 +21,7 @@ $keywords = "PDI, Car Inspection, New Car Checklist, Pre-Delivery Inspection, Ca
 // Get Params
 $brand_param = isset($_GET['brand']) ? $_GET['brand'] : '';
 $model_param = isset($_GET['model']) ? $_GET['model'] : '';
+$city_param = isset($_GET['city']) ? $_GET['city'] : '';
 
 // Helper to resolve display names
 $brandNameDisplay = '';
@@ -90,6 +91,14 @@ if ($brand_param && empty($model_param)) {
             break;
         case "checklist":
             $title = "Complete PDI Checklist | PDICARS";
+            $description = "";
+            $keywords = "";
+            break;
+        case "location-service":
+            $currCity = $city_param ? ucwords(str_replace('-', ' ', $city_param)) : 'Gurgaon';
+            $title = "Best Car PDI Service in $currCity | Expert New Car Inspection";
+            $description = "Book professional Car PDI Service in $currCity. Certified engineers, 500+ point checklist, and same-day reports. Don't buy a new car without us.";
+            $keywords = "car pdi service $currCity, new car inspection $currCity, vehicle pdi check $currCity, car defect check $currCity";
             break;
     }
 }

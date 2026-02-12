@@ -36,29 +36,33 @@
         <div class="col-lg-10">
             <div class="booking-card">
                 <h3 class="text-center mb-4 fw-bold text-primary-theme">Schedule Your Inspection</h3>
-                <form>
+                <form id="expertForm" onsubmit="submitToSheet(event, 'ExpertLead')">
                     <div class="row g-3">
                         <div class="col-md-6 col-lg-3">
                             <label for="fullName" class="form-label text-muted small fw-bold">FULL NAME</label>
-                            <input type="text" id="fullName" class="form-control" placeholder="John Doe">
+                            <input type="text" id="fullName" name="name" class="form-control" placeholder="John Doe"
+                                required>
                         </div>
                         <div class="col-md-6 col-lg-3">
                             <label for="phone" class="form-label text-muted small fw-bold">PHONE NUMBER</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="+91 98765...">
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="+91 98765..."
+                                pattern="\d{10}" maxlength="10" minlength="10" title="Please enter exactly 10 digits"
+                                required>
                         </div>
                         <div class="col-md-6 col-lg-3">
                             <label for="carModel" class="form-label text-muted small fw-bold">CAR MODEL</label>
-                            <input type="text" id="carModel" class="form-control" placeholder="e.g. Tata Nexon">
+                            <input type="text" id="carModel" name="model" class="form-control"
+                                placeholder="e.g. Tata Nexon">
                         </div>
                         <div class="col-md-6 col-lg-3">
                             <label for="location" class="form-label text-muted small fw-bold">LOCATION</label>
-                            <input type="text" id="location" class="form-control" placeholder="City/Dealer">
+                            <input type="text" id="location" name="city" class="form-control" placeholder="City/Dealer">
                         </div>
                         <div class="col-12 mt-4 text-center">
                             <button type="submit" class="btn-pdi btn-pdi-accent">
                                 HIRE OUR EXPERT <i class="fas fa-arrow-right ms-2"></i>
                             </button>
-                            <p class="text-muted small mt-4"><i class="fas fa-lock me-1"></i> No payment required
+                            <p class="text-muted fs-6 mt-4"><i class="fas fa-lock me-1"></i> No payment required
                                 upfront.</p>
                         </div>
                     </div>
@@ -114,7 +118,7 @@
                 <div class="feature-box">
                     <div class="icon-wrap"><i class="fas fa-car-crash"></i></div>
                     <h5>Transit Damage</h5>
-                    <p class="text-muted small">Cars travel thousands of kilometers. Scratches and dents are often
+                    <p class="text-muted fs-6">Cars travel thousands of kilometers. Scratches and dents are often
                         repainted by dealers without telling you.</p>
                 </div>
             </div>
@@ -122,7 +126,7 @@
                 <div class="feature-box">
                     <div class="icon-wrap"><i class="fas fa-cogs"></i></div>
                     <h5>Manufacturing Defects</h5>
-                    <p class="text-muted small">Even factory-fresh cars can have alignment issues, electrical faults, or
+                    <p class="text-muted fs-6">Even factory-fresh cars can have alignment issues, electrical faults, or
                         missing accessories.</p>
                 </div>
             </div>
@@ -130,7 +134,7 @@
                 <div class="feature-box">
                     <div class="icon-wrap"><i class="fas fa-file-contract"></i></div>
                     <h5>Documentation Fraud</h5>
-                    <p class="text-muted small">We verify the VIN, manufacturing month, and ensure you aren't being sold
+                    <p class="text-muted fs-6">We verify the VIN, manufacturing month, and ensure you aren't being sold
                         an old demo car.</p>
                 </div>
             </div>
@@ -290,7 +294,6 @@
     </div>
 </section>
 
-<!-- SECTION 8: TESTIMONIALS -->
 <!-- SECTION 8: TESTIMONIALS -->
 <section class="section-padding bg-light-custom">
     <div class="container">

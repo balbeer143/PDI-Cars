@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer>
+<footer class="site-footer">
     <div class="container">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
             <div class="footer-col col">
@@ -26,14 +26,45 @@
             </div>
             <div class="footer-col col">
                 <h4>Newsletter</h4>
-                <p class="fs-6 footer-note">Get car tips & updates.</p>
-                <input type="email" class="email-input footer-input-custom" placeholder="Enter Email"
-                    aria-label="Email Address for Newsletter">
-                <button class="btn-pdi btn-pdi-accent w-100">Subscribe</button>
+                <form id="newsletterForm" onsubmit="submitToSheet(event, 'Newsletter')">
+                    <p class="fs-6 footer-note">Get car tips & updates.</p>
+                    <input type="email" name="email" class="email-input footer-input-custom" placeholder="Enter Email"
+                        aria-label="Email Address for Newsletter" required>
+                    <button type="submit" class="btn-pdi btn-pdi-accent w-100">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- NEW: Locations We Serve (SEO Links) -->
+        <div class="row mt-5 pt-4 border-top border-secondary">
+            <div class="col-12">
+                <h5 class="text-white mb-3" style="font-size: 1rem;">Locations We Serve</h5>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="<?php echo $base_url; ?>car-pdi-service-in-gurgaon"
+                        class="text-secondary text-decoration-none small">Gurgaon</a>
+                    <a href="<?php echo $base_url; ?>car-pdi-service-in-delhi"
+                        class="text-secondary text-decoration-none small">Delhi</a>
+                    <a href="<?php echo $base_url; ?>car-pdi-service-in-noida"
+                        class="text-secondary text-decoration-none small">Noida</a>
+                    <a href="<?php echo $base_url; ?>car-pdi-service-in-bangalore"
+                        class="text-secondary text-decoration-none small">Bangalore</a>
+                    <a href="<?php echo $base_url; ?>car-pdi-service-in-mumbai"
+                        class="text-secondary text-decoration-none small">Mumbai</a>
+                    <a href="<?php echo $base_url; ?>car-pdi-service-in-pune"
+                        class="text-secondary text-decoration-none small">Pune</a>
+                    <a href="<?php echo $base_url; ?>car-pdi-service-in-hyderabad"
+                        class="text-secondary text-decoration-none small">Hyderabad</a>
+                    <a href="<?php echo $base_url; ?>car-pdi-service-in-chennai"
+                        class="text-secondary text-decoration-none small">Chennai</a>
+                    <a href="<?php echo $base_url; ?>car-pdi-service-in-kolkata"
+                        class="text-secondary text-decoration-none small">Kolkata</a>
+                    <a href="<?php echo $base_url; ?>car-pdi-service-in-ahmedabad"
+                        class="text-secondary text-decoration-none small">Ahmedabad</a>
+                </div>
             </div>
         </div>
     </div>
-    <div class="copyright">
+    <div class="copyright text-white">
         &copy; 2026 PDICars.com. All Rights Reserved.
     </div>
 </footer>
@@ -42,6 +73,35 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 <script src="<?php echo $base_url; ?>assets/js/custom.js"></script>
+<script src="<?php echo $base_url; ?>assets/js/submit-to-sheet.js"></script>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".testimonialSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
+    });
+</script>
 
 <!-- Scroll Reveal Script -->
 <script>
@@ -65,6 +125,7 @@
         revealOnScroll();
     });
 </script>
+
 </body>
 
 </html>
